@@ -33,7 +33,7 @@ export const PROPERTIES = [
       "Rooftop pool and gym",
       "Walking distance to Delilah Beach",
     ],
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/property-luxury-highrise-hdj6GQEpwB3s6T3rqm7K8E.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg",
     seo: {
       title: "Luxury High-Rise Apartments for Sale in Ashkelon | Mr. Ashkelon",
       description:
@@ -61,7 +61,7 @@ export const PROPERTIES = [
       "Private lift access",
       "Dedicated concierge service",
     ],
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg",
     seo: {
       title: "Luxury Penthouse Apartments for Sale in Ashkelon | Mr. Ashkelon",
       description:
@@ -89,7 +89,7 @@ export const PROPERTIES = [
       "Close to beaches and promenade",
       "Excellent transport links",
     ],
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+    image: "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0008-400x284.jpg",
     seo: {
       title: "Sea View Apartments for Sale in Ashkelon | Mr. Ashkelon",
       description:
@@ -107,7 +107,7 @@ export const BLOG_POSTS = [
     date: "2025-03-15",
     readTime: "8 min read",
     category: "Buying Guide",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/blog-img1_923bfbc4.jpg",
     seo: {
       title: "Foreigner's Guide to Buying Property in Ashkelon, Israel | Mr. Ashkelon",
       description:
@@ -164,7 +164,7 @@ Motti has guided dozens of overseas buyers through the process of purchasing pro
     date: "2025-01-20",
     readTime: "10 min read",
     category: "Building Guide",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/blog-img2_1f4c6dbd.jpg",
     seo: {
       title: "Building a House in Ashkelon, Israel: Complete Guide | Mr. Ashkelon",
       description:
@@ -228,7 +228,7 @@ While our primary expertise is in buying and selling existing properties, Motti 
     date: "2024-11-10",
     readTime: "7 min read",
     category: "Buying Guide",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/ashkelon-israel_78811096.jpg",
     seo: {
       title: "What to Know Before Buying Property in Ashkelon | Mr. Ashkelon",
       description:

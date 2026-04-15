@@ -10,7 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import { PROPERTIES } from "@/lib/data";
 
 const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/property-luxury-highrise-hdj6GQEpwB3s6T3rqm7K8E.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg";
 
 export default function FeaturedProperties() {
   return (

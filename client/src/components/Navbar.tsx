@@ -40,26 +40,13 @@ export default function Navbar() {
       <div className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div
-              className="w-9 h-9 rounded flex items-center justify-center font-bold text-sm"
-              style={{
-                backgroundColor: "oklch(0.72 0.12 75)",
-                color: "oklch(0.235 0.058 250)",
-                fontFamily: "Georgia, serif",
-              }}
-            >
-              MR
-            </div>
-            <span
-              className="font-bold text-lg hidden sm:block"
-              style={{
-                fontFamily: "Georgia, serif",
-                color: "oklch(0.985 0.008 85)",
-              }}
-            >
-              Mr. Ashkelon
-            </span>
+          <Link href="/" className="flex items-center group">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-favicon_7a032b7f.png"
+              alt="Mr. Ashkelon — Sales. Rentals. Management."
+              className="h-12 w-auto"
+              style={{ filter: "invert(1) brightness(2)" }}
+            />
           </Link>
 
           {/* Desktop Nav */}

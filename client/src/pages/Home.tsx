@@ -11,11 +11,11 @@ import ContactForm from "@/components/ContactForm";
 import { PROPERTIES, BLOG_POSTS, SERVICES, TESTIMONIALS } from "@/lib/data";
 
 const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/hero-homepage-JEeoM8ijVeviVnToqkeLSz.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg";
 const BROKER_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/hero-about-dLJHLYYoahG8fdHkuhpTKY.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/mr-mrs-ashkelon_99e0fa39.png";
 const ASHKELON_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/hero-ashkelon-9bpgEoC4mKfHdHdVw2agwf.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/ashkelon-israel_78811096.jpg";
 
 export default function Home() {
   return (

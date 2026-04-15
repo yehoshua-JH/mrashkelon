@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 
 const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/hero-homepage-JEeoM8ijVeviVnToqkeLSz.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg";
 
 export default function PrivacyPolicy() {
   return (

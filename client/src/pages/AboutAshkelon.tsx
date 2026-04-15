@@ -11,7 +11,7 @@ import ContactForm from "@/components/ContactForm";
 import { ACCORDION_DATA } from "@/lib/data";
 
 const ASHKELON_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/hero-ashkelon-9bpgEoC4mKfHdHdVw2agwf.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/ashkelon-israel_78811096.jpg";
 
 function SimpleMarkdown({ text }: { text: string }) {
   // Very simple markdown renderer for the accordion content
