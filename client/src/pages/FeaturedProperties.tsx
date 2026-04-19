@@ -1,124 +1,122 @@
 // =============================================================
 // MR. ASHKELON — Featured Properties Listing Page
+// Matches Lovable source: hero banner with anchor buttons,
+// alternating bg sections per property, specs grid, gallery grid, CTA buttons
 // =============================================================
 
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import { PROPERTIES } from "@/lib/data";
-
-const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function FeaturedProperties() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-16">
-        <PageHero
-          title="Featured Properties"
-          subtitle="Handpicked luxury and sea-view properties in Ashkelon"
-          image={HERO_IMAGE}
+
+      {/* Hero Banner */}
+      <section className="relative h-64 md:h-80 bg-gradient-to-br from-primary to-primary/80 flex flex-col items-center justify-center gap-6">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage:
+              "url(https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project-src_c3fc7609.jpg)",
+          }}
         />
-      </div>
-
-      <section className="py-20" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="section-heading mb-2">Current Listings</h2>
-            <span className="gold-divider mx-auto" />
-            <p className="mt-4 text-sm max-w-xl mx-auto" style={{ color: "oklch(0.45 0.03 250)" }}>
-              We specialise in premium properties in Ashkelon's most desirable locations.
-              Contact us to arrange a viewing or to discuss your specific requirements.
-            </p>
-          </div>
-
-          <div className="space-y-10">
-            {PROPERTIES.map((property, idx) => (
-              <div
-                key={property.slug}
-                className={`grid lg:grid-cols-2 gap-8 items-center ${idx % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
-              >
-                <div className={`relative overflow-hidden rounded-lg shadow-lg ${idx % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                  <img
-                    src={property.image}
-                    alt={property.title}
-                    className="w-full object-cover"
-                    style={{ height: "360px" }}
-                  />
-                  <div
-                    className="absolute top-4 left-4 px-3 py-1.5 rounded text-xs font-semibold"
-                    style={{
-                      backgroundColor: "oklch(0.72 0.12 75)",
-                      color: "oklch(0.235 0.058 250)",
-                    }}
-                  >
-                    {property.tagline}
-                  </div>
-                </div>
-
-                <div className={idx % 2 === 1 ? "lg:col-start-1" : ""}>
-                  <p
-                    className="text-xs font-semibold uppercase tracking-widest mb-1"
-                    style={{ color: "oklch(0.72 0.12 75)" }}
-                  >
-                    {property.location}
-                  </p>
-                  <h2
-                    className="text-2xl font-bold mb-1"
-                    style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
-                  >
-                    {property.title}
-                  </h2>
-                  <p className="text-base font-semibold mb-4" style={{ color: "oklch(0.45 0.03 250)" }}>
-                    {property.subtitle}
-                  </p>
-
-                  <div className="flex flex-wrap gap-4 text-sm mb-5" style={{ color: "oklch(0.45 0.03 250)" }}>
-                    <span>🛏 {property.bedrooms} Bedrooms</span>
-                    <span>🚿 {property.bathrooms} Bathrooms</span>
-                    <span>📐 {property.size}</span>
-                  </div>
-
-                  <p className="text-sm leading-relaxed mb-5" style={{ color: "oklch(0.45 0.03 250)" }}>
-                    {property.description.substring(0, 200)}...
-                  </p>
-
-                  <div className="flex items-center justify-between mb-5">
-                    <span
-                      className="text-xl font-bold"
-                      style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
-                    >
-                      {property.price}
-                    </span>
-                  </div>
-
-                  <Link
-                    href={`/property/${property.slug}`}
-                    className="inline-block px-6 py-3 rounded font-semibold text-sm transition-all duration-200"
-                    style={{
-                      backgroundColor: "oklch(0.72 0.12 75)",
-                      color: "oklch(0.235 0.058 250)",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.82 0.10 75)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.72 0.12 75)";
-                    }}
-                  >
-                    View Full Details
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+        <h1 className="relative text-4xl md:text-5xl font-heading font-bold text-white">
+          Featured Properties
+        </h1>
+        <div className="relative flex flex-wrap justify-center gap-3">
+          {PROPERTIES.map((p) => (
+            <Button
+              key={p.slug}
+              asChild
+              variant="secondary"
+              className="bg-secondary text-secondary-foreground hover:bg-secondary/80 font-medium"
+            >
+              <a href={`#${p.slug}`}>{p.title}</a>
+            </Button>
+          ))}
         </div>
       </section>
 
-      <ContactForm title="Interested in a Property?" subtitle="Contact us to arrange a viewing or to discuss your requirements." />
+      {/* Properties */}
+      {PROPERTIES.map((property, index) => (
+        <section
+          key={property.slug}
+          id={property.slug}
+          className={`py-16 md:py-24 ${index % 2 === 1 ? "bg-muted" : ""}`}
+        >
+          <div className="container px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground text-center mb-12">
+              {property.title}
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Text + specs */}
+              <div>
+                <p className="text-muted-foreground leading-relaxed mb-4">{property.description}</p>
+                <p className="text-muted-foreground leading-relaxed mb-6">{property.details}</p>
+
+                <Card className="border-none shadow-md mb-6">
+                  <CardContent className="pt-6">
+                    <div className="grid grid-cols-2 gap-3 text-sm">
+                      {Object.entries(property.specs).map(([key, value]) => (
+                        <div key={key}>
+                          <span className="font-semibold text-foreground capitalize">{key}: </span>
+                          <span className="text-muted-foreground">{value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {property.note && (
+                  <p className="text-secondary font-semibold text-lg mb-6">{property.note}</p>
+                )}
+
+                <div className="flex gap-3">
+                  <Button
+                    asChild
+                    className="bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  >
+                    <Link href={`/property/${property.slug}`}>View Full Details</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                  >
+                    <Link href="/contact">Contact Us</Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Gallery */}
+              <div
+                className={`grid ${property.galleryImages.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-3`}
+              >
+                {property.galleryImages.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`${property.title} - Image ${i + 1}`}
+                    className="w-full h-64 md:h-72 object-cover rounded-lg"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <ContactForm
+        title="Interested in a Property?"
+        subtitle="Contact us to arrange a viewing or to discuss your requirements."
+      />
       <Footer />
     </div>
   );

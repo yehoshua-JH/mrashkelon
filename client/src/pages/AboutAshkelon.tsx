@@ -1,149 +1,323 @@
 // =============================================================
 // MR. ASHKELON — About Ashkelon Page
-// Features accordion with all city info
+// Matches Lovable source AboutAshkelon.tsx exactly:
+// - Hero: "About Ashkelon" title, beach bg at 30% opacity
+// - "Information about Ashkelon" heading with gold underline
+// - shadcn Accordion with 8 items
+// - ContactSection at the bottom
 // =============================================================
 
-import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
-import { ACCORDION_DATA } from "@/lib/data";
-
-const ASHKELON_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/ashkelon-israel_78811096.jpg";
-
-function SimpleMarkdown({ text }: { text: string }) {
-  // Very simple markdown renderer for the accordion content
-  const lines = text.trim().split("\n");
-  return (
-    <div className="text-sm leading-relaxed space-y-2" style={{ color: "oklch(0.45 0.03 250)" }}>
-      {lines.map((line, i) => {
-        if (line.startsWith("## ")) {
-          return (
-            <h3 key={i} className="text-base font-bold mt-4 mb-1" style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}>
-              {line.replace("## ", "")}
-            </h3>
-          );
-        }
-        if (line.startsWith("**") && line.endsWith("**")) {
-          return (
-            <p key={i} className="font-bold" style={{ color: "oklch(0.235 0.058 250)" }}>
-              {line.replace(/\*\*/g, "")}
-            </p>
-          );
-        }
-        if (line.startsWith("- ")) {
-          return (
-            <div key={i} className="flex items-start gap-2">
-              <span style={{ color: "oklch(0.72 0.12 75)", marginTop: "2px" }}>•</span>
-              <span dangerouslySetInnerHTML={{ __html: line.replace("- ", "").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") }} />
-            </div>
-          );
-        }
-        if (line.startsWith("|")) {
-          // Table row
-          const cells = line.split("|").filter((c) => c.trim() !== "");
-          if (cells.every((c) => c.trim().match(/^-+$/))) return null;
-          return (
-            <div key={i} className="grid gap-2" style={{ gridTemplateColumns: `repeat(${cells.length}, 1fr)` }}>
-              {cells.map((cell, j) => (
-                <span key={j} className="text-xs py-1 px-2 rounded" style={{ backgroundColor: "oklch(0.955 0.012 85)" }}>
-                  {cell.trim()}
-                </span>
-              ))}
-            </div>
-          );
-        }
-        if (line.trim() === "") return <div key={i} className="h-1" />;
-        return (
-          <p key={i} dangerouslySetInnerHTML={{ __html: line.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
-        );
-      })}
-    </div>
-  );
-}
 
 export default function AboutAshkelon() {
-  const [openId, setOpenId] = useState<string | null>("about-ashkelon");
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-16">
-        <PageHero
-          title="About Ashkelon"
-          subtitle="Discover Israel's most exciting coastal city"
-          image={ASHKELON_IMAGE}
+
+      {/* Hero Banner — matches Lovable: beach bg at 30% opacity, just "About Ashkelon" */}
+      <section className="relative h-64 md:h-80 bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80)",
+          }}
         />
-      </div>
-
-      {/* Intro */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
-        <div className="container max-w-3xl text-center">
-          <h2 className="section-heading mb-2">The City of Gardens</h2>
-          <span className="gold-divider mx-auto" />
-          <p className="mt-6 text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-            Ashkelon is one of Israel's most dynamic and rapidly growing cities. Located on the
-            Mediterranean coast, it combines 5,000 years of history with modern infrastructure,
-            beautiful beaches, and a warm, welcoming community. Discover why thousands of overseas
-            buyers and new Olim choose Ashkelon as their home every year.
-          </p>
-        </div>
+        <h1 className="relative text-4xl md:text-5xl font-heading font-bold text-primary-foreground">
+          About Ashkelon
+        </h1>
       </section>
 
-      {/* Accordion */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.955 0.012 85)" }}>
-        <div className="container max-w-3xl">
-          <div className="space-y-3">
-            {ACCORDION_DATA.map((item) => (
-              <div
-                key={item.id}
-                className="rounded-lg overflow-hidden shadow-sm"
-                style={{ backgroundColor: "oklch(1 0 0)" }}
-              >
-                <button
-                  className="w-full flex items-center justify-between px-6 py-4 text-left transition-colors duration-200"
-                  style={{
-                    backgroundColor:
-                      openId === item.id
-                        ? "oklch(0.235 0.058 250)"
-                        : "oklch(1 0 0)",
-                    color:
-                      openId === item.id
-                        ? "oklch(0.985 0.008 85)"
-                        : "oklch(0.235 0.058 250)",
-                  }}
-                  onClick={() => setOpenId(openId === item.id ? null : item.id)}
-                >
-                  <span
-                    className="font-semibold text-sm"
-                    style={{ fontFamily: "Georgia, serif" }}
+      {/* Information */}
+      <section className="py-16 md:py-24">
+        <div className="container px-4 max-w-4xl">
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
+            Information about Ashkelon
+          </h2>
+          <div className="w-20 h-1 bg-secondary mb-8" />
+
+          <Accordion type="single" collapsible defaultValue="about" className="space-y-4">
+            <AccordionItem value="about" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-heading font-semibold">
+                About Ashkelon
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed space-y-4">
+                <p>
+                  Ashkelon, the City of Gardens, is located along Israel's southern coast and is
+                  considered the capital of the Ashkelon District. It has recreation and tourism
+                  centres and is in a constant development boom. The city has a population of
+                  128,000 and its jurisdiction extends over 55,000 dunams, not far short of the
+                  size of Tel Aviv, making it one of Israel's largest population centres.
+                </p>
+                <p>
+                  The city's location between the sea and the outskirts of the desert give the
+                  residents a comfortable, temperate climate throughout the year.
+                </p>
+                <p>
+                  Ashkelon is one of the oldest cities in the world and is replete with history. At
+                  its centre there are ancient sites, among the rarest in the world, alongside green
+                  agricultural area extending into the horizon. In the last decade alone, Ashkelon
+                  has absorbed over 40,000 new residents including immigrants and young families who
+                  have been drawn by the charm of its quality of life.
+                </p>
+                <p>
+                  Ashkelon surely must be one of Israel's best kept secrets and the ideal place to
+                  fulfil the dream of living in Israel. Sun, sea, beautiful beaches, clean, shopping
+                  facilities, schools, industry, excellent road and rail services and so much more…
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="mayor" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-heading font-semibold">
+                Greetings from the Mayor
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed space-y-4">
+                <p className="italic">
+                  The following is an extract from the Ashkelon Municipal website.
+                </p>
+                <p>Dear Visitors,</p>
+                <p>
+                  Since the dawn of history 5,000 years ago, Ashkelon, due to its strategic
+                  location as an important port, has attracted many people and varied populations
+                  who lived in the city and contributed to its prosperity.
+                </p>
+                <p>
+                  This dynamic city boasts a high quality of life, excellent educational
+                  institutions, rich and varied leisure activities for the entire population with
+                  many recreation spots located around the city.
+                </p>
+                <p>
+                  I invite you to visit Ashkelon and enjoy the many attractions that the city has
+                  to offer. Among other things, you can stroll along 12 kilometers of spectacular
+                  sea shore, have fun at the Sea Park located on Delilah Beach, and spend time at
+                  the beautiful marina with its new large commercial center, cinema, cafés, and
+                  restaurants.
+                </p>
+                <p className="font-semibold text-foreground">
+                  Tomer Glam
+                  <br />
+                  Mayor of Ashkelon
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="olim" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-heading font-semibold">
+                Information for Olim
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed space-y-3">
+                <p className="font-semibold text-foreground">
+                  Glossary of Useful Administrative Terms
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <span className="font-medium text-foreground italic">Bituach Leumi</span> — The
+                    National Insurance
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground italic">Kupat Cholim</span> —
+                    Health Insurance fund
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground italic">Misrad HaKlita</span> —
+                    Ministry of Immigrant Absorption
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground italic">Misrad HaPnim</span> —
+                    Interior Ministry
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground italic">Teudat Zehut</span> —
+                    Identity card
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground italic">Sal Klita</span> —
+                    Financial assistance paid in the 6 months following Aliyah
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground italic">Ulpan</span> — Hebrew
+                    classes
+                  </li>
+                </ul>
+                <p className="text-sm">
+                  For more information, visit the{" "}
+                  <a
+                    href="http://www.jewishagency.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary hover:underline"
                   >
-                    {item.title}
-                  </span>
-                  <span
-                    className="text-lg transition-transform duration-200"
-                    style={{
-                      transform: openId === item.id ? "rotate(180deg)" : "rotate(0deg)",
-                      color: openId === item.id ? "oklch(0.72 0.12 75)" : "oklch(0.55 0.02 85)",
-                    }}
-                  >
-                    ▾
-                  </span>
-                </button>
-                {openId === item.id && (
-                  <div className="px-6 py-5">
-                    <SimpleMarkdown text={item.content} />
+                    Jewish Agency for Israel
+                  </a>
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="emergency" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-heading font-semibold">
+                Emergency Telephone Numbers
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  {[
+                    ["Police", "100"],
+                    ["Ambulance", "101"],
+                    ["Fire Service", "102"],
+                    ["Electric Company Hotline", "103"],
+                    ["Municipality Hotline", "106 / 08-6792306"],
+                    ["IDF Home Front Command", "1207"],
+                    ["Barzilai Hospital", "08-6745700"],
+                  ].map(([name, number]) => (
+                    <div
+                      key={name}
+                      className="flex justify-between py-1 border-b border-border"
+                    >
+                      <span className="font-medium text-foreground">{name}</span>
+                      <span className="text-muted-foreground">{number}</span>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="health" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-heading font-semibold">
+                Health Providers
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-3 text-sm">
+                  {[
+                    { name: "Maccabi", address: "Hagvura 3", phone: "(08) 6747666 or *3555" },
+                    { name: "Meuhedet", address: "Hagvura 11", phone: "(08) 6741741 or *3833" },
+                    {
+                      name: "Leumit",
+                      address: "Beit Frank, Rechov Herzl 30",
+                      phone: "(08) 6790555",
+                    },
+                    {
+                      name: "Clalit",
+                      address: "Eli Cohen 9, 7th floor",
+                      phone: "(08) 67772333 or *2700",
+                    },
+                    {
+                      name: "Barzilai Hospital",
+                      address: "Rechov Ha'histradrut",
+                      phone: "(08) 6745700",
+                    },
+                  ].map((provider) => (
+                    <div
+                      key={provider.name}
+                      className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-border gap-1"
+                    >
+                      <span className="font-medium text-foreground">{provider.name}</span>
+                      <span className="text-muted-foreground">{provider.address}</span>
+                      <span className="text-muted-foreground">{provider.phone}</span>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="synagogues" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-heading font-semibold">
+                Synagogues
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed space-y-3">
+                <p>
+                  Ashkelon has more than 160 synagogues, the majority of which are Sephardi. There
+                  are a number of Ashkenaz synagogues, the most popular with the English speaking
+                  community being:
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <span className="font-medium text-foreground">
+                      Central Synagogue, Afridar
+                    </span>{" "}
+                    — Tel: (Gary Donovan) 08 6843171
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground">Barnea Synagogue</span> — Tel:
+                    052 637 4667
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground">Chabad</span> — Rabbi Lieberman
+                    (English speaker), Tel: 08 675 4913
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground">Kehillat Netzach Israel</span> —
+                    8 Harel Street, Tel: 08-6711370/1 (Conservative)
+                  </li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="beaches" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-heading font-semibold">
+                Beaches
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed space-y-3">
+                <p>
+                  The 10 kilometer-long Ashkelon beach attracts both local and foreign
+                  beach-goers. Ashkelon, proclaimed a national tourism site, is rapidly developing
+                  this sphere.
+                </p>
+                <p>
+                  Tourists and vacationers have at their disposal restaurants and pubs, sports
+                  facilities and heated swimming pools, the "Ashkeluna" water amusement park, two
+                  country clubs, an amphitheater, a tennis club, museums, cinemas, bowling alleys,
+                  fishing spots, and bathing beaches equipped with all the necessary amenities.
+                </p>
+                <p>
+                  The Ashkelon Marina Area has a 600-vessel docking capacity making it one of the
+                  largest marinas in Israel.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="transport" className="border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-heading font-semibold">
+                Public Transport
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed space-y-4">
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Buses</p>
+                  <p>
+                    The bus services are very comprehensive in Ashkelon with many local lines and
+                    Inter-City Lines. There are two bus stations, one in the city centre next to
+                    the Giron Shopping Mall, the other in the Migdal area.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Railways</p>
+                  <p>
+                    The Ashkelon Railway Station is situated on the outskirts of the city. Trains
+                    run towards Tel Aviv and the North with connections to all parts of the country.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Taxi Services</p>
+                  <div className="text-sm space-y-1 mt-1">
+                    <p>Shaon — (08) 6788888</p>
+                    <p>Degel — (08) 6711111</p>
+                    <p>Shimshon — (08) 6755555</p>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
-      <ContactForm title="Ready to Make Ashkelon Your Home?" subtitle="Contact us for a free consultation and start your property search today." />
+      <ContactForm />
       <Footer />
     </div>
   );

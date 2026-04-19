@@ -4,6 +4,8 @@
 //           VideoTestimonials, Testimonials, Blog, Contact
 
 import { Link } from "wouter";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import {
   Home as HomeIcon,
   Key,
@@ -46,9 +48,9 @@ const ashkelonHighlights = [
 ];
 
 const videos = [
-  { id: "wHoNFVMQAQQ", name: "Debbie & Marc" },
-  { id: "bAT4gEqiEpM", name: "Matthew & Maxine" },
-  { id: "L6FUdq4QLKE", name: "Annabel" },
+  { id: "PeumXmRNhUo", name: "Debbie & Marc" },
+  { id: "2dNTUaaR8hI", name: "Matthew & Maxine" },
+  { id: "B4kCThOC8LE", name: "Annabel" },
 ];
 
 const testimonials = [
@@ -62,7 +64,8 @@ const testimonials = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
 
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section
@@ -368,15 +371,15 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {videos.map((v) => (
-              <div key={v.id} className="flex flex-col items-center">
-                <div className="w-full rounded-lg overflow-hidden shadow">
+              <div key={v.id} className="group">
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
                   <iframe
                     src={`https://www.youtube.com/embed/${v.id}`}
-                    title={v.name}
+                    title={`${v.name} testimonial`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="w-full"
-                    style={{ height: "200px", border: "none", display: "block" }}
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: "none" }}
                   />
                 </div>
                 <p
@@ -444,11 +447,11 @@ export default function Home() {
               className="text-3xl md:text-4xl font-bold mb-2"
               style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}
             >
-              Resources & Guides
+              Resources & Insights
             </h2>
             <div className="w-16 h-1 mx-auto mb-4 rounded-full" style={{ backgroundColor: "var(--secondary)" }} />
             <p className="max-w-2xl mx-auto" style={{ color: "var(--muted-foreground)" }}>
-              Expert guides and insights to help you navigate the Israeli property market.
+              Helpful guides and insights for prospective buyers exploring the Ashkelon property market.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -471,12 +474,6 @@ export default function Home() {
                     />
                   </div>
                   <div className="p-5">
-                    <span
-                      className="inline-block text-xs font-semibold px-2 py-1 rounded mb-3"
-                      style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)", color: "var(--secondary)" }}
-                    >
-                      {post.category}
-                    </span>
                     <h3
                       className="font-semibold mb-2 leading-snug"
                       style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}
@@ -580,6 +577,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }
@@ -594,42 +592,16 @@ function ContactForm() {
         alert("Thank you! We will be in touch shortly.");
       }}
     >
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
-            First Name
-          </label>
-          <input
-            type="text"
-            required
-            className="w-full px-3 py-2 rounded border text-sm"
-            style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }}
-            placeholder="Your first name"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
-            Last Name
-          </label>
-          <input
-            type="text"
-            required
-            className="w-full px-3 py-2 rounded border text-sm"
-            style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }}
-            placeholder="Your last name"
-          />
-        </div>
-      </div>
       <div>
         <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
-          Email
+          Name <span style={{ color: "red" }}>*</span>
         </label>
         <input
-          type="email"
+          type="text"
           required
           className="w-full px-3 py-2 rounded border text-sm"
           style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }}
-          placeholder="your@email.com"
+          placeholder="Your full name"
         />
       </div>
       <div>
@@ -640,12 +612,24 @@ function ContactForm() {
           type="tel"
           className="w-full px-3 py-2 rounded border text-sm"
           style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }}
-          placeholder="+44 or +1..."
+          placeholder="Your phone number"
         />
       </div>
       <div>
         <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
-          Message
+          Email <span style={{ color: "red" }}>*</span>
+        </label>
+        <input
+          type="email"
+          required
+          className="w-full px-3 py-2 rounded border text-sm"
+          style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }}
+          placeholder="Your email address"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
+          Message <span style={{ color: "red" }}>*</span>
         </label>
         <textarea
           required
@@ -658,7 +642,7 @@ function ContactForm() {
       <button
         type="submit"
         className="w-full py-3 rounded font-semibold text-sm transition-colors"
-        style={{ backgroundColor: "var(--primary)", color: "var(--primary-foreground)" }}
+        style={{ backgroundColor: "var(--secondary)", color: "var(--secondary-foreground)" }}
       >
         Send Message
       </button>

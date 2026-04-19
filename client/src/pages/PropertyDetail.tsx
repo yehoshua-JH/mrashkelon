@@ -1,17 +1,26 @@
 // =============================================================
 // MR. ASHKELON — Property Detail Page
 // Dynamic page for /property/:slug
+// Matches Lovable source layout: hero banner, overview, highlights grid,
+// gallery with lightbox, sidebar with specs card + note + CTA
 // =============================================================
 
+import { useState } from "react";
 import { useParams, Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { PROPERTIES } from "@/lib/data";
+import { CheckCircle, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function PropertyDetail() {
   const { slug } = useParams<{ slug: string }>();
   const property = PROPERTIES.find((p) => p.slug === slug);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   if (!property) {
     return (
@@ -19,12 +28,12 @@ export default function PropertyDetail() {
         <Navbar />
         <div className="flex-1 flex items-center justify-center pt-16">
           <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4" style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}>
+            <h1 className="text-3xl font-heading font-bold text-foreground mb-4">
               Property Not Found
             </h1>
-            <Link href="/featured-properties" className="text-sm underline" style={{ color: "oklch(0.72 0.12 75)" }}>
-              View All Properties
-            </Link>
+            <Button asChild variant="outline">
+              <Link href="/featured-properties">View All Properties</Link>
+            </Button>
           </div>
         </div>
         <Footer />
@@ -36,169 +45,166 @@ export default function PropertyDetail() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* Hero Image */}
-      <div className="pt-16">
-        <div
-          className="relative"
-          style={{
-            height: "480px",
-            backgroundImage: `url(${property.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div
-            className="absolute inset-0"
-            style={{ backgroundColor: "oklch(0.235 0.058 250 / 0.5)" }}
-          />
-          <div className="relative z-10 container h-full flex flex-col justify-end pb-10">
-            <div
-              className="inline-block px-3 py-1 rounded text-xs font-semibold mb-3 self-start"
-              style={{
-                backgroundColor: "oklch(0.72 0.12 75)",
-                color: "oklch(0.235 0.058 250)",
-              }}
-            >
-              {property.tagline}
-            </div>
-            <h1
-              className="text-4xl md:text-5xl font-bold text-white"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+      {/* Hero Banner */}
+      <section className="relative h-[400px] md:h-[500px] overflow-hidden">
+        <img
+          src={property.image}
+          alt={property.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+          <div className="container max-w-6xl">
+            <Badge variant="secondary" className="mb-3 text-sm px-4 py-1">
+              Featured Project
+            </Badge>
+            <h1 className="font-heading text-3xl md:text-5xl font-bold text-white mb-2">
               {property.title}
             </h1>
-            <p className="text-base mt-2" style={{ color: "oklch(0.85 0.01 85)" }}>
-              {property.subtitle} — {property.location}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
-        <div className="container">
-          <div className="grid lg:grid-cols-3 gap-10">
-            {/* Main */}
-            <div className="lg:col-span-2">
-              {/* Quick stats */}
-              <div
-                className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-lg mb-8"
-                style={{ backgroundColor: "oklch(0.955 0.012 85)" }}
-              >
-                {[
-                  { label: "Bedrooms", value: property.bedrooms },
-                  { label: "Bathrooms", value: property.bathrooms },
-                  { label: "Size", value: property.size },
-                  { label: "Floor", value: property.floor },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <p
-                      className="text-lg font-bold"
-                      style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
-                    >
-                      {stat.value}
-                    </p>
-                    <p className="text-xs uppercase tracking-wide mt-0.5" style={{ color: "oklch(0.55 0.02 85)" }}>
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Description */}
-              <h2
-                className="text-xl font-bold mb-3"
-                style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
-              >
-                About This Property
-              </h2>
-              <span className="gold-divider mb-5" />
-              <p className="text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-                {property.description}
-              </p>
-
-              {/* Highlights */}
-              <h3
-                className="text-lg font-bold mt-8 mb-4"
-                style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
-              >
-                Key Highlights
-              </h3>
-              <ul className="space-y-2">
-                {property.highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-3 text-sm" style={{ color: "oklch(0.45 0.03 250)" }}>
-                    <span style={{ color: "oklch(0.72 0.12 75)", marginTop: "2px" }}>✓</span>
-                    {h}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Sidebar */}
-            <div>
-              <div
-                className="rounded-lg p-6 shadow-sm sticky top-24"
-                style={{ backgroundColor: "oklch(0.235 0.058 250)" }}
-              >
-                <p
-                  className="text-2xl font-bold mb-1"
-                  style={{ fontFamily: "Georgia, serif", color: "oklch(0.72 0.12 75)" }}
-                >
-                  {property.price}
-                </p>
-                <p className="text-xs mb-6" style={{ color: "oklch(0.72 0.02 85)" }}>
-                  {property.location}
-                </p>
-                <Link
-                  href="/contact"
-                  className="block w-full text-center py-3 rounded font-semibold text-sm mb-3 transition-all duration-200"
-                  style={{
-                    backgroundColor: "oklch(0.72 0.12 75)",
-                    color: "oklch(0.235 0.058 250)",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.82 0.10 75)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.72 0.12 75)";
-                  }}
-                >
-                  Enquire About This Property
-                </Link>
-                <a
-                  href="tel:054-731-2118"
-                  className="block w-full text-center py-3 rounded font-semibold text-sm border transition-all duration-200"
-                  style={{
-                    borderColor: "oklch(0.72 0.02 85)",
-                    color: "oklch(0.985 0.008 85)",
-                    backgroundColor: "transparent",
-                  }}
-                >
-                  📞 054-731-2118
-                </a>
-                <div className="mt-6 pt-6" style={{ borderTop: "1px solid oklch(0.32 0.055 250)" }}>
-                  <p className="text-xs" style={{ color: "oklch(0.72 0.02 85)" }}>
-                    All enquiries handled personally by Motti. English-speaking support available.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <Link
-              href="/featured-properties"
-              className="text-sm font-medium"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              ← Back to All Properties
-            </Link>
+            <p className="text-white/80 text-lg">{property.tagline}</p>
           </div>
         </div>
       </section>
 
-      <ContactForm title="Interested in This Property?" subtitle="Get in touch and Motti will arrange a viewing at your convenience." showContactInfo={false} />
+      {/* Content */}
+      <section className="py-16 md:py-20">
+        <div className="container px-4 max-w-6xl">
+          <Link
+            href="/featured-properties"
+            className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 font-medium mb-8"
+          >
+            <ArrowLeft className="w-4 h-4" /> Back to Properties
+          </Link>
+
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-2 space-y-8">
+              {/* Overview */}
+              <div>
+                <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Overview</h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">{property.description}</p>
+                <p className="text-muted-foreground leading-relaxed">{property.details}</p>
+              </div>
+
+              {/* Highlights */}
+              {property.highlights.length > 0 && (
+                <div>
+                  <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Highlights</h2>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {property.highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
+                        <span className="text-muted-foreground">{h}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Gallery */}
+              {property.galleryImages.length > 0 && (
+                <div>
+                  <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Gallery</h2>
+                  <div className="grid grid-cols-2 gap-3">
+                    {property.galleryImages.map((img, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setLightboxIndex(i)}
+                        className="overflow-hidden rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary"
+                      >
+                        <img
+                          src={img}
+                          alt={`${property.title} - ${i + 1}`}
+                          className="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Sidebar */}
+            <div className="space-y-6">
+              <Card className="border-none shadow-lg">
+                <CardContent className="pt-6 space-y-4">
+                  <h3 className="font-heading font-bold text-lg text-foreground">Property Details</h3>
+                  {Object.entries(property.specs).map(([key, value]) => (
+                    <div key={key} className="flex justify-between border-b border-border pb-2 last:border-none">
+                      <span className="font-medium text-foreground text-sm">{key}</span>
+                      <span className="text-muted-foreground text-sm text-right max-w-[55%]">{value}</span>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+
+              {property.note && (
+                <Card className="border-secondary/30 bg-secondary/5">
+                  <CardContent className="pt-6">
+                    <p className="text-secondary font-semibold text-sm">{property.note}</p>
+                  </CardContent>
+                </Card>
+              )}
+
+              <Button
+                asChild
+                size="lg"
+                className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base py-6 rounded-full"
+              >
+                <Link href="/contact">Contact Us for Details</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ContactForm
+        title="Interested in This Property?"
+        subtitle="Get in touch and Motti will arrange a viewing at your convenience."
+        showContactInfo={false}
+      />
       <Footer />
+
+      {/* Lightbox */}
+      <Dialog open={lightboxIndex !== null} onOpenChange={() => setLightboxIndex(null)}>
+        <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 border-none bg-black/95 flex items-center justify-center">
+          {lightboxIndex !== null && property && (
+            <>
+              <img
+                src={property.galleryImages[lightboxIndex]}
+                alt={`${property.title} - ${lightboxIndex + 1}`}
+                className="max-w-full max-h-[85vh] object-contain"
+              />
+              {property.galleryImages.length > 1 && (
+                <>
+                  <button
+                    onClick={() =>
+                      setLightboxIndex(
+                        (lightboxIndex - 1 + property.galleryImages.length) %
+                          property.galleryImages.length
+                      )
+                    }
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={() =>
+                      setLightboxIndex((lightboxIndex + 1) % property.galleryImages.length)
+                    }
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </>
+              )}
+              <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+                {lightboxIndex + 1} / {property.galleryImages.length}
+              </span>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

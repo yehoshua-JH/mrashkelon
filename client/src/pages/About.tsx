@@ -1,137 +1,147 @@
 // =============================================================
 // MR. ASHKELON — About Page
+// Matches Lovable source About.tsx exactly:
+// - Hero: "About" title, beach bg at 30% opacity
+// - Main: "Mr Ashkelon is Motti Ben Yitzhack" h2 + gold divider
+// - Float-right formal photo, 3 paragraphs, Mr&Mrs banner centered
+// - "What We Offer" section: Sales, Investment, Rentals cards
+// - "Learn more about our services" CTA button
 // =============================================================
 
+import { Home, TrendingUp, Key } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 
-const BROKER_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/mr-mrs-ashkelon_99e0fa39.png";
-const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg";
+const MOTTI_SUSAN_FORMAL =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/motti-susan-formal-src_d6f775ca.jpg";
+const MR_MRS_BANNER =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/mr-mrs-ashkelon-plus_3566e0a2.png";
+
+const services = [
+  {
+    icon: Home,
+    title: "Sales",
+    description:
+      "Our Mission is to provide our clients with customer service that is second to none through our commitment to excellence and the principles of regular consultation, efficient cost controls and rigorous project management.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Investment",
+    description:
+      "Whether you are contemplating buying an investment property for the first time, undertaking a new development, adding to your existing portfolio, seeking advice to ensure that you are achieving the maximum potential from your holding(s) or want to sell, our Investment service can provide valuable independent advice to you.",
+  },
+  {
+    icon: Key,
+    title: "Rentals",
+    description:
+      "We have a number of apartments available for Long Term Vacation Rental. Please contact us for full details, availability and rental prices.",
+  },
+];
 
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-16">
-        <PageHero
-          title="About Mr. Ashkelon"
-          subtitle="Your trusted English-speaking real estate expert in Ashkelon, Israel"
-          image={HERO_IMAGE}
+
+      {/* Hero Banner — matches Lovable: beach bg at 30% opacity, just "About" */}
+      <section className="relative h-64 md:h-80 bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80)",
+          }}
         />
-      </div>
+        <h1 className="relative text-4xl md:text-5xl font-heading font-bold text-primary-foreground">
+          About
+        </h1>
+      </section>
 
-      {/* Bio Section */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img
-                src={BROKER_IMAGE}
-                alt="Motti — Mr. Ashkelon Real Estate Broker"
-                className="rounded-lg w-full object-cover shadow-xl"
-                style={{ maxHeight: "520px" }}
-              />
-              <div
-                className="absolute -bottom-4 -right-4 px-5 py-4 rounded shadow-lg"
-                style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
-              >
-                <p className="text-xs font-bold uppercase tracking-wide" style={{ color: "oklch(0.235 0.058 250)" }}>
-                  Licensed Broker
-                </p>
-                <p className="text-sm font-semibold" style={{ color: "oklch(0.235 0.058 250)" }}>
-                  Ashkelon, Israel
-                </p>
-              </div>
-            </div>
-            <div>
-              <p
-                className="text-sm font-semibold uppercase tracking-widest mb-2"
-                style={{ color: "oklch(0.72 0.12 75)" }}
-              >
-                Meet Motti
-              </p>
-              <h2 className="section-heading mb-2">
-                Over 20 Years of Local Expertise
-              </h2>
-              <span className="gold-divider" />
-              <div className="mt-5 space-y-4 text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-                <p>
-                  Motti is a licensed real estate broker with over two decades of experience in the
-                  Ashkelon property market. Born and raised in Israel, he has lived in Ashkelon for
-                  most of his life and has an unparalleled understanding of the city's neighbourhoods,
-                  developments, and investment opportunities.
-                </p>
-                <p>
-                  As a fluent English speaker, Motti has built a reputation as the go-to broker for
-                  overseas buyers — particularly from North America, the UK, and France — who are
-                  navigating the Israeli property market for the first time. He understands the unique
-                  challenges and concerns of foreign buyers and new Olim, and provides the kind of
-                  patient, transparent, and personalised service that makes the process straightforward.
-                </p>
-                <p>
-                  Motti's approach is built on honesty and long-term relationships. He will never
-                  pressure you into a purchase that is not right for you, and his advice is always
-                  grounded in a genuine understanding of your needs, budget, and lifestyle goals.
-                </p>
-              </div>
+      {/* Main Content — matches Lovable exactly */}
+      <section className="py-16 md:py-24">
+        <div className="container px-4 max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2">
+            Mr Ashkelon is Motti Ben Yitzhack
+          </h2>
+          <div className="w-20 h-1 bg-secondary mb-8" />
 
-              {/* Credentials */}
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                {[
-                  { icon: "🏆", label: "Licensed Broker", sub: "Israeli Real Estate Registry" },
-                  { icon: "🌍", label: "English Speaker", sub: "Fluent, native-level" },
-                  { icon: "📅", label: "Est. 2003", sub: "20+ years in Ashkelon" },
-                  { icon: "🤝", label: "500+ Clients", sub: "Buyers, sellers & investors" },
-                ].map((cred) => (
-                  <div
-                    key={cred.label}
-                    className="p-4 rounded-lg"
-                    style={{ backgroundColor: "oklch(0.955 0.012 85)" }}
-                  >
-                    <div className="text-xl mb-1">{cred.icon}</div>
-                    <p className="text-sm font-bold" style={{ color: "oklch(0.235 0.058 250)" }}>
-                      {cred.label}
-                    </p>
-                    <p className="text-xs" style={{ color: "oklch(0.55 0.02 85)" }}>
-                      {cred.sub}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="text-muted-foreground leading-relaxed">
+            <img
+              src={MOTTI_SUSAN_FORMAL}
+              alt="Motti and Susan Ben Yitzhack"
+              className="float-right ml-6 mb-4 w-48 md:w-56 rounded-lg shadow-md"
+            />
+            <p className="mb-6">
+              Mr Ashkelon specializes in property sales, rentals and management in the Ashkelon area.
+            </p>
+            <p className="mb-6">
+              Founded by Motti Ben Yitzhack, Mr Ashkelon has helped countless real estate investors
+              with the purchase of property and homes in the Ashkelon area. Ben has extensive
+              experience in the real estate market in Israel and because he knows the ins and outs of
+              this specific market he is able to make the process of buying property in Israel a more
+              pleasant experience. His experience is especially helpful when it comes to navigating
+              language barriers, cultural acclimatization and understanding property laws and
+              regulations in this region.
+            </p>
+            <p>
+              Ashkelon is a beautiful coastal town that is situated towards the south of Israel.
+              It's fast becoming the go-to area for property investors as development is happening at
+              a rapid pace. Please get in touch if you're interested in finding out more about the
+              investment opportunities available in this area or if you're looking to relocate in the
+              near future.
+            </p>
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <img
+              src={MR_MRS_BANNER}
+              alt="Mr & Mrs Ashkelon Plus - Coastal & Jerusalem Property Specialists"
+              className="max-w-sm md:max-w-md h-auto object-contain rounded-lg"
+            />
           </div>
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.955 0.012 85)" }}>
-        <div className="container max-w-3xl text-center">
-          <h2 className="section-heading mb-2">Our Philosophy</h2>
-          <span className="gold-divider mx-auto" />
-          <p className="mt-6 text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-            We believe that buying property in a foreign country should be an exciting and empowering
-            experience, not a stressful one. Our role is to provide you with the information,
-            guidance, and local expertise you need to make confident, well-informed decisions. We
-            are not just selling you a property — we are helping you build a life in one of the
-            world's most remarkable cities.
-          </p>
-          <blockquote
-            className="mt-8 text-lg font-bold italic"
-            style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
-          >
-            "Ashkelon is Israel's best-kept secret. My mission is to help people discover it."
-          </blockquote>
-          <p className="mt-2 text-sm" style={{ color: "oklch(0.55 0.02 85)" }}>
-            — Motti, Mr. Ashkelon
-          </p>
+      {/* What We Offer — matches Lovable exactly */}
+      <section className="py-16 bg-muted">
+        <div className="container px-4 max-w-5xl">
+          <h2 className="text-3xl font-heading font-bold text-foreground text-center mb-12">
+            What We Offer
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <Card
+                key={service.title}
+                className="border-none shadow-md hover:shadow-lg transition-shadow"
+              >
+                <CardContent className="pt-8 pb-6 px-6 text-center">
+                  <div className="w-14 h-14 rounded-full bg-secondary/15 flex items-center justify-center mx-auto mb-5">
+                    <service.icon className="w-7 h-7 text-secondary" />
+                  </div>
+                  <h3 className="text-xl font-heading font-bold text-foreground mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Button asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              <Link href="/services">Learn more about our services</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
-      <ContactForm title="Start Your Property Journey" subtitle="Ready to find your home in Ashkelon? Let's talk." />
+      <ContactForm />
       <Footer />
     </div>
   );

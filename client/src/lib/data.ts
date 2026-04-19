@@ -14,86 +14,119 @@ export const CONTACT = {
 export const PROPERTIES = [
   {
     slug: "luxury-high-rise",
-    title: "Luxury High-Rise",
-    subtitle: "Premium Coastal Living",
-    tagline: "Panoramic Sea Views",
-    price: "From ₪2,800,000",
-    bedrooms: "3–5",
-    bathrooms: "2–3",
-    size: "120–200 m²",
-    floor: "High floors available",
-    location: "Afridar, Ashkelon",
+    title: "Luxury High-Rise Living",
+    tagline: "Panoramic views & premium amenities",
+    location: "Prime city center location",
     description:
-      "Experience the pinnacle of coastal living in this stunning luxury high-rise development. Featuring panoramic Mediterranean Sea views from expansive balconies, premium finishes throughout, and world-class amenities. Each apartment is thoughtfully designed to maximise light and sea vistas, with open-plan living spaces that flow seamlessly to generous terraces.",
-    highlights: [
-      "Panoramic Mediterranean Sea views",
-      "Premium marble and hardwood finishes",
-      "24/7 concierge and security",
-      "Underground parking",
-      "Rooftop pool and gym",
-      "Walking distance to Delilah Beach",
-    ],
+      "This stunning new high-rise development offers an unparalleled combination of modern design, premium amenities, and a prime location. With panoramic city and landscape views from every floor, this tower redefines luxury living in Israel.",
+    details:
+      "Each apartment features floor-to-ceiling windows, high-end finishes, central air conditioning, and private underground parking. Residents enjoy access to a state-of-the-art fitness center, rooftop terrace, concierge services, and beautifully landscaped communal gardens. The ground floor includes a stylish coffee shop and commercial spaces for everyday convenience.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project-src_c3fc7609.jpg",
+    galleryImages: [
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/floor-plan-typical-src_e59f0d21.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/floor-plan-upper-src_c528b8a9.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-path-src_351b6b26.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/malha-mall-src_a373c38b.jpg",
+    ],
+    specs: {
+      Location: "Prime city center location",
+      "Unit Sizes": "70–160 sqm",
+      Bedrooms: "2–5 bedroom options",
+      Parking: "Private underground parking",
+      Amenities: "Gym, rooftop terrace, concierge",
+      Status: "Now selling — limited units",
+    },
+    highlights: [
+      "Panoramic city & mountain views",
+      "Floor-to-ceiling windows",
+      "State-of-the-art fitness center",
+      "Rooftop terrace & gardens",
+      "Ground-floor commercial & café",
+      "24/7 concierge service",
+    ],
+    note: "Limited units remaining. Contact us today for pricing and availability.",
     seo: {
       title: "Luxury High-Rise Apartments for Sale in Ashkelon | Mr. Ashkelon",
       description:
-        "Premium luxury high-rise apartments with panoramic Mediterranean Sea views in Ashkelon, Israel. 3–5 bedrooms, from ₪2,800,000. Contact Mr. Ashkelon today.",
+        "Stunning new high-rise development in Ashkelon city center. Panoramic views, premium amenities, 2–5 bedrooms. Contact Mr. Ashkelon for pricing.",
     },
   },
   {
     slug: "penthouse",
     title: "Penthouse Apartment",
-    subtitle: "The Ultimate in Luxury",
-    tagline: "Sky-High Elegance",
-    price: "From ₪4,500,000",
-    bedrooms: "4–6",
-    bathrooms: "3–4",
-    size: "200–350 m²",
-    floor: "Top floor",
-    location: "Barnea, Ashkelon",
+    tagline: "Spacious luxury in Afridar, Ashkelon",
+    location: "Afridar, Ashkelon",
     description:
-      "Redefine luxury living with this exceptional penthouse collection. Occupying the entire top floor of a prestigious development, these residences offer unobstructed 360-degree views of the Mediterranean Sea, the ancient city, and the surrounding landscape. Bespoke interiors, private roof terraces, and the finest craftsmanship define every detail.",
-    highlights: [
-      "360-degree panoramic views",
-      "Private roof terrace with plunge pool",
-      "Bespoke kitchen and bathrooms",
-      "Smart home automation",
-      "Private lift access",
-      "Dedicated concierge service",
-    ],
+      "This stunning penthouse apartment, built by the renowned Mivnim Neivim, offers an unparalleled combination of space, comfort, and location. With 125 square meters of living space, plus a 25-square-meter balcony, this home is perfect for those seeking luxury and convenience.",
+    details:
+      "The double-size master bedroom provides a private retreat, while the open-concept living area flows seamlessly to the spacious balcony, where you can enjoy a partial sea view and fresh coastal breezes. Located just five minutes from the beach.",
     image: "https://mrashkelon.com/wp-content/uploads/2025/02/image0-400x516.jpeg",
+    galleryImages: [
+      "https://mrashkelon.com/wp-content/uploads/2025/02/image0-400x516.jpeg",
+      "https://mrashkelon.com/wp-content/uploads/2025/02/image1-400x516.jpeg",
+      "https://mrashkelon.com/wp-content/uploads/2025/02/image2-400x516.jpeg",
+      "https://mrashkelon.com/wp-content/uploads/2025/02/image3-400x516.jpeg",
+    ],
+    specs: {
+      Location: "Afridar, Ashkelon",
+      Size: "125 sqm + 25 sqm balcony",
+      Rooms: "4 (including double-size master)",
+      Bathrooms: "2.5",
+      Parking: "2 private spaces",
+      Features: "Storage room, partial sea view",
+    },
+    highlights: [
+      "Double-size master bedroom",
+      "25 sqm balcony with partial sea view",
+      "Open-concept living area",
+      "5 minutes from the beach",
+      "2 private parking spaces",
+      "Built by Mivnim Neivim",
+    ],
+    note: "Contact us today for pricing and to schedule a viewing.",
     seo: {
-      title: "Luxury Penthouse Apartments for Sale in Ashkelon | Mr. Ashkelon",
+      title: "Penthouse Apartment for Sale in Afridar, Ashkelon | Mr. Ashkelon",
       description:
-        "Exceptional penthouse apartments with 360-degree sea views in Ashkelon, Israel. Private roof terraces, bespoke interiors, from ₪4,500,000.",
+        "Stunning 125 sqm penthouse with 25 sqm balcony and partial sea view in Afridar, Ashkelon. Built by Mivnim Neivim. Contact Mr. Ashkelon for details.",
     },
   },
   {
     slug: "sea-view",
     title: "Amazing Sea View Apartment",
-    subtitle: "Coastal Charm",
-    tagline: "Wake Up to the Mediterranean",
-    price: "From ₪1,800,000",
-    bedrooms: "2–4",
-    bathrooms: "1–2",
-    size: "80–140 m²",
-    floor: "Multiple floors available",
-    location: "Migdal, Ashkelon",
+    tagline: "Breathtaking ocean views in Afridar",
+    location: "Afridar, Ashkelon",
     description:
-      "Discover the joy of Mediterranean coastal living in these beautifully appointed sea view apartments. Bright, airy interiors with quality finishes open onto balconies with stunning sea vistas. Ideally located close to Ashkelon's finest beaches, restaurants, and amenities, these apartments offer exceptional value in a rapidly growing city.",
-    highlights: [
-      "Direct sea views from living areas",
-      "Bright open-plan layouts",
-      "Quality kitchen and bathroom fittings",
-      "Secure building with parking",
-      "Close to beaches and promenade",
-      "Excellent transport links",
-    ],
+      "This beautiful apartment offers a perfect blend of luxury and convenience. With 130 square meters of living space and a 13-square-meter patio, this home is designed for those who appreciate both comfort and style.",
+    details:
+      "The four bedrooms include a spacious master bedroom with an en suite bathroom, providing a private retreat. The modern kitchen island is perfect for culinary enthusiasts. Enjoy breathtaking ocean views from your patio.",
     image: "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0008-400x284.jpg",
+    galleryImages: [
+      "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0008-400x284.jpg",
+      "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0010-400x284.jpg",
+      "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0013-400x284.jpg",
+      "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0012-400x284.jpg",
+    ],
+    specs: {
+      Location: "Afridar, Ashkelon",
+      Size: "130 sqm + 13 sqm patio",
+      Rooms: "4 bedrooms incl. master with en suite",
+      Bathrooms: "2",
+      Parking: "1 designated space",
+      Features: "Kitchen island, ocean view, Shabbat elevator, gym",
+    },
+    highlights: [
+      "Breathtaking ocean views",
+      "Modern kitchen island",
+      "Master bedroom with en suite",
+      "Shabbat elevator",
+      "Building gym access",
+      "13 sqm private patio",
+    ],
+    note: "Don't miss this opportunity. Contact us for a private viewing.",
     seo: {
-      title: "Sea View Apartments for Sale in Ashkelon | Mr. Ashkelon",
+      title: "Sea View Apartment for Sale in Afridar, Ashkelon | Mr. Ashkelon",
       description:
-        "Beautiful sea view apartments for sale in Ashkelon, Israel. 2–4 bedrooms with Mediterranean views, from ₪1,800,000. Speak to Mr. Ashkelon.",
+        "Beautiful 130 sqm apartment with breathtaking ocean views in Afridar, Ashkelon. 4 bedrooms, kitchen island, Shabbat elevator. Contact Mr. Ashkelon.",
     },
   },
 ];
@@ -102,8 +135,7 @@ export const BLOG_POSTS = [
   {
     slug: "foreigners-guide-buying-property-ashkelon",
     title: "A Foreigner's Guide to Buying Property in Ashkelon",
-    excerpt:
-      "Everything you need to know about purchasing real estate in Ashkelon as a foreign national — from legal requirements to the buying process.",
+    excerpt: "What to expect when you decide to invest in Ashkelon property.",
     date: "2025-03-15",
     readTime: "8 min read",
     category: "Buying Guide",
@@ -113,54 +145,23 @@ export const BLOG_POSTS = [
       description:
         "Complete guide for foreign nationals buying property in Ashkelon, Israel. Legal requirements, the buying process, taxes, and expert tips from local broker Motti.",
     },
-    content: `
-Purchasing property in Israel as a foreign national is entirely possible and, with the right guidance, a straightforward process. Ashkelon in particular has attracted significant interest from overseas buyers — particularly from North America, the UK, and France — drawn by its Mediterranean climate, affordable prices relative to Tel Aviv, and its growing status as a desirable coastal city.
-
-## Can Foreigners Buy Property in Israel?
-
-Yes. Israeli law permits foreign nationals to purchase real estate in Israel without restriction. There is no requirement to be Jewish or to hold Israeli citizenship. Both residents and non-residents may purchase property freely.
-
-## The Buying Process
-
-**Step 1: Engage a Lawyer**
-The first and most important step is to appoint a qualified Israeli lawyer (עורך דין) who specialises in real estate transactions. Your lawyer will conduct due diligence on the property, review the title deed (tabu), check for any encumbrances or liens, and draft the purchase contract.
-
-**Step 2: Sign a Memorandum of Understanding (MOU)**
-Once you have agreed on a price with the seller, a preliminary MOU is signed and a deposit of typically 10% is paid. This is a binding document, so ensure your lawyer has reviewed it thoroughly.
-
-**Step 3: Conduct Due Diligence**
-Your lawyer will verify the property's legal status at the Land Registry (Tabu), confirm there are no outstanding debts, and check planning permissions.
-
-**Step 4: Sign the Purchase Contract**
-The full purchase contract is signed, and the balance of the purchase price is paid. The property is then registered in your name at the Land Registry.
-
-## Taxes and Costs
-
-Foreign buyers should be aware of the following costs:
-
-- **Purchase Tax (Mas Rechisha):** Non-residents pay a higher rate than Israeli residents. As of 2025, the rate for non-residents starts at 8% on the first ₪5.5 million and 10% above that.
-- **Lawyer's Fees:** Typically 0.5%–1% of the purchase price plus VAT.
-- **Agent's Commission:** Typically 2% plus VAT, shared between buyer and seller.
-- **Land Registry Fees:** A small administrative fee.
-
-## Financing
-
-Israeli banks do offer mortgages to foreign nationals, though the terms are generally less favourable than for Israeli residents. Most foreign buyers finance their purchase through overseas funds or a combination of overseas funds and an Israeli mortgage.
-
-## Why Ashkelon?
-
-Ashkelon offers exceptional value compared to Tel Aviv or Jerusalem. A luxury sea-view apartment that might cost ₪5 million in Tel Aviv can be purchased in Ashkelon for ₪2–3 million, with the same Mediterranean climate and a far more relaxed lifestyle. The city has invested heavily in infrastructure, parks, and cultural facilities over the past decade, and property values have risen consistently.
-
-## Working with Mr. Ashkelon
-
-Motti has guided dozens of overseas buyers through the process of purchasing property in Ashkelon. He speaks English fluently, understands the specific concerns of foreign buyers, and has an extensive network of trusted lawyers, mortgage advisors, and contractors. Contact us today for a free, no-obligation consultation.
-    `,
+    content: [
+      "Investing in a new home or piece of land is a detailed process that takes a fair amount of time and admin. First you need to find a property that interests you and only if it meets your specific requirements will you begin the process of applying for funding and filling out the relevant paperwork.",
+      "Investing in property in a different country brings a whole other set of requirements to the table.",
+      "### Looking at Ashkelon",
+      "Ashkelon is growing at a rapid pace and with so many incredible opportunities available to investors, property is being snatched up every month. This boom has also brought many new developments with it so if you're looking to make an investment in Israel, now is the time, and what better place than a beautiful city near the sea.",
+      "### What to expect when buying a property in Ashkelon as a foreigner",
+      "If you have decided that property in Israel is going to be your next investment, here is what you can expect as you go through the process of purchasing a property or land:",
+      "**Contact an estate agent** — Finding an estate agent to work with is an important first step if you want to make the process of buying a property in Ashkelon a pleasant one. Once your estate agent has a better idea of what you are looking for they can start identifying potential properties for you.",
+      "**Evaluate your options** — Once your estate agent has identified a list of potential properties for you they will send you a shortlist so that you can evaluate them and decide which ones you would like to view in person. Your agent will setup all of the viewings for you and accompany you on each visit.",
+      "**Begin negotiations** — It's at this stage that you truly appreciate having the help of an experienced agent. Because they understand the processes, rules and regulations involved with purchasing property in Israel they can negotiate a price on your behalf and sort out any other additional costs. You will also require the assistance of a lawyer during the buying process.",
+      "**Move or manage** — Once the process is complete your agent will be able to guide you during your move to Ashkelon or advise you on how to best manage your property if you will be leasing it out to holiday makers or locals.",
+    ],
   },
   {
     slug: "build-house-ashkelon",
-    title: "Building a House in Ashkelon: What You Need to Know",
-    excerpt:
-      "Thinking of building your dream home in Ashkelon? Here is a comprehensive guide to the planning, permits, and construction process in Israel.",
+    title: "Should You Build a House in Ashkelon?",
+    excerpt: "Is building better than buying in Israel?",
     date: "2025-01-20",
     readTime: "10 min read",
     category: "Building Guide",
@@ -170,61 +171,20 @@ Motti has guided dozens of overseas buyers through the process of purchasing pro
       description:
         "Comprehensive guide to building a house in Ashkelon, Israel. Planning permissions, construction costs, finding contractors, and navigating Israeli building regulations.",
     },
-    content: `
-Building your own home in Ashkelon is a rewarding but complex undertaking. Israel has a well-defined planning and building system, and understanding it before you begin will save you significant time and money.
-
-## Finding Land
-
-The first step is finding a suitable plot. In Ashkelon, land is available in several areas, including newer development zones on the city's outskirts. Your real estate broker can help identify plots with appropriate zoning for residential construction.
-
-Key considerations when evaluating land:
-- **Zoning (Yiud):** Confirm the land is zoned for residential use
-- **Israel Land Authority (Minhal):** Much of Israeli land is leased from the state rather than owned outright
-- **Infrastructure:** Check proximity to water, electricity, and sewage connections
-- **Building rights:** Understand how many square metres you are permitted to build
-
-## Planning Permission
-
-All construction in Israel requires a building permit (Heter Bniya) from the local municipality. The process involves:
-
-1. **Engaging an Architect:** A licensed Israeli architect must prepare detailed plans
-2. **Submitting Plans:** Plans are submitted to the Local Planning and Building Committee
-3. **Committee Review:** The committee reviews plans for compliance with local zoning and building codes
-4. **Permit Issuance:** Once approved, a building permit is issued
-
-The planning process typically takes 6–18 months depending on the complexity of the project and the workload of the local committee.
-
-## Construction Costs
-
-Construction costs in Israel vary significantly by location and specification. As a rough guide:
-- **Standard construction:** ₪6,000–₪9,000 per m²
-- **High specification:** ₪10,000–₪15,000 per m²
-- **Luxury finishes:** ₪15,000+ per m²
-
-These figures exclude land cost, professional fees, and municipal levies.
-
-## Finding a Contractor
-
-Selecting a reliable contractor is critical. We recommend:
-- Requesting references and visiting completed projects
-- Ensuring the contractor is registered with the Israeli Contractors Registry
-- Having a detailed contract prepared by your lawyer
-- Establishing a clear payment schedule tied to construction milestones
-
-## The Construction Timeline
-
-A typical single-family home in Israel takes 18–30 months from permit approval to completion. This includes foundation work, structural construction, internal fitting, and landscaping.
-
-## Working with Mr. Ashkelon
-
-While our primary expertise is in buying and selling existing properties, Motti has extensive connections with reputable architects, contractors, and planning consultants in Ashkelon. We are happy to make introductions and guide you through the early stages of a self-build project.
-    `,
+    content: [
+      "It's no secret that investing in real estate can be one of the most profitable decisions you can make. There are however many property investors who ask whether it's better to build a home in Israel instead of going through the process of buying one.",
+      "There are two key factors to keep in mind if you're wondering whether to buy or build a property in Ashkelon, Israel.",
+      "**You need time** — If you're considering going the construction route, you need to have enough time to dedicate to the process. Along with having enough time, you should also be present in Israel during the building process. If you won't necessarily be in Ashkelon at the time, it's best to have someone in the country that can assist you.",
+      "**What are your specifications?** — With property in an area such as Ashkelon being in such high demand, you won't always find exactly what you are looking for. If you have a long list of property requirements, it might be better to consider building a home from scratch in order to get exactly what you're looking for.",
+      "As an added bonus, one of the main benefits of building a home instead of purchasing one is that you are exempt from VAT when purchasing land in Israel. It should also be noted that a builder's services are not subject to acquisition tax either. While these savings won't be huge, they do help.",
+      "If you require assistance with locating land that you could potentially use to build your dream home, it's best to work with an agent in order to speed up the process and to ensure that you run into fewer difficulties as you navigate the Ashkelon property sector.",
+    ],
   },
   {
     slug: "aware-buying-property-ashkelon",
-    title: "What to Be Aware of When Buying Property in Ashkelon",
+    title: "What to Be Aware of When Buying a Property in Ashkelon",
     excerpt:
-      "Key considerations, potential pitfalls, and important due diligence steps every buyer should know before purchasing property in Ashkelon.",
+      "Israel's property sector is continuously evolving and many investors are seeing the potential of purchasing in up and coming areas such as Ashkelon.",
     date: "2024-11-10",
     readTime: "7 min read",
     category: "Buying Guide",
@@ -234,49 +194,16 @@ While our primary expertise is in buying and selling existing properties, Motti 
       description:
         "Essential due diligence checklist and key considerations for buying property in Ashkelon, Israel. Avoid common pitfalls with expert advice from Mr. Ashkelon.",
     },
-    content: `
-Buying property is one of the most significant financial decisions you will make. In Israel, and in Ashkelon specifically, there are several important factors to be aware of before you commit to a purchase.
-
-## Legal Due Diligence
-
-**Title Verification**
-Always verify the property's title at the Israel Land Registry (Tabu). Ensure the seller is the registered owner and that there are no mortgages, liens, or other encumbrances on the property. This is a fundamental step that your lawyer must complete before any contract is signed.
-
-**Planning Status**
-Check whether the property has all required building permits and that any additions or modifications were carried out legally. Unauthorised construction can create significant legal and financial problems for the buyer.
-
-**Shared Property (Bayit Meshutaf)**
-Many Israeli apartment buildings are structured as shared properties. Understand your obligations as a co-owner, including contributions to building maintenance and the authority of the building committee (Va'ad Bayit).
-
-## Financial Considerations
-
-**Purchase Tax**
-As noted in our buyer's guide, purchase tax rates differ significantly between Israeli residents and non-residents. Factor this into your budget from the outset.
-
-**Ongoing Costs**
-Budget for:
-- Municipal tax (Arnona) — paid annually to the municipality
-- Building committee fees (Va'ad Bayit) — monthly contribution to building maintenance
-- Property management fees if applicable
-
-**Currency Risk**
-If you are purchasing in foreign currency, be aware of exchange rate risk. Consider using a currency specialist to lock in favourable rates.
-
-## Location Considerations
-
-**Proximity to Security Zones**
-Ashkelon has historically been subject to rocket fire from Gaza. While the security situation has improved significantly and the city has invested heavily in protected rooms (Mamad) in all new buildings, it is important to understand the security context. All new construction in Israel is required to include a protected room.
-
-**Neighbourhood Research**
-Ashkelon has several distinct neighbourhoods, each with its own character and price point. Afridar is the most established and sought-after area, popular with English-speaking immigrants. Barnea and Shimshon are newer, more modern areas. The city centre offers more affordable options.
-
-**Future Development**
-Research planned infrastructure projects in the area. New transport links, commercial developments, or parks can significantly enhance property values.
-
-## Working with a Reputable Broker
-
-A licensed, experienced local broker is invaluable in navigating these considerations. Motti has over 20 years of experience in the Ashkelon market and can guide you through every aspect of the due diligence process. Contact us for a free consultation.
-    `,
+    content: [
+      "Israel's property sector is continuously evolving and many investors are seeing the potential of purchasing in up and coming areas such as Ashkelon.",
+      "If you are considering investing in a property, especially as a foreigner, there are a few things that you should probably be aware of before you begin the buying process.",
+      "1. If you happen to be living in a country such as the United States, you should be aware of the fact that Israeli properties are viewed a little differently to those in the States. For example, features such as hardwood floors or open plan kitchens might often be seen as luxuries in Israel while these features might be quite common in homes elsewhere in the world.",
+      "2. If you're bringing in money from your home country, it's wise to pay attention to the exchange rate as some contracts contain a price that's been based on the exchange rate hitting a certain level.",
+      "3. Look out for potential price increases if you are investing in a property that's still under construction as prices are linked to the consumer price index.",
+      "4. Keep in mind that Israel boasts a strong negotiation culture so almost every price can be negotiated. This is something that usually catches a lot of foreigners off-guard.",
+      "5. Checking the land registry is part of the buying process in Israel and this is something that you or your lawyer will need to do yourself.",
+      "While there are several differences between buying a property in Israel and the United States, it is one investment you won't regret making.",
+    ],
   },
 ];
 

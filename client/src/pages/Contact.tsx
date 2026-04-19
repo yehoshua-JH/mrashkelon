@@ -1,81 +1,240 @@
 // =============================================================
 // MR. ASHKELON — Contact Page
+// Matches Lovable source Contact.tsx exactly:
+// - Hero: "Contact" title, beach bg at 30% opacity
+// - "Contact Info" heading with gold underline
+// - Form: Name+Phone side-by-side, Email, Message, SEND button
+// - Contact info: Israel/USA phones, Email, Address, Social icons
 // =============================================================
 
+import { useState } from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
-import ContactForm from "@/components/ContactForm";
-import { CONTACT } from "@/lib/data";
-
-const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!formData.message.trim()) newErrors.message = "Message is required.";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+    setIsSubmitting(true);
+    await new Promise((r) => setTimeout(r, 500));
+    setSubmitted(true);
+    setFormData({ name: "", phone: "", email: "", message: "" });
+    setErrors({});
+    setIsSubmitting(false);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-16">
-        <PageHero
-          title="Contact Us"
-          subtitle="We'd love to hear from you. Get in touch for a free, no-obligation consultation."
-          image={HERO_IMAGE}
+
+      {/* Hero Banner */}
+      <section className="relative h-64 md:h-80 bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80)",
+          }}
         />
-      </div>
+        <h1 className="relative text-4xl md:text-5xl font-heading font-bold text-primary-foreground">
+          Contact
+        </h1>
+      </section>
 
-      <ContactForm
-        title="Send Us a Message"
-        subtitle="Fill in the form and Motti will respond personally within 24 hours."
-        showContactInfo={true}
-      />
+      <section className="py-16 md:py-24">
+        <div className="container px-4 max-w-6xl">
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-2">Contact Info</h2>
+          <div className="w-20 h-1 bg-secondary mb-6" />
+          <p className="text-muted-foreground mb-10">
+            Please fill in the form below or contact us by email or phone and we'll get back to
+            you soon.
+          </p>
 
-      {/* Additional Info */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
-        <div className="container max-w-3xl">
-          <div className="grid sm:grid-cols-2 gap-8">
-            <div
-              className="p-6 rounded-lg"
-              style={{ backgroundColor: "oklch(0.955 0.012 85)" }}
-            >
-              <h3
-                className="text-base font-bold mb-3"
-                style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
-              >
-                🇮🇱 Israel Office
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-                Hatayassim St.
-                <br />
-                Ashkelon 78573, Israel
-                <br />
-                <br />
-                <a href={`tel:${CONTACT.phone_il}`} className="font-medium hover:underline">
-                  {CONTACT.phone_il}
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Form */}
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center">
+                <div className="text-4xl mb-4">✅</div>
+                <h3 className="text-xl font-bold mb-2 font-heading text-foreground">
+                  Message Sent!
+                </h3>
+                <p className="text-muted-foreground">
+                  Thank you for reaching out. Motti will be in touch with you shortly.
+                </p>
+              </div>
+            ) : (
+              <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Input
+                      placeholder="Name *"
+                      value={formData.name}
+                      onChange={(e) => {
+                        setFormData({ ...formData, name: e.target.value });
+                        setErrors((p) => ({ ...p, name: "" }));
+                      }}
+                      maxLength={100}
+                      className={`bg-accent/10 border-border ${errors.name ? "border-destructive" : ""}`}
+                    />
+                    {errors.name && (
+                      <p className="text-destructive text-xs mt-1">{errors.name}</p>
+                    )}
+                  </div>
+                  <div>
+                    <Input
+                      placeholder="Phone"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      maxLength={20}
+                      className="bg-accent/10 border-border"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <Input
+                    placeholder="Email Address *"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      setErrors((p) => ({ ...p, email: "" }));
+                    }}
+                    maxLength={255}
+                    className={`bg-accent/10 border-border ${errors.email ? "border-destructive" : ""}`}
+                  />
+                  {errors.email && (
+                    <p className="text-destructive text-xs mt-1">{errors.email}</p>
+                  )}
+                </div>
+                <div>
+                  <Textarea
+                    placeholder="Message *"
+                    rows={6}
+                    value={formData.message}
+                    onChange={(e) => {
+                      setFormData({ ...formData, message: e.target.value });
+                      setErrors((p) => ({ ...p, message: "" }));
+                    }}
+                    maxLength={1000}
+                    className={`bg-accent/10 border-border ${errors.message ? "border-destructive" : ""}`}
+                  />
+                  {errors.message && (
+                    <p className="text-destructive text-xs mt-1">{errors.message}</p>
+                  )}
+                </div>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg py-6"
+                >
+                  {isSubmitting ? "Sending..." : "SEND"}
+                </Button>
+              </form>
+            )}
+
+            {/* Contact Info */}
+            <div className="flex flex-col justify-center gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Israel</p>
+                    <a
+                      href="tel:054-731-2118"
+                      className="font-medium text-foreground hover:text-secondary transition-colors"
+                    >
+                      054-731-2118
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">USA</p>
+                    <a
+                      href="tel:1-612-424-5387"
+                      className="font-medium text-foreground hover:text-secondary transition-colors"
+                    >
+                      1-612-424-5387
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <a
+                      href="mailto:motti@mrashkelon.com"
+                      className="font-medium text-foreground hover:text-secondary transition-colors"
+                    >
+                      motti@mrashkelon.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Address</p>
+                    <p className="font-medium text-foreground">Hatayassim St., Ashkelon 78573</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <a
+                  href="https://www.facebook.com/motti.benyitzhack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center hover:bg-secondary/30 transition-colors text-secondary text-sm font-bold"
+                >
+                  f
                 </a>
-              </p>
-            </div>
-            <div
-              className="p-6 rounded-lg"
-              style={{ backgroundColor: "oklch(0.955 0.012 85)" }}
-            >
-              <h3
-                className="text-base font-bold mb-3"
-                style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
-              >
-                🇺🇸 US Contact
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-                Available for calls from North America
-                <br />
-                <br />
-                <a href={`tel:${CONTACT.phone_us}`} className="font-medium hover:underline">
-                  {CONTACT.phone_us}
+                <a
+                  href="https://twitter.com/@mbyashkelon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center hover:bg-secondary/30 transition-colors text-secondary text-sm font-bold"
+                >
+                  𝕏
                 </a>
-                <br />
-                <a href={`mailto:${CONTACT.email}`} className="font-medium hover:underline">
-                  {CONTACT.email}
+                <a
+                  href="https://il.linkedin.com/in/motti-ben-yitzhack-68135aa8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center hover:bg-secondary/30 transition-colors text-secondary text-sm font-bold"
+                >
+                  in
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </div>

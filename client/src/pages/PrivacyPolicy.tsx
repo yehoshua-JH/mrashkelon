@@ -13,9 +13,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-16">
-        <PageHero title="Privacy Policy" image={HERO_IMAGE} />
-      </div>
+      <PageHero title="Privacy Policy" image={HERO_IMAGE} />
 
       <section className="py-16" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
         <div className="container max-w-3xl">
