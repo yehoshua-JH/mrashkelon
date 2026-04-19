@@ -1,141 +1,120 @@
-// =============================================================
-// MR. ASHKELON — Footer Component
-// Design: Deep navy background, gold accents, serif typography
-// =============================================================
+// MR. ASHKELON — Footer
+// Exact match of Lovable source Footer.tsx
+// 4-col grid: logo | phones | email+address | social icons
 
 import { Link } from "wouter";
-import { CONTACT } from "@/lib/data";
+import { Facebook, Linkedin, Mail, MapPin } from "lucide-react";
+
+const LOGO_WHITE =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white-src_f0231a59.webp";
+
+const footerLinks = [
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Properties", href: "/featured-properties" },
+  { label: "About Ashkelon", href: "/about-ashkelon" },
+  { label: "Resources", href: "/resources" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+];
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "oklch(0.18 0.055 250)" }}>
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Brand */}
+    <footer className="py-12" style={{ backgroundColor: "var(--primary)", color: "var(--primary-foreground)" }}>
+      <div className="container px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
+
+          {/* Col 1 — Logo */}
           <div>
-            <div className="mb-4">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-favicon_7a032b7f.png"
-                alt="Mr. Ashkelon — Sales. Rentals. Management."
-                className="h-14 w-auto"
-                style={{ filter: "invert(1) brightness(2)" }}
-              />
+            <Link href="/">
+              <img src={LOGO_WHITE} alt="Mr. Ashkelon" style={{ height: "4rem", width: "auto" }} />
+            </Link>
+          </div>
+
+          {/* Col 2 — Phone Numbers */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <span className="text-lg">🇮🇱</span>
+              <a href="tel:054-731-2118" className="text-sm" style={{ color: "rgba(255,255,255,0.80)" }}>
+                054-731-2118
+              </a>
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: "oklch(0.72 0.02 85)" }}>
-              Your trusted English-speaking real estate broker in Ashkelon, Israel.
-              Helping overseas buyers and Olim find their dream home since 2003.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3
-              className="text-sm font-semibold uppercase tracking-widest mb-4"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              {[
-                { href: "/about", label: "About" },
-                { href: "/services", label: "Services" },
-                { href: "/featured-properties", label: "Properties" },
-                { href: "/about-ashkelon", label: "About Ashkelon" },
-                { href: "/resources", label: "Resources" },
-                { href: "/contact", label: "Contact" },
-                { href: "/privacy-policy", label: "Privacy Policy" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm transition-colors duration-200"
-                    style={{ color: "oklch(0.72 0.02 85)", textDecoration: "none" }}
-                    onMouseEnter={(e) => {
-                      (e.target as HTMLElement).style.color = "oklch(0.72 0.12 75)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.target as HTMLElement).style.color = "oklch(0.72 0.02 85)";
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3
-              className="text-sm font-semibold uppercase tracking-widest mb-4"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              Contact
-            </h3>
-            <ul className="space-y-3 text-sm" style={{ color: "oklch(0.72 0.02 85)" }}>
-              <li className="flex items-start gap-2">
-                <span>🇮🇱</span>
-                <a
-                  href={`tel:${CONTACT.phone_il}`}
-                  className="hover:text-amber-400 transition-colors"
-                  style={{ color: "inherit" }}
-                >
-                  {CONTACT.phone_il}
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>🇺🇸</span>
-                <a
-                  href={`tel:${CONTACT.phone_us}`}
-                  className="hover:text-amber-400 transition-colors"
-                  style={{ color: "inherit" }}
-                >
-                  {CONTACT.phone_us}
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>✉️</span>
-                <a
-                  href={`mailto:${CONTACT.email}`}
-                  className="hover:text-amber-400 transition-colors"
-                  style={{ color: "inherit" }}
-                >
-                  {CONTACT.email}
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>📍</span>
-                <span>{CONTACT.address}</span>
-              </li>
-            </ul>
-            <div className="mt-4">
-              <a
-                href="https://x.com/mrashkelon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm transition-colors"
-                style={{ color: "oklch(0.72 0.02 85)" }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLElement).style.color = "oklch(0.72 0.12 75)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLElement).style.color = "oklch(0.72 0.02 85)";
-                }}
-              >
-                𝕏 Follow on X
+            <div className="flex items-center gap-3">
+              <span className="text-lg">🇺🇸</span>
+              <a href="tel:1-612-424-5387" className="text-sm" style={{ color: "rgba(255,255,255,0.80)" }}>
+                1-612-424-5387
               </a>
             </div>
           </div>
+
+          {/* Col 3 — Email & Address */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <Mail style={{ width: "1rem", height: "1rem", color: "rgba(255,255,255,0.60)", flexShrink: 0 }} />
+              <a href="mailto:motti@mrashkelon.com" className="text-sm" style={{ color: "rgba(255,255,255,0.80)" }}>
+                motti@mrashkelon.com
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <MapPin style={{ width: "1rem", height: "1rem", color: "rgba(255,255,255,0.60)", flexShrink: 0 }} />
+              <span className="text-sm" style={{ color: "rgba(255,255,255,0.80)" }}>
+                Hatayassim St., Ashkelon 78573
+              </span>
+            </div>
+          </div>
+
+          {/* Col 4 — Social Icons */}
+          <div className="flex gap-2 md:justify-end">
+            <a
+              href="https://www.facebook.com/motti.benyitzhack"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded flex items-center justify-center"
+              style={{ backgroundColor: "var(--secondary)", color: "var(--secondary-foreground)" }}
+            >
+              <Facebook style={{ width: "1.25rem", height: "1.25rem" }} />
+            </a>
+            <a
+              href="https://twitter.com/@mbyashkelon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded flex items-center justify-center font-bold text-lg"
+              style={{ backgroundColor: "var(--secondary)", color: "var(--secondary-foreground)" }}
+            >
+              𝕏
+            </a>
+            <a
+              href="https://il.linkedin.com/in/motti-ben-yitzhack-68135aa8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded flex items-center justify-center"
+              style={{ backgroundColor: "var(--secondary)", color: "var(--secondary-foreground)" }}
+            >
+              <Linkedin style={{ width: "1.25rem", height: "1.25rem" }} />
+            </a>
+          </div>
         </div>
 
+        {/* Bottom bar — nav links + copyright */}
         <div
-          className="mt-10 pt-6 text-center text-xs"
-          style={{
-            borderTop: "1px solid oklch(0.32 0.055 250)",
-            color: "oklch(0.55 0.02 85)",
-          }}
+          className="mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t"
+          style={{ borderColor: "rgba(255,255,255,0.10)" }}
         >
-          © {new Date().getFullYear()} Mr. Ashkelon. All rights reserved.
+          <nav className="flex flex-wrap justify-center gap-6">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs"
+                style={{ color: "rgba(255,255,255,0.50)", textDecoration: "none" }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.40)" }}>
+            © {new Date().getFullYear()} Mr. Ashkelon. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

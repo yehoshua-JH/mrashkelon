@@ -33,7 +33,7 @@ export const PROPERTIES = [
       "Rooftop pool and gym",
       "Walking distance to Delilah Beach",
     ],
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project-src_c3fc7609.jpg",
     seo: {
       title: "Luxury High-Rise Apartments for Sale in Ashkelon | Mr. Ashkelon",
       description:
