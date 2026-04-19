@@ -61,7 +61,7 @@ export const PROPERTIES = [
       "Private lift access",
       "Dedicated concierge service",
     ],
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg",
+    image: "https://mrashkelon.com/wp-content/uploads/2025/02/image0-400x516.jpeg",
     seo: {
       title: "Luxury Penthouse Apartments for Sale in Ashkelon | Mr. Ashkelon",
       description:
@@ -107,7 +107,7 @@ export const BLOG_POSTS = [
     date: "2025-03-15",
     readTime: "8 min read",
     category: "Buying Guide",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/blog-img1_923bfbc4.jpg",
+    image: "https://mrashkelon.com/wp-content/uploads/2016/10/Ashkelon-Israel_Mr-Ashkelon.jpg",
     seo: {
       title: "Foreigner's Guide to Buying Property in Ashkelon, Israel | Mr. Ashkelon",
       description:
@@ -164,7 +164,7 @@ Motti has guided dozens of overseas buyers through the process of purchasing pro
     date: "2025-01-20",
     readTime: "10 min read",
     category: "Building Guide",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/blog-img2_1f4c6dbd.jpg",
+    image: "https://mrashkelon.com/wp-content/uploads/2022/02/Depositphotos_339337302_L.jpg",
     seo: {
       title: "Building a House in Ashkelon, Israel: Complete Guide | Mr. Ashkelon",
       description:
@@ -228,7 +228,7 @@ While our primary expertise is in buying and selling existing properties, Motti 
     date: "2024-11-10",
     readTime: "7 min read",
     category: "Buying Guide",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/ashkelon-israel_78811096.jpg",
+    image: "https://mrashkelon.com/wp-content/uploads/2022/02/Depositphotos_295423952_L.jpg",
     seo: {
       title: "What to Know Before Buying Property in Ashkelon | Mr. Ashkelon",
       description:

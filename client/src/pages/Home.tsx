@@ -1,448 +1,467 @@
 // =============================================================
 // MR. ASHKELON — Homepage
-// Design: Mediterranean Heritage Luxury
-// Sections: Hero, About snippet, Services, Properties, Why Ashkelon, Testimonials, Resources, CTA
+// Exact match of ashkelon-broker.lovable.app
+// Layout: Hero (split text+image), About Us, Services, Featured
+//         Properties, Why Ashkelon, Video Testimonials,
+//         Written Testimonials, Resources, Contact Form, Footer
 // =============================================================
 
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import { PROPERTIES, BLOG_POSTS, SERVICES, TESTIMONIALS } from "@/lib/data";
+import { PROPERTIES, BLOG_POSTS } from "@/lib/data";
 
-const HERO_IMAGE =
+// ── Images ──────────────────────────────────────────────────
+const HERO_IMG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project_ab2b12dc.jpg";
-const BROKER_IMAGE =
+const ABOUT_IMG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/mr-mrs-ashkelon_99e0fa39.png";
-const ASHKELON_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/ashkelon-israel_78811096.jpg";
+
+// helper to get a short description from the property data
+const getShortDesc = (p: (typeof PROPERTIES)[0]) =>
+  p.tagline || p.subtitle || p.description.slice(0, 80) + "…";
+
+// ── YouTube video IDs ────────────────────────────────────────
+const VIDEOS = [
+  { id: "PeumXmRNhUo", name: "Debbie & Marc" },
+  { id: "2dNTUaaR8hI", name: "Matthew & Maxine" },
+  { id: "B4kCThOC8LE", name: "Annabel" },
+];
+
+// ── Services ─────────────────────────────────────────────────
+const SERVICES = [
+  {
+    icon: "🏠",
+    title: "Property Purchase",
+    desc: "Expert guidance through every step of buying property in Ashkelon, from search to closing.",
+  },
+  {
+    icon: "🔑",
+    title: "Rentals & Holiday Homes",
+    desc: "Find the perfect rental or holiday home in Ashkelon's best neighborhoods.",
+  },
+  {
+    icon: "📋",
+    title: "Legal & Documentation",
+    desc: "Full support with contracts, permits, and all legal paperwork in Hebrew and English.",
+  },
+  {
+    icon: "🔨",
+    title: "Contractor Management",
+    desc: "We oversee renovations and construction, managing trusted local contractors on your behalf.",
+  },
+  {
+    icon: "✈️",
+    title: "Relocation Assistance",
+    desc: "Comprehensive help settling into life in Israel — from utilities to community connections.",
+  },
+  {
+    icon: "🏢",
+    title: "Property Management",
+    desc: "Ongoing management of your property, whether you live locally or abroad.",
+  },
+];
+
+// ── Why Ashkelon ──────────────────────────────────────────────
+const WHY = [
+  {
+    icon: "🌊",
+    title: "Mediterranean Coast",
+    desc: "Stunning beaches and a relaxed coastal lifestyle year-round.",
+  },
+  {
+    icon: "💰",
+    title: "Affordable Prices",
+    desc: "Property prices significantly lower than Tel Aviv, Jerusalem, or Netanya.",
+  },
+  {
+    icon: "👥",
+    title: "Growing Community",
+    desc: "A thriving Anglo community with English-speaking services and social groups.",
+  },
+  {
+    icon: "☀️",
+    title: "300+ Sunny Days",
+    desc: "Enjoy warm Mediterranean weather with over 300 days of sunshine per year.",
+  },
+];
+
+// ── Written Testimonials ──────────────────────────────────────
+const TESTIMONIALS = [
+  {
+    quote:
+      "As an experienced UK property developer, I can say Motti resolved complex issues calmly and professionally. His knowledge of the local market and ability to navigate challenges is truly exceptional.",
+    name: "Alan Goldberg",
+    location: "London, UK",
+  },
+  {
+    quote:
+      "Motti's help was invaluable when buying abroad. He introduced us to all the contacts we needed — lawyers, contractors, interior designers — and guided us through every step of the process.",
+    name: "Jonny & Karen Dorman",
+    location: "London, UK",
+  },
+  {
+    quote:
+      "First class service. Totally professional. Motti made the entire experience smooth and stress-free. I wouldn't hesitate to recommend him to anyone looking to buy in Ashkelon.",
+    name: "Anthony Reindorp",
+    location: "London, UK",
+  },
+  {
+    quote:
+      "Motti handled all the paperwork, got contractors on time, and continues to manage our property. His ongoing support even after the purchase is what sets him apart from others.",
+    name: "Brian & Sharon Sternfeld",
+    location: "Manchester, UK",
+  },
+  {
+    quote:
+      "Motti takes away all the pain of buying in Israel. His hands-on approach and dedication to his clients means you can relax knowing everything is being taken care of professionally.",
+    name: "Aryeh Shender",
+    location: "Israel",
+  },
+  {
+    quote:
+      "Finding housing for over a dozen expatriates with diverse needs while setting up a new business operation in a foreign country presents many challenges. Motti has provided a prompt, professional, patient, personalized yet budget-friendly and efficient service, finding and furnishing apartments for our staff. I appreciate his support and recommend his service to anyone looking to enjoy living in such a pleasant Mediterranean location, short or long term.",
+    name: "Ian Travis",
+    location: "NEHP World Wide",
+  },
+];
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* ── HERO ── */}
+      {/* ── HERO ──────────────────────────────────────────── */}
       <section
-        className="relative flex items-end"
-        style={{
-          minHeight: "90vh",
-          backgroundImage: `url(${HERO_IMAGE})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center 30%",
-        }}
+        className="pt-16 min-h-[600px] flex items-center"
+        style={{ background: "linear-gradient(180deg, oklch(0.235 0.058 250) 0%, oklch(0.28 0.055 250) 60%, oklch(0.38 0.045 250) 100%)" }}
       >
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, oklch(0.235 0.058 250 / 0.85) 0%, oklch(0.235 0.058 250 / 0.4) 60%, transparent 100%)",
-          }}
-        />
-        <div className="relative z-10 container pb-20 pt-32">
-          <div className="max-w-xl">
-            <p
-              className="text-sm font-semibold uppercase tracking-widest mb-3"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              Ashkelon, Israel
-            </p>
-            <h1
-              className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              Find Your Dream Home on the Mediterranean
-            </h1>
-            <p className="text-base md:text-lg mb-8" style={{ color: "oklch(0.85 0.01 85)" }}>
-              English-speaking real estate experts helping overseas buyers and Olim
-              find the perfect property in Ashkelon since 2003.
-            </p>
-            <div className="flex flex-wrap gap-3">
+        <div className="container py-12 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left: text */}
+            <div>
+              <h1
+                className="text-4xl lg:text-5xl font-bold leading-tight mb-6"
+                style={{ fontFamily: "Georgia, serif", color: "#ffffff" }}
+              >
+                Welcome to your future home in Israel!
+              </h1>
+              <p className="text-lg mb-8" style={{ color: "oklch(0.82 0.05 85)" }}>
+                Discover the Mr. Ashkelon difference. Let the leading Anglo licensed Real Estate
+                Broker be your guide to a seamless experience in purchasing property in Ashkelon,
+                Israel's best-kept secret.
+              </p>
               <Link
+                href="/contact"
+                className="inline-block px-8 py-3 rounded font-semibold text-base transition-opacity hover:opacity-90"
+                style={{
+                  backgroundColor: "oklch(0.72 0.12 75)",
+                  color: "oklch(0.235 0.058 250)",
+                  fontFamily: "Georgia, serif",
+                }}
+              >
+                Contact us for a consultation
+              </Link>
+              <p className="mt-4 text-sm" style={{ color: "oklch(0.65 0.04 85)" }}>
+                100's of satisfied buyers have purchased with Mr. Ashkelon
+              </p>
+            </div>
+
+            {/* Right: property image with badge */}
+            <div className="relative">
+              <div
+                className="absolute top-0 left-0 right-0 z-10 text-center py-3 font-bold text-sm"
+                style={{ backgroundColor: "oklch(0.72 0.12 75)", color: "oklch(0.235 0.058 250)" }}
+              >
+                SELLING FAST!
+                <br />Move in Now
+              </div>
+              <img
+                src={HERO_IMG}
+                alt="Luxury high-rise development in Ashkelon"
+                className="w-full rounded shadow-2xl"
+                style={{ maxHeight: "420px", objectFit: "cover" }}
+              />
+              <a
                 href="/featured-properties"
-                className="px-6 py-3 rounded font-semibold text-sm transition-all duration-200"
+                className="absolute bottom-4 right-4 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-90"
                 style={{
                   backgroundColor: "oklch(0.72 0.12 75)",
                   color: "oklch(0.235 0.058 250)",
                 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.82 0.10 75)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.72 0.12 75)";
-                }}
               >
-                View Properties
-              </Link>
-              <Link
-                href="/contact"
-                className="px-6 py-3 rounded font-semibold text-sm border transition-all duration-200"
-                style={{
-                  borderColor: "oklch(0.85 0.01 85)",
-                  color: "oklch(0.985 0.008 85)",
-                  backgroundColor: "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor =
-                    "oklch(0.985 0.008 85 / 0.1)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
-                }}
-              >
-                Free Consultation
-              </Link>
+                CLICK HERE →
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── STATS BAR ── */}
-      <div style={{ backgroundColor: "oklch(0.235 0.058 250)" }}>
-        <div className="container py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[
-              { value: "20+", label: "Years Experience" },
-              { value: "500+", label: "Properties Sold" },
-              { value: "12km", label: "Coastline" },
-              { value: "128k", label: "City Population" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p
-                  className="text-2xl font-bold"
-                  style={{ fontFamily: "Georgia, serif", color: "oklch(0.72 0.12 75)" }}
-                >
-                  {stat.value}
-                </p>
-                <p className="text-xs uppercase tracking-wide mt-1" style={{ color: "oklch(0.72 0.02 85)" }}>
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── ABOUT SNIPPET ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
+      {/* ── ABOUT US ──────────────────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
+          <h2
+            className="text-3xl font-bold mb-2 text-center"
+            style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
+          >
+            About Us
+          </h2>
+          <div
+            className="w-16 h-1 mx-auto mb-10 rounded"
+            style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
               <img
-                src={BROKER_IMAGE}
-                alt="Motti — Mr. Ashkelon Real Estate Broker"
-                className="rounded-lg w-full object-cover shadow-xl"
-                style={{ maxHeight: "480px" }}
+                src={ABOUT_IMG}
+                alt="Mr & Mrs Ashkelon Plus - Coastal & Jerusalem Property Specialists"
+                className="w-full rounded shadow-lg"
               />
-              <div
-                className="absolute -bottom-4 -right-4 px-5 py-3 rounded shadow-lg"
-                style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
-              >
-                <p className="text-xs font-bold uppercase tracking-wide" style={{ color: "oklch(0.235 0.058 250)" }}>
-                  Licensed Broker
-                </p>
-                <p className="text-sm font-semibold" style={{ color: "oklch(0.235 0.058 250)" }}>
-                  20+ Years in Ashkelon
-                </p>
-              </div>
             </div>
             <div>
-              <p
-                className="text-sm font-semibold uppercase tracking-widest mb-2"
-                style={{ color: "oklch(0.72 0.12 75)" }}
-              >
-                About Mr. Ashkelon
+              <p className="text-base leading-relaxed mb-4" style={{ color: "#374151" }}>
+                Motti and Susan Ben Yitzhack are licensed Anglo real estate brokers based in
+                Ashkelon, Israel. With years of experience and deep local expertise, they specialize
+                in helping English-speaking buyers navigate the Israeli property market with
+                confidence and ease.
               </p>
-              <h2 className="section-heading mb-2">
-                Your Trusted Guide to Ashkelon Real Estate
-              </h2>
-              <span className="gold-divider" />
-              <p className="mt-5 text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-                Motti is a licensed real estate broker with over 20 years of experience in the
-                Ashkelon market. As an English speaker who has lived in Ashkelon for decades, he
-                understands the unique needs of overseas buyers, new Olim, and international
-                investors navigating the Israeli property market.
+              <p className="text-base leading-relaxed mb-4" style={{ color: "#374151" }}>
+                From finding your dream property to handling legal documentation, managing
+                contractors, arranging rentals, and assisting with every aspect of relocation —
+                Motti and Susan provide a comprehensive, hands-on service that removes the stress
+                from buying property abroad.
               </p>
-              <p className="mt-3 text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-                From the initial property search to the final handover of keys, Motti provides
-                personalised, end-to-end guidance that removes the stress and uncertainty from
-                one of the most significant decisions of your life.
+              <p className="text-base leading-relaxed" style={{ color: "#374151" }}>
+                Their warm, personal approach has earned them the trust of buyers from the UK, US,
+                and beyond, making them the go-to brokers for the growing Anglo community in
+                Ashkelon.
               </p>
-              <Link
-                href="/about"
-                className="inline-block mt-6 px-6 py-3 rounded font-semibold text-sm transition-all duration-200"
-                style={{
-                  backgroundColor: "oklch(0.235 0.058 250)",
-                  color: "oklch(0.985 0.008 85)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.32 0.055 250)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.235 0.058 250)";
-                }}
-              >
-                Learn More About Motti
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.955 0.012 85)" }}>
+      {/* ── OUR SERVICES ──────────────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "oklch(0.97 0.005 85)" }}>
         <div className="container">
-          <div className="text-center mb-12">
-            <p
-              className="text-sm font-semibold uppercase tracking-widest mb-2"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              What We Offer
-            </p>
-            <h2 className="section-heading">Our Services</h2>
-            <span className="gold-divider mx-auto" />
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((service) => (
+          <h2
+            className="text-3xl font-bold mb-2 text-center"
+            style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
+          >
+            Our Services
+          </h2>
+          <div
+            className="w-16 h-1 mx-auto mb-4 rounded"
+            style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
+          />
+          <p className="text-center mb-10" style={{ color: "#6b7280" }}>
+            Everything you need for a smooth property experience in Israel — all under one roof.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((s) => (
               <div
-                key={service.title}
-                className="p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
+                key={s.title}
+                className="bg-white rounded-lg p-6 shadow-sm text-center"
               >
-                <div className="text-3xl mb-3">{service.icon}</div>
+                <div className="text-4xl mb-4" style={{ color: "oklch(0.72 0.12 75)" }}>
+                  {s.icon}
+                </div>
                 <h3
-                  className="text-base font-bold mb-2"
+                  className="text-lg font-bold mb-2"
                   style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
                 >
-                  {service.title}
+                  {s.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
-                  {service.description}
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {s.desc}
                 </p>
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/services"
-              className="inline-block px-6 py-3 rounded font-semibold text-sm border-2 transition-all duration-200"
-              style={{
-                borderColor: "oklch(0.235 0.058 250)",
-                color: "oklch(0.235 0.058 250)",
-                backgroundColor: "transparent",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.235 0.058 250)";
-                (e.currentTarget as HTMLElement).style.color = "oklch(0.985 0.008 85)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
-                (e.currentTarget as HTMLElement).style.color = "oklch(0.235 0.058 250)";
-              }}
-            >
-              All Services
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* ── FEATURED PROPERTIES ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
+      {/* ── FEATURED PROPERTIES ───────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
-          <div className="text-center mb-12">
-            <p
-              className="text-sm font-semibold uppercase tracking-widest mb-2"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              Current Listings
-            </p>
-            <h2 className="section-heading">Featured Properties</h2>
-            <span className="gold-divider mx-auto" />
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PROPERTIES.map((property) => (
-              <Link
-                key={property.slug}
-                href={`/property/${property.slug}`}
-                className="group block rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white"
-                style={{ textDecoration: "none" }}
+          <h2
+            className="text-3xl font-bold mb-2 text-center"
+            style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
+          >
+            Featured Properties
+          </h2>
+          <div
+            className="w-16 h-1 mx-auto mb-4 rounded"
+            style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
+          />
+          <p className="text-center mb-10" style={{ color: "#6b7280" }}>
+            Browse our curated selection of properties in Ashkelon's most sought-after neighborhoods.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PROPERTIES.map((p) => (
+              <div
+                key={p.slug}
+                className="rounded-lg overflow-hidden shadow border"
+                style={{ borderColor: "#e5e7eb" }}
               >
-                <div className="relative overflow-hidden" style={{ height: "200px" }}>
-                  <img
-                    src={property.image}
-                    alt={property.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute top-3 left-3 px-2 py-1 rounded text-xs font-semibold"
-                    style={{
-                      backgroundColor: "oklch(0.72 0.12 75)",
-                      color: "oklch(0.235 0.058 250)",
-                    }}
-                  >
-                    {property.tagline}
-                  </div>
-                </div>
-                <div className="p-5">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
                   <h3
                     className="text-lg font-bold mb-1"
                     style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
                   >
-                    {property.title}
+                    {p.title}
                   </h3>
-                  <p className="text-xs mb-3" style={{ color: "oklch(0.55 0.02 85)" }}>
-                    {property.location}
+                  <p className="text-sm mb-1" style={{ color: "#6b7280" }}>
+                    📍 {p.location}
                   </p>
-                  <div className="flex gap-4 text-xs mb-4" style={{ color: "oklch(0.45 0.03 250)" }}>
-                    <span>🛏 {property.bedrooms} bed</span>
-                    <span>🚿 {property.bathrooms} bath</span>
-                    <span>📐 {property.size}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span
-                      className="text-sm font-bold"
-                      style={{ color: "oklch(0.235 0.058 250)" }}
-                    >
-                      {property.price}
-                    </span>
-                    <span
-                      className="text-xs font-semibold"
-                      style={{ color: "oklch(0.72 0.12 75)" }}
-                    >
-                      View Details →
-                    </span>
-                  </div>
+                  <p className="text-sm mb-4" style={{ color: "#6b7280" }}>
+                    {getShortDesc(p)}
+                  </p>
+                  <Link
+                    href={`/property/${p.slug}`}
+                    className="block w-full text-center py-2 rounded border font-medium text-sm transition-colors hover:bg-opacity-90"
+                    style={{
+                      borderColor: "oklch(0.72 0.12 75)",
+                      color: "oklch(0.72 0.12 75)",
+                    }}
+                  >
+                    View Details
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/featured-properties"
-              className="inline-block px-6 py-3 rounded font-semibold text-sm transition-all duration-200"
-              style={{
-                backgroundColor: "oklch(0.72 0.12 75)",
-                color: "oklch(0.235 0.058 250)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.82 0.10 75)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.72 0.12 75)";
-              }}
-            >
-              View All Properties
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── WHY ASHKELON ── */}
-      <section
-        className="relative py-24"
-        style={{
-          backgroundImage: `url(${ASHKELON_IMAGE})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: "oklch(0.235 0.058 250 / 0.75)" }}
-        />
-        <div className="relative z-10 container text-center">
-          <p
-            className="text-sm font-semibold uppercase tracking-widest mb-2"
-            style={{ color: "oklch(0.72 0.12 75)" }}
-          >
-            Discover the City
-          </p>
+      {/* ── WHY ASHKELON ──────────────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "oklch(0.235 0.058 250)" }}>
+        <div className="container">
           <h2
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "Georgia, serif" }}
+            className="text-3xl font-bold mb-2 text-center"
+            style={{ fontFamily: "Georgia, serif", color: "#ffffff" }}
           >
             Why Ashkelon?
           </h2>
-          <span className="gold-divider mx-auto" />
-          <p className="mt-6 text-base max-w-2xl mx-auto" style={{ color: "oklch(0.85 0.01 85)" }}>
-            Ashkelon is Israel's best-kept secret — a coastal city with 5,000 years of history,
-            12 kilometres of stunning beaches, a warm Mediterranean climate, and property prices
-            that offer exceptional value compared to Tel Aviv or Jerusalem.
+          <div
+            className="w-16 h-1 mx-auto mb-4 rounded"
+            style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
+          />
+          <p className="text-center mb-10" style={{ color: "oklch(0.75 0.04 85)" }}>
+            Israel's best-kept secret — a beautiful coastal city with affordable living, warm
+            community, and incredible quality of life.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 text-left">
-            {[
-              { icon: "🌊", title: "12km of Beaches", desc: "Stunning Mediterranean coastline with supervised beaches and a beautiful marina" },
-              { icon: "🏛️", title: "5,000 Years of History", desc: "Ancient ruins, national parks, and a rich cultural heritage unlike any other city" },
-              { icon: "✈️", title: "Easy Access", desc: "45 minutes from Ben Gurion Airport and excellent rail links to Tel Aviv" },
-              { icon: "💰", title: "Exceptional Value", desc: "Premium coastal living at a fraction of the cost of Tel Aviv or Herzliya" },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="p-5 rounded-lg"
-                style={{ backgroundColor: "oklch(0.985 0.008 85 / 0.1)", backdropFilter: "blur(4px)" }}
-              >
-                <div className="text-2xl mb-2">{item.icon}</div>
-                <h3 className="text-sm font-bold text-white mb-1" style={{ fontFamily: "Georgia, serif" }}>
-                  {item.title}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {WHY.map((w) => (
+              <div key={w.title} className="text-center">
+                <div className="text-4xl mb-3">{w.icon}</div>
+                <h3
+                  className="text-base font-bold mb-2"
+                  style={{ fontFamily: "Georgia, serif", color: "#ffffff" }}
+                >
+                  {w.title}
                 </h3>
-                <p className="text-xs leading-relaxed" style={{ color: "oklch(0.82 0.01 85)" }}>
-                  {item.desc}
+                <p className="text-sm" style={{ color: "oklch(0.75 0.04 85)" }}>
+                  {w.desc}
                 </p>
               </div>
             ))}
           </div>
-          <Link
-            href="/about-ashkelon"
-            className="inline-block mt-10 px-6 py-3 rounded font-semibold text-sm border transition-all duration-200"
-            style={{
-              borderColor: "oklch(0.72 0.12 75)",
-              color: "oklch(0.72 0.12 75)",
-              backgroundColor: "transparent",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.72 0.12 75)";
-              (e.currentTarget as HTMLElement).style.color = "oklch(0.235 0.058 250)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
-              (e.currentTarget as HTMLElement).style.color = "oklch(0.72 0.12 75)";
-            }}
-          >
-            Discover Ashkelon
-          </Link>
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.955 0.012 85)" }}>
+      {/* ── VIDEO TESTIMONIALS ────────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
-          <div className="text-center mb-12">
-            <p
-              className="text-sm font-semibold uppercase tracking-widest mb-2"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              Client Stories
-            </p>
-            <h2 className="section-heading">What Our Clients Say</h2>
-            <span className="gold-divider mx-auto" />
+          <h2
+            className="text-3xl font-bold mb-2 text-center"
+            style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
+          >
+            Testimonials
+          </h2>
+          <div
+            className="w-16 h-1 mx-auto mb-4 rounded"
+            style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
+          />
+          <p className="text-center mb-10" style={{ color: "#6b7280" }}>
+            Hear directly from our happy clients about their experience with Mr. Ashkelon.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {VIDEOS.map((v) => (
+              <div key={v.id} className="flex flex-col items-center">
+                <div className="w-full rounded-lg overflow-hidden shadow">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${v.id}`}
+                    title={v.name}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full"
+                    style={{ height: "200px", border: "none" }}
+                  />
+                </div>
+                <p
+                  className="mt-3 font-semibold text-sm"
+                  style={{ color: "oklch(0.235 0.058 250)" }}
+                >
+                  {v.name}
+                </p>
+              </div>
+            ))}
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+      </section>
+
+      {/* ── WRITTEN TESTIMONIALS ──────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "oklch(0.97 0.005 85)" }}>
+        <div className="container">
+          <h2
+            className="text-3xl font-bold mb-2 text-center"
+            style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
+          >
+            What Our Clients Say
+          </h2>
+          <div
+            className="w-16 h-1 mx-auto mb-4 rounded"
+            style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
+          />
+          <p className="text-center mb-10" style={{ color: "#6b7280" }}>
+            Hear from buyers who found their perfect property in Ashkelon with our help.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t) => (
               <div
                 key={t.name}
-                className="p-6 rounded-lg bg-white shadow-sm"
+                className="bg-white rounded-lg p-6 shadow-sm"
               >
-                <div className="flex gap-0.5 mb-3">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <span key={i} style={{ color: "oklch(0.72 0.12 75)" }}>★</span>
+                <div
+                  className="text-3xl font-serif mb-3"
+                  style={{ color: "oklch(0.72 0.12 75)" }}
+                >
+                  "
+                </div>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
+                  "{t.quote}"
+                </p>
+                <div className="flex gap-1 mb-2">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <span key={s} style={{ color: "oklch(0.72 0.12 75)" }}>
+                      ★
+                    </span>
                   ))}
                 </div>
-                <p className="text-sm leading-relaxed mb-4 italic" style={{ color: "oklch(0.45 0.03 250)" }}>
-                  "{t.text}"
-                </p>
-                <p className="text-sm font-bold" style={{ color: "oklch(0.235 0.058 250)" }}>
+                <p
+                  className="font-bold text-sm"
+                  style={{ color: "oklch(0.235 0.058 250)" }}
+                >
                   {t.name}
                 </p>
-                <p className="text-xs" style={{ color: "oklch(0.55 0.02 85)" }}>
+                <p className="text-xs" style={{ color: "#6b7280" }}>
                   {t.location}
                 </p>
               </div>
@@ -451,86 +470,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── RESOURCES ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.985 0.008 85)" }}>
+      {/* ── RESOURCES ─────────────────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
-          <div className="text-center mb-12">
-            <p
-              className="text-sm font-semibold uppercase tracking-widest mb-2"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              Knowledge Base
-            </p>
-            <h2 className="section-heading">Resources & Guides</h2>
-            <span className="gold-divider mx-auto" />
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2
+            className="text-3xl font-bold mb-2 text-center"
+            style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
+          >
+            Resources &amp; Insights
+          </h2>
+          <div
+            className="w-16 h-1 mx-auto mb-4 rounded"
+            style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
+          />
+          <p className="text-center mb-10" style={{ color: "#6b7280" }}>
+            Helpful guides and insights for prospective buyers exploring the Ashkelon property market.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {BLOG_POSTS.map((post) => (
-              <Link
+              <div
                 key={post.slug}
-                href={`/resources/${post.slug}`}
-                className="group block rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white"
-                style={{ textDecoration: "none" }}
+                className="rounded-lg overflow-hidden shadow border"
+                style={{ borderColor: "#e5e7eb" }}
               >
-                <div className="relative overflow-hidden" style={{ height: "180px" }}>
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute top-3 left-3 px-2 py-1 rounded text-xs font-semibold"
-                    style={{
-                      backgroundColor: "oklch(0.235 0.058 250)",
-                      color: "oklch(0.985 0.008 85)",
-                    }}
-                  >
-                    {post.category}
-                  </div>
-                </div>
-                <div className="p-5">
-                  <p className="text-xs mb-2" style={{ color: "oklch(0.55 0.02 85)" }}>
-                    {post.readTime}
-                  </p>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-44 object-cover"
+                />
+                <div className="p-4">
                   <h3
-                    className="text-base font-bold leading-snug mb-2"
+                    className="text-base font-bold mb-2"
                     style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
                   >
                     {post.title}
                   </h3>
-                  <p className="text-xs leading-relaxed" style={{ color: "oklch(0.45 0.03 250)" }}>
+                  <p className="text-sm mb-4" style={{ color: "#6b7280" }}>
                     {post.excerpt}
                   </p>
+                  <Link
+                    href={`/resources/${post.slug}`}
+                    className="inline-block px-4 py-2 rounded text-sm font-medium transition-opacity hover:opacity-90"
+                    style={{
+                      backgroundColor: "oklch(0.72 0.12 75)",
+                      color: "oklch(0.235 0.058 250)",
+                    }}
+                  >
+                    Read More
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/resources"
-              className="inline-block px-6 py-3 rounded font-semibold text-sm border-2 transition-all duration-200"
-              style={{
-                borderColor: "oklch(0.235 0.058 250)",
-                color: "oklch(0.235 0.058 250)",
-                backgroundColor: "transparent",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.235 0.058 250)";
-                (e.currentTarget as HTMLElement).style.color = "oklch(0.985 0.008 85)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
-                (e.currentTarget as HTMLElement).style.color = "oklch(0.235 0.058 250)";
-              }}
-            >
-              All Resources
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── CONTACT CTA ── */}
-      <ContactForm />
+      {/* ── CONTACT FORM ──────────────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "oklch(0.97 0.005 85)" }}>
+        <div className="container">
+          <h2
+            className="text-3xl font-bold mb-2 text-center"
+            style={{ fontFamily: "Georgia, serif", color: "oklch(0.235 0.058 250)" }}
+          >
+            Get in Touch
+          </h2>
+          <div
+            className="w-16 h-1 mx-auto mb-4 rounded"
+            style={{ backgroundColor: "oklch(0.72 0.12 75)" }}
+          />
+          <p className="text-center mb-10" style={{ color: "#6b7280" }}>
+            Ready to find your dream property in Ashkelon? Contact us for a free consultation.
+          </p>
+          <ContactForm />
+        </div>
+      </section>
 
       <Footer />
     </div>

@@ -45,7 +45,7 @@ export default function Navbar() {
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-favicon_7a032b7f.png"
               alt="Mr. Ashkelon — Sales. Rentals. Management."
               className="h-12 w-auto"
-              style={{ filter: "invert(1) brightness(2)" }}
+              style={{ filter: "invert(1)" }}
             />
           </Link>
 
