@@ -527,46 +527,57 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Contact Form */}
             <ContactForm />
-            {/* Contact Details */}
+            {/* Contact Details — matches Contact page icon set exactly */}
             <div className="space-y-6">
+              {/* Israel phone */}
               <div className="flex items-start gap-4">
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                   style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
                 >
-                  <Phone style={{ width: "1.25rem", height: "1.25rem", color: "var(--secondary)" }} />
+                  <Phone style={{ width: "1.25rem", height: "1.25rem", color: "oklch(0.72 0.12 75)" }} />
                 </div>
                 <div>
-                  <p className="font-medium mb-1" style={{ color: "var(--primary)" }}>Phone</p>
-                  <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
-                    🇮🇱 <a href="tel:054-731-2118" style={{ color: "inherit" }}>054-731-2118</a>
-                  </p>
-                  <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
-                    🇺🇸 <a href="tel:1-612-424-5387" style={{ color: "inherit" }}>1-612-424-5387</a>
-                  </p>
+                  <p className="text-sm font-semibold mb-1" style={{ color: "var(--primary)" }}>Israel</p>
+                  <a href="tel:054-731-2118" className="text-sm hover:underline" style={{ color: "var(--muted-foreground)" }}>054-731-2118</a>
                 </div>
               </div>
+              {/* USA phone */}
               <div className="flex items-start gap-4">
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                   style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
                 >
-                  <Mail style={{ width: "1.25rem", height: "1.25rem", color: "var(--secondary)" }} />
+                  <Phone style={{ width: "1.25rem", height: "1.25rem", color: "oklch(0.72 0.12 75)" }} />
                 </div>
                 <div>
-                  <p className="font-medium mb-1" style={{ color: "var(--primary)" }}>Email</p>
-                  <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>motti@mrashkelon.com</p>
+                  <p className="text-sm font-semibold mb-1" style={{ color: "var(--primary)" }}>USA</p>
+                  <a href="tel:1-612-424-5387" className="text-sm hover:underline" style={{ color: "var(--muted-foreground)" }}>1-612-424-5387</a>
                 </div>
               </div>
+              {/* Email */}
               <div className="flex items-start gap-4">
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                   style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
                 >
-                  <MapPin style={{ width: "1.25rem", height: "1.25rem", color: "var(--secondary)" }} />
+                  <Mail style={{ width: "1.25rem", height: "1.25rem", color: "oklch(0.72 0.12 75)" }} />
                 </div>
                 <div>
-                  <p className="font-medium mb-1" style={{ color: "var(--primary)" }}>Address</p>
+                  <p className="text-sm font-semibold mb-1" style={{ color: "var(--primary)" }}>Email</p>
+                  <a href="mailto:motti@mrashkelon.com" className="text-sm hover:underline" style={{ color: "var(--muted-foreground)" }}>motti@mrashkelon.com</a>
+                </div>
+              </div>
+              {/* Address */}
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                  style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
+                >
+                  <MapPin style={{ width: "1.25rem", height: "1.25rem", color: "oklch(0.72 0.12 75)" }} />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold mb-1" style={{ color: "var(--primary)" }}>Address</p>
                   <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
                     Hatayassim St.<br />Ashkelon 78573, Israel
                   </p>

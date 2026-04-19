@@ -1,9 +1,12 @@
 // =============================================================
 // MR. ASHKELON — ContactForm Component
 // Reusable contact form with validation
+// Icon set: Lucide Phone / Mail / MapPin in gold circular badges
+// — matches the Contact page icon style exactly
 // =============================================================
 
 import { useState } from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { CONTACT } from "@/lib/data";
 
 interface ContactFormProps {
@@ -147,41 +150,60 @@ export default function ContactForm({
             </button>
           </form>
 
-          {/* Contact Info */}
+          {/* Contact Info — Lucide icons in gold circular badges, matching Contact page */}
           {showContactInfo && (
             <div className="space-y-6">
+              {/* Israel phone */}
               <div className="flex items-start gap-4">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-lg"
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
                 >
-                  📞
+                  <Phone className="w-5 h-5" style={{ color: "oklch(0.72 0.12 75)" }} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold mb-1" style={{ color: "oklch(0.235 0.058 250)" }}>
-                    Phone
+                    Israel
                   </p>
-                  <p className="text-sm" style={{ color: "oklch(0.45 0.03 250)" }}>
-                    Israel:{" "}
-                    <a href={`tel:${CONTACT.phone_il}`} className="hover:underline">
-                      {CONTACT.phone_il}
-                    </a>
-                  </p>
-                  <p className="text-sm" style={{ color: "oklch(0.45 0.03 250)" }}>
-                    US:{" "}
-                    <a href={`tel:${CONTACT.phone_us}`} className="hover:underline">
-                      {CONTACT.phone_us}
-                    </a>
-                  </p>
+                  <a
+                    href={`tel:${CONTACT.phone_il}`}
+                    className="text-sm hover:underline"
+                    style={{ color: "oklch(0.45 0.03 250)" }}
+                  >
+                    {CONTACT.phone_il}
+                  </a>
                 </div>
               </div>
 
+              {/* USA phone */}
               <div className="flex items-start gap-4">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-lg"
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
                 >
-                  ✉️
+                  <Phone className="w-5 h-5" style={{ color: "oklch(0.72 0.12 75)" }} />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold mb-1" style={{ color: "oklch(0.235 0.058 250)" }}>
+                    USA
+                  </p>
+                  <a
+                    href={`tel:${CONTACT.phone_us}`}
+                    className="text-sm hover:underline"
+                    style={{ color: "oklch(0.45 0.03 250)" }}
+                  >
+                    {CONTACT.phone_us}
+                  </a>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
+                >
+                  <Mail className="w-5 h-5" style={{ color: "oklch(0.72 0.12 75)" }} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold mb-1" style={{ color: "oklch(0.235 0.058 250)" }}>
@@ -197,12 +219,13 @@ export default function ContactForm({
                 </div>
               </div>
 
+              {/* Address */}
               <div className="flex items-start gap-4">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-lg"
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
                 >
-                  📍
+                  <MapPin className="w-5 h-5" style={{ color: "oklch(0.72 0.12 75)" }} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold mb-1" style={{ color: "oklch(0.235 0.058 250)" }}>
