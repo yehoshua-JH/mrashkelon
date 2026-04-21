@@ -23,6 +23,9 @@ import {
 const HERO_IMAGE =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-hero_d58348ff.jpg";
 
+const FLOOR_PLAN =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-floor-plan_a30e3a77.jpg";
+
 // ── Feature items ─────────────────────────────────────────────
 const FEATURES = [
   { icon: Sofa, label: "Large living room" },
@@ -142,6 +145,44 @@ export default function BrizaPenthouse() {
                 <span className="font-bold">054 7312 118</span>
               </span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 1b. FLOOR PLAN IMAGE ─────────────────────────────── */}
+      <section className="py-16" style={{ backgroundColor: "oklch(0.975 0.008 80)" }}>
+        <div className="container max-w-4xl mx-auto">
+          <h2
+            className="font-heading font-bold text-center mb-3"
+            style={{
+              fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
+              color: "oklch(0.285 0.055 255)",
+            }}
+          >
+            Floor Plan
+          </h2>
+          <div
+            className="mx-auto mb-8 rounded-full"
+            style={{
+              width: "3.5rem",
+              height: "3px",
+              backgroundColor: "oklch(0.72 0.12 75)",
+              margin: "0 auto 2rem",
+            }}
+          />
+          <div
+            className="rounded-xl overflow-hidden"
+            style={{
+              border: "1px solid oklch(0.88 0.01 255)",
+              boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
+            }}
+          >
+            <img
+              src={FLOOR_PLAN}
+              alt="BRIZA BY EFGAD Penthouse Floor Plan"
+              className="w-full h-auto block"
+              style={{ display: "block" }}
+            />
           </div>
         </div>
       </section>
