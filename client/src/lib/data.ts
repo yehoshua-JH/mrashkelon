@@ -129,6 +129,43 @@ export const PROPERTIES = [
         "Beautiful 130 sqm apartment with breathtaking ocean views in Afridar, Ashkelon. 4 bedrooms, kitchen island, Shabbat elevator. Contact Mr. Ashkelon.",
     },
   },
+  {
+    slug: "briza-penthouse",
+    title: "BRIZA BY EFGAD Penthouse",
+    tagline: "Last available — stunning sea views",
+    location: "Ashkelon",
+    description:
+      "The last available penthouse in the prestigious BRIZA BY EFGAD project in Ashkelon. This exceptional property offers open sea views, a very large terrace with a private pool, and a spacious open-plan living area.",
+    details:
+      "This penthouse features a large open living space connected to a dining area and kitchen. The property includes multiple bedrooms, a master suite, and direct access to a very large terrace with outdoor seating and a private pool.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-hero_d58348ff.jpg",
+    galleryImages: [
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-hero_d58348ff.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-floor-plan_a30e3a77.jpg",
+    ],
+    specs: {
+      Location: "Ashkelon",
+      Project: "BRIZA BY EFGAD",
+      Type: "Penthouse",
+      Terrace: "Large private terrace",
+      Pool: "Private pool",
+      Status: "Last unit available",
+    },
+    highlights: [
+      "Open sea views",
+      "Large private terrace",
+      "Private pool",
+      "Multiple bedrooms incl. master suite",
+      "Open-plan living, dining & kitchen",
+      "Prestigious BRIZA BY EFGAD project",
+    ],
+    note: "Last available unit. Call now: 054 7312 118",
+    seo: {
+      title: "BRIZA BY EFGAD Penthouse for Sale in Ashkelon | Mr. Ashkelon",
+      description:
+        "Last available penthouse in the BRIZA BY EFGAD project, Ashkelon. Open sea views, private pool, large terrace. Contact Mr. Ashkelon for details.",
+    },
+  },
 ];
 
 export const BLOG_POSTS = [
