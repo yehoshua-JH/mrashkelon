@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-clean_fcc3338e.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png";
 
 const FLOOR_PLAN =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-floor-plan_a30e3a77.jpg";
@@ -34,7 +34,7 @@ const FEATURES = [
   { icon: BedDouble, label: "Multiple bedrooms" },
   { icon: Bed, label: "Master bedroom" },
   { icon: Sun, label: "Large terrace" },
-  { icon: Waves, label: "Private pool" },
+  { icon: Waves, label: "Open sea views" },
   { icon: Armchair, label: "Outdoor seating area" },
 ];
 
@@ -43,10 +43,12 @@ const DETAILS = [
   { label: "Property Type", value: "Penthouse" },
   { label: "Location", value: "Ashkelon" },
   { label: "Project", value: "BRIZA BY EFGAD" },
-  { label: "Rooms", value: "—" },
-  { label: "Built Area", value: "—" },
-  { label: "Terrace Size", value: "—" },
-  { label: "Parking", value: "—" },
+  { label: "Floor", value: "22" },
+  { label: "Rooms", value: "6" },
+  { label: "Built Area", value: "~177 m²" },
+  { label: "Balcony", value: "70 m²" },
+  { label: "Parking", value: "2 underground spaces" },
+  { label: "Storage", value: "Storage room included" },
 ];
 
 export default function BrizaPenthouse() {
@@ -74,7 +76,7 @@ export default function BrizaPenthouse() {
             className="text-sm md:text-base font-medium"
             style={{ color: "rgba(255,255,255,0.85)" }}
           >
-            Located in the prestigious BRIZA BY EFGAD project in Ashkelon — open sea views &amp; private pool.
+            Located in the prestigious BRIZA BY EFGAD project in Ashkelon — floor 22, open sea views &amp; 70 m² terrace.
           </p>
           <a
             href="tel:054-731-2118"
@@ -176,9 +178,9 @@ export default function BrizaPenthouse() {
             style={{ color: "oklch(0.42 0.025 255)" }}
           >
             This penthouse features a large open living space connected to a
-            dining area and kitchen. The property includes multiple bedrooms, a
-            master suite, and direct access to a very large terrace with outdoor
-            seating and a private pool.
+            dining area and kitchen. The property includes 6 rooms with a master
+            suite, and direct access to a spacious 70 m² terrace with stunning
+            open sea views and outdoor seating area.
           </p>
         </div>
       </section>
