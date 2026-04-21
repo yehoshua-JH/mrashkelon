@@ -29,7 +29,7 @@ import { BLOG_POSTS } from "@/lib/data";
 const LOGO_WHITE =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white_1f2ffe27.webp";
 const FEATURED_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project-src_c3fc7609.jpg";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-clean_fcc3338e.png";
 
 const services = [
   { Icon: HomeIcon, title: "Property Purchase", description: "Expert guidance through every step of buying property in Ashkelon, from search to closing." },
@@ -113,25 +113,25 @@ export default function Home() {
 
             {/* Right: Featured Property Card */}
             <div>
-              <Link href="/property/luxury-high-rise" className="block group">
+              <Link href="/briza-penthouse" className="block group">
                 <div className="relative rounded-xl overflow-hidden shadow-2xl">
                   <div
                     className="text-center py-3 px-4"
                     style={{ backgroundColor: "var(--accent)" }}
                   >
                     <p className="font-bold text-lg tracking-wide" style={{ color: "var(--accent-foreground)" }}>
-                      SELLING FAST!
+                      LAST AVAILABLE!
                     </p>
                     <p className="text-sm" style={{ color: "rgba(34,40,60,0.80)" }}>
-                      Move in Now
+                      BRIZA BY EFGAD — Penthouse with Sea Views
                     </p>
                   </div>
                   <div className="relative">
                     <img
                       src={FEATURED_IMG}
-                      alt="Luxury high-rise development in Ashkelon"
+                      alt="BRIZA BY EFGAD Penthouse — Ashkelon"
                       className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      style={{ height: "350px" }}
+                      style={{ height: "350px", objectPosition: "center top" }}
                     />
                     <div
                       className="absolute top-4 right-0 font-bold text-xs px-4 py-2 rounded-l-md shadow-lg"
@@ -140,7 +140,7 @@ export default function Home() {
                         color: "var(--secondary-foreground)",
                       }}
                     >
-                      CLICK HERE →
+                      VIEW PROPERTY →
                     </div>
                   </div>
                 </div>
