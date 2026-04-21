@@ -57,46 +57,93 @@ export default function BrizaPenthouse() {
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────────────────── */}
-      <section className="w-full">
-        {/* Full image — no cropping, no overlay text (headline is baked into the image) */}
-        <div className="w-full" style={{ paddingTop: "64px" }}>
-          <img
-            src={HERO_IMAGE}
-            alt="BRIZA BY EFGAD — Last Available Stunning Penthouse with sea views"
-            className="w-full h-auto block"
-            style={{ display: "block", maxHeight: "90vh", objectFit: "contain", objectPosition: "center" }}
-          />
-        </div>
-        {/* CTA bar below the image */}
+      <section
+        className="relative w-full flex flex-col justify-end"
+        style={{
+          paddingTop: "64px",
+          minHeight: "85vh",
+          backgroundImage: `url(${HERO_IMAGE})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Dark gradient overlay */}
         <div
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5"
-          style={{ backgroundColor: "oklch(0.22 0.04 255)" }}
-        >
-          <p
-            className="text-sm md:text-base font-medium"
-            style={{ color: "rgba(255,255,255,0.85)" }}
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.80) 100%)",
+          }}
+        />
+
+        {/* BRIZA logo — top left */}
+        <div className="absolute top-20 left-6 md:left-10 z-10">
+          <div
+            className="border-2 p-3 inline-block"
+            style={{ borderColor: "oklch(0.72 0.12 75)" }}
           >
-            Located in the prestigious BRIZA BY EFGAD project in Ashkelon — floor 22, open sea views &amp; 70 m² terrace.
+            <p
+              className="text-xs font-bold tracking-widest leading-tight text-center"
+              style={{ color: "oklch(0.72 0.12 75)" }}
+            >
+              BRIZA
+              <br />
+              <span className="font-normal">BY EFGAD</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Headline text — bottom left */}
+        <div className="relative z-10 px-6 md:px-12 pb-8">
+          <h1
+            className="font-bold leading-tight mb-2"
+            style={{
+              fontFamily: "Georgia, serif",
+              fontSize: "clamp(2.2rem, 6vw, 4.5rem)",
+              color: "#ffffff",
+            }}
+          >
+            Last Available
+            <br />
+            <em
+              style={{
+                fontStyle: "italic",
+                color: "oklch(0.72 0.12 75)",
+              }}
+            >
+              Stunning
+            </em>
+            <br />
+            Penthouse,
+          </h1>
+          <p
+            className="text-xl md:text-2xl font-light mb-6"
+            style={{ color: "rgba(255,255,255,0.90)" }}
+          >
+            amazing sea views.
           </p>
+
+          {/* CTA button */}
           <a
             href="tel:054-731-2118"
-            className="inline-flex items-center gap-3 px-7 py-3 rounded font-semibold text-base transition-all duration-200 whitespace-nowrap"
+            className="inline-flex items-center gap-3 px-7 py-4 font-semibold text-base transition-all duration-200"
             style={{
-              backgroundColor: "oklch(0.72 0.12 75)",
-              color: "oklch(0.22 0.03 255)",
+              backgroundColor: "oklch(0.35 0.06 200)",
+              color: "#ffffff",
+              borderRadius: "4px",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.backgroundColor =
-                "oklch(0.82 0.10 75)";
+                "oklch(0.42 0.07 200)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.backgroundColor =
-                "oklch(0.72 0.12 75)";
+                "oklch(0.35 0.06 200)";
             }}
           >
             <svg
-              width="18"
-              height="18"
+              width="22"
+              height="22"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -107,7 +154,7 @@ export default function BrizaPenthouse() {
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
             <span>
-              Call now &nbsp;
+              Call now{" "}
               <span className="font-bold">054 7312 118</span>
             </span>
           </a>
