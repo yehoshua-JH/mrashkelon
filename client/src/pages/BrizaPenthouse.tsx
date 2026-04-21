@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-hero_d58348ff.jpg";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-clean_fcc3338e.png";
 
 const FLOOR_PLAN =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-floor-plan_a30e3a77.jpg";
@@ -55,97 +55,60 @@ export default function BrizaPenthouse() {
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────────────────── */}
-      <section
-        className="relative flex items-end"
-        style={{ minHeight: "90vh" }}
-      >
-        {/* Background image */}
+      <section className="w-full">
+        {/* Full image — no cropping, no overlay text (headline is baked into the image) */}
+        <div className="w-full" style={{ paddingTop: "64px" }}>
+          <img
+            src={HERO_IMAGE}
+            alt="BRIZA BY EFGAD — Last Available Stunning Penthouse with sea views"
+            className="w-full h-auto block"
+            style={{ display: "block", maxHeight: "90vh", objectFit: "contain", objectPosition: "center" }}
+          />
+        </div>
+        {/* CTA bar below the image */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${HERO_IMAGE})` }}
-        />
-        {/* Dark gradient overlay — bottom-heavy so text is readable */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(18,28,52,0.88) 0%, rgba(18,28,52,0.55) 45%, rgba(18,28,52,0.10) 100%)",
-          }}
-        />
-
-        {/* Content */}
-        <div className="relative container pb-16 pt-32">
-          <div className="max-w-2xl">
-            {/* Project badge */}
-            <span
-              className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded"
-              style={{
-                backgroundColor: "oklch(0.72 0.12 75 / 0.20)",
-                color: "oklch(0.72 0.12 75)",
-                border: "1px solid oklch(0.72 0.12 75 / 0.40)",
-              }}
+          className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5"
+          style={{ backgroundColor: "oklch(0.22 0.04 255)" }}
+        >
+          <p
+            className="text-sm md:text-base font-medium"
+            style={{ color: "rgba(255,255,255,0.85)" }}
+          >
+            Located in the prestigious BRIZA BY EFGAD project in Ashkelon — open sea views &amp; private pool.
+          </p>
+          <a
+            href="tel:054-731-2118"
+            className="inline-flex items-center gap-3 px-7 py-3 rounded font-semibold text-base transition-all duration-200 whitespace-nowrap"
+            style={{
+              backgroundColor: "oklch(0.72 0.12 75)",
+              color: "oklch(0.22 0.03 255)",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.backgroundColor =
+                "oklch(0.82 0.10 75)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.backgroundColor =
+                "oklch(0.72 0.12 75)";
+            }}
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              BRIZA BY EFGAD — Ashkelon
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>
+              Call now &nbsp;
+              <span className="font-bold">054 7312 118</span>
             </span>
-
-            {/* Headline */}
-            <h1
-              className="font-heading font-bold leading-tight mb-4"
-              style={{
-                fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
-                color: "oklch(1 0 0)",
-              }}
-            >
-              Last Available Stunning Penthouse,{" "}
-              <span style={{ color: "oklch(0.72 0.12 75)" }}>
-                amazing sea views.
-              </span>
-            </h1>
-
-            {/* Sub-headline */}
-            <p
-              className="text-base md:text-lg mb-8 leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.82)" }}
-            >
-              Located in the prestigious BRIZA BY EFGAD project in Ashkelon,
-              this penthouse offers open sea views and a spacious outdoor area.
-            </p>
-
-            {/* CTA */}
-            <a
-              href="tel:054-731-2118"
-              className="inline-flex items-center gap-3 px-7 py-4 rounded font-semibold text-base transition-all duration-200"
-              style={{
-                backgroundColor: "oklch(0.72 0.12 75)",
-                color: "oklch(0.22 0.03 255)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor =
-                  "oklch(0.82 0.10 75)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor =
-                  "oklch(0.72 0.12 75)";
-              }}
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              <span>
-                Call now &nbsp;
-                <span className="font-bold">054 7312 118</span>
-              </span>
-            </a>
-          </div>
+          </a>
         </div>
       </section>
 

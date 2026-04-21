@@ -138,9 +138,9 @@ export const PROPERTIES = [
       "The last available penthouse in the prestigious BRIZA BY EFGAD project in Ashkelon. This exceptional property offers open sea views, a very large terrace with a private pool, and a spacious open-plan living area.",
     details:
       "This penthouse features a large open living space connected to a dining area and kitchen. The property includes multiple bedrooms, a master suite, and direct access to a very large terrace with outdoor seating and a private pool.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-hero_d58348ff.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-clean_fcc3338e.png",
     galleryImages: [
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-hero_d58348ff.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-penthouse-clean_fcc3338e.png",
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-floor-plan_a30e3a77.jpg",
     ],
     specs: {
