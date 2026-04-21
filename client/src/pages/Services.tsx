@@ -136,9 +136,6 @@ export default function Services() {
                   surveys and site inspections
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-secondary mt-1">•</span> Evaluating potential rental incomes
-                </li>
-                <li className="flex items-start gap-2">
                   <span className="text-secondary mt-1">•</span> Providing an assessment on the net
                   return on investment (ROI)
                 </li>

@@ -4,11 +4,11 @@
 // - Hero: "About" title, beach bg at 30% opacity
 // - Main: "Mr Ashkelon is Motti Ben Yitzhack" h2 + gold divider
 // - Float-right formal photo, 3 paragraphs, Mr&Mrs banner centered
-// - "What We Offer" section: Sales, Investment, Rentals cards
+// - "What We Offer" section: Sales, Investment cards
 // - "Learn more about our services" CTA button
 // =============================================================
 
-import { Home, TrendingUp, Key } from "lucide-react";
+import { Home, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -33,12 +33,6 @@ const services = [
     title: "Investment",
     description:
       "Whether you are contemplating buying an investment property for the first time, undertaking a new development, adding to your existing portfolio, seeking advice to ensure that you are achieving the maximum potential from your holding(s) or want to sell, our Investment service can provide valuable independent advice to you.",
-  },
-  {
-    icon: Key,
-    title: "Rentals",
-    description:
-      "We have a number of apartments available for Long Term Vacation Rental. Please contact us for full details, availability and rental prices.",
   },
 ];
 
@@ -76,7 +70,7 @@ export default function About() {
               className="float-right ml-6 mb-4 w-48 md:w-56 rounded-lg shadow-md"
             />
             <p className="mb-6">
-              Mr Ashkelon specializes in property sales, rentals and management in the Ashkelon area.
+              Mr Ashkelon specializes in property sales and management in the Ashkelon area.
             </p>
             <p className="mb-6">
               Founded by Motti Ben Yitzhack, Mr Ashkelon has helped countless real estate investors
@@ -112,7 +106,7 @@ export default function About() {
           <h2 className="text-3xl font-heading font-bold text-foreground text-center mb-12">
             What We Offer
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {services.map((service) => (
               <Card
                 key={service.title}
