@@ -21,6 +21,7 @@ import Resources from "./pages/Resources";
 import BlogArticle from "./pages/BlogArticle";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import BrizaPenthouse from "./pages/BrizaPenthouse";
 import NotFound from "./pages/NotFound";
 
 function Router() {
@@ -37,6 +38,7 @@ function Router() {
       <Route path="/resources" component={Resources} />
       <Route path="/resources/:slug" component={BlogArticle} />
       <Route path="/contact" component={Contact} />
+      <Route path="/briza-penthouse" component={BrizaPenthouse} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
