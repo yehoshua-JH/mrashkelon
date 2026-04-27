@@ -74,7 +74,7 @@ export default function About() {
               Mr Ashkelon specializes in property sales and management in the Ashkelon area.
             </p>
             <p className="mb-6">
-              Founded by Motti Ben Yitzhack, Mr Ashkelon has helped countless real estate investors
+              Founded by Motti Yitzhack, Mr Ashkelon has helped countless real estate investors
               with the purchase of property and homes in the Ashkelon area. Motti has extensive
               experience in the real estate market in Israel and because he knows the ins and outs of
               this specific market he is able to make the process of buying property in Israel a more

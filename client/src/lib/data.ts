@@ -227,7 +227,7 @@ export const BLOG_POSTS = [
         "Complete guide for foreign nationals buying property in Ashkelon, Israel. Legal requirements, the buying process, taxes, and expert tips from local broker Motti.",
     },
     content: [
-      "Investing in a new home or piece of land is a detailed process that takes a fair amount of time and admin. First you need to find a property that interests you and only if it meets your specific requirements will you begin the process of applying for funding and filling out the relevant paperwork.",
+      "Investing in a new home or piece of land is a detailed process that takes a fair amount of time and planning. First you need to find a property that interests you and only if it meets your specific requirements will you begin the process of applying for funding and filling out the relevant paperwork.",
       "Investing in property in a different country brings a whole other set of requirements to the table.",
       "### Looking at Ashkelon",
       "Ashkelon is growing at a rapid pace and with so many incredible opportunities available to investors, property is being snatched up every month. This boom has also brought many new developments with it so if you're looking to make an investment in Israel, now is the time, and what better place than a beautiful city near the sea.",
@@ -352,11 +352,11 @@ export const ACCORDION_DATA = [
   {
     id: "about-ashkelon",
     title: "About Ashkelon",
-    content: `Ashkelon, the City of Gardens, is located along Israel's southern coast and is considered the capital of the Ashkelon District. It has recreation and tourism centres and is in a constant development boom. The city has a population of approximately 180,000 and its jurisdiction extends over 55,000 dunams, not far short of the size of Tel Aviv, making it one of Israel's largest population centres.
+    content: `Ashkelon, the City of Gardens, is located along Israel's southern coast and is considered the capital of the Southern district. It has recreation and tourism centres and is in a constant development boom. The city has a population of approximately 180,000 and its jurisdiction extends over 55,000 dunams, not far short of the size of Tel Aviv, making it one of Israel's largest population centres.
 
 The city's location between the sea and the outskirts of the desert give the residents a comfortable, temperate climate throughout the year.
 
-Ashkelon is one of the oldest cities in the world and is replete with history. At its centre there are ancient sites, among the rarest in the world, alongside green agricultural area extending into the horizon. In the last decade alone, Ashkelon has absorbed over 40,000 new residents including immigrants and young families who have been drawn by the charm of its quality of life.
+Ashkelon is one of the oldest cities in the world and is replete with history. At its centre there are ancient sites, among the rarest in the world, alongside green agricultural areas extending into the horizon. In the last decade alone, Ashkelon has absorbed over 40,000 new residents including immigrants and young families who have been drawn by the charm of its quality of life.
 
 Ashkelon surely must be one of Israel's best kept secrets and the ideal place to fulfil the dream of living in Israel. Sun, sea, beautiful beaches, clean, shopping facilities, schools, industry, excellent road and rail services and so much more…`,
   },
@@ -419,7 +419,8 @@ For more information, visit the [Jewish Agency for Israel](https://www.jewishage
     title: "Synagogues",
     content: `Ashkelon has more than 160 synagogues, the majority of which are Sephardi. There are a number of Ashkenaz synagogues, the most popular with the English speaking community being:
 
-- **Central Synagogue, Afridar** — Tel: (Gary Donovan) 08 6843171
+- **Central Synagogue, Afridar** — Tel: (Marc Steinberg) 0526647006
+- **Ohel Hanna** — Ashkenazi English speakers – Jonty 0525666600
 - **Barnea Synagogue** — Tel: 052 637 4667
 - **Chabad** — Rabbi Lieberman (English speaker), Tel: 08 675 4913
 - **Kehillat Netzach Israel** — 8 Harel Street, Tel: 08-6711370/1 (Conservative)`,
@@ -427,14 +428,11 @@ For more information, visit the [Jewish Agency for Israel](https://www.jewishage
   {
     id: "beaches",
     title: "Beaches",
-    content: `Ashkelon boasts 12 kilometres of stunning Mediterranean coastline with several beautiful beaches:
+    content: `The 10 kilometer-long Ashkelon beach attracts both local and out of towners beach-goers. Ashkelon, proclaimed a national tourism site, is rapidly developing this sphere.
 
-- **Delilah Beach** — The most popular beach, home to the Sea Park with water slides, restaurants, and a marina
-- **Barnea Beach** — A quieter, family-friendly beach in the north of the city
-- **Afridar Beach** — Close to the Afridar neighbourhood, popular with residents
-- **Shimshon Beach** — A relaxed beach in the southern part of the city
+Tourists and vacationers have at their disposal restaurants and pubs, sports facilities and heated swimming pools, two country clubs, an amphitheater, a tennis club, museums, cinemas, bowling alleys, fishing spots, and bathing beaches equipped with all the necessary amenities.
 
-All beaches are supervised by lifeguards during the summer season and are free to access.`,
+The Ashkelon Marina Area has a 600-vessel docking capacity making it one of the largest marinas in Israel.`,
   },
   {
     id: "public-transport",
@@ -445,7 +443,7 @@ The bus services are very comprehensive in Ashkelon with many local lines and In
 
 **Railways**
 
-The Ashkelon Railway Station is situated on the outskirts of the city. Trains run towards Tel Aviv and the North with connections to all parts of the country.
+The Ashkelon Railway Station is conveniently located. Trains run towards Tel Aviv and the North with connections to all parts of the country. The hi-speed train to Tel Aviv is just a 41 minute ride.
 
 **Taxi Services**
 

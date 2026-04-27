@@ -81,7 +81,7 @@ export default function Services() {
             <p>
               As a residential and commuter city, Ashkelon benefits from a sound development plan
               that provides excellent housing facilities, road and rail network and social facilities
-              for its 128,000 residents. In the city's commercial areas can be found many retail
+              for its 180,000 residents. In the city's commercial areas can be found many retail
               stores and service industry businesses and in its industrial zones several global name
               brands such as Carlsberg Brewery.
             </p>
