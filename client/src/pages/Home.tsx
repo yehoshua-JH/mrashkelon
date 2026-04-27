@@ -36,7 +36,6 @@ const services = [
   { Icon: FileText, title: "Legal & Documentation", description: "Full support with contracts, permits, and all legal paperwork in Hebrew and English." },
   { Icon: Hammer, title: "Contractor Management", description: "We oversee renovations and construction, managing trusted local contractors on your behalf." },
   { Icon: Plane, title: "Relocation Assistance", description: "Comprehensive help settling into life in Israel — from utilities to community connections." },
-  { Icon: Building, title: "Property Management", description: "Ongoing management of your property, whether you live locally or abroad." },
 ];
 
 const ashkelonHighlights = [
@@ -171,7 +170,7 @@ export default function Home() {
               </h2>
               <div className="w-16 h-1 mb-6 rounded-full" style={{ backgroundColor: "var(--secondary)" }} />
               <p className="text-base leading-relaxed mb-4" style={{ color: "var(--muted-foreground)" }}>
-                Motti and Susan Ben Yitzhack are licensed Anglo real estate brokers based in Ashkelon, Israel. With years of experience and deep local expertise, they specialize in helping English-speaking buyers navigate the Israeli property market with confidence and ease.
+                Motti and Susan Yitzhack are licensed Anglo real estate brokers based in Ashkelon, Israel. With years of experience and deep local expertise, they specialize in helping English-speaking buyers navigate the Israeli property market with confidence and ease.
               </p>
               <p className="text-base leading-relaxed mb-4" style={{ color: "var(--muted-foreground)" }}>
                 From finding your dream property to handling legal documentation, managing contractors, and assisting with every aspect of relocation — Motti and Susan provide a comprehensive, hands-on service that removes the stress from buying property abroad.

@@ -67,7 +67,7 @@ export default function About() {
           <div className="text-muted-foreground leading-relaxed">
             <img
               src={MOTTI_SUSAN_FORMAL}
-              alt="Motti and Susan Ben Yitzhack"
+              alt="Motti and Susan Yitzhack"
               className="float-right ml-6 mb-4 w-48 md:w-56 rounded-lg shadow-md"
             />
             <p className="mb-6">

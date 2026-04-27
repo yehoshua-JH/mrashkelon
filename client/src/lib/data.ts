@@ -179,9 +179,14 @@ export const PROPERTIES = [
       "Genesis is a premium residential tower project located in one of Jerusalem's most rapidly developing areas, offering a rare combination of open green views, modern infrastructure, and excellent connectivity.",
     details:
       "A 28-floor residential tower offering 3, 4 & 5 room apartments, each with a Mamad safe room, storage room, and underground parking. Situated in one of Jerusalem's most rapidly developing western neighbourhoods — close to shopping, schools, synagogues, and cultural landmarks.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_a964c6a2.jpeg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg",
     galleryImages: [
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_a964c6a2.jpeg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-tower-render_5d155ce3.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-interior_1cd10936.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-living-room_b2a5d329.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-lobby_216c139a.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-sunset_e389b2d2.jpg",
     ],
     specs: {
       Location: "Western Jerusalem",
