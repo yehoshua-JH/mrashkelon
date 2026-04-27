@@ -62,11 +62,11 @@ export const PROPERTIES = [
       "This stunning new high-rise development offers an unparalleled combination of modern design, premium amenities, and a prime location. With panoramic city and landscape views from every floor, this tower redefines luxury living in Israel.",
     details:
       "Each apartment features floor-to-ceiling windows, high-end finishes, central air conditioning, and private underground parking. Residents enjoy access to a state-of-the-art fitness center, rooftop terrace, concierge services, and beautifully landscaped communal gardens. The ground floor includes a stylish coffee shop and commercial spaces for everyday convenience.",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/tower-main_337bda60.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/tower-main_337bda60.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/tower-israeli_72609b13.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/tower-waterfront_d45c1362.jpg",
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
     ],
     specs: {
