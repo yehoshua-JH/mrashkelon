@@ -23,6 +23,7 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BrizaPenthouse from "./pages/BrizaPenthouse";
 import JerusalemProject from "./pages/JerusalemProject";
+import GenesisJerusalem from "./pages/GenesisJerusalem";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -43,6 +44,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/briza-penthouse" component={BrizaPenthouse} />
       <Route path="/jerusalem-project" component={JerusalemProject} />
+      <Route path="/genesis-jerusalem" component={GenesisJerusalem} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
