@@ -29,7 +29,7 @@ import { BLOG_POSTS } from "@/lib/data";
 const LOGO_WHITE =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white_1f2ffe27.webp";
 const FEATURED_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_e784a20d.jpeg";
 
 const services = [
   { Icon: HomeIcon, title: "Property Purchase", description: "Expert guidance through every step of buying property in Ashkelon, from search to closing." },
@@ -112,23 +112,23 @@ export default function Home() {
 
             {/* Right: Featured Property Card — Jerusalem Project */}
             <div>
-              <Link href="/jerusalem-project" className="block group">
+              <Link href="/genesis-jerusalem" className="block group">
                 <div className="relative rounded-xl overflow-hidden shadow-2xl">
                   <div
                     className="text-center py-3 px-4"
                     style={{ backgroundColor: "var(--accent)" }}
                   >
                     <p className="font-bold text-lg tracking-wide" style={{ color: "var(--accent-foreground)" }}>
-                      COMING SOON
+                      PRE-SALE NOW OPEN
                     </p>
                     <p className="text-sm" style={{ color: "rgba(34,40,60,0.80)" }}>
-                      Jerusalem Project — Register Your Interest
+                      Genesis Jerusalem — Register Your Interest
                     </p>
                   </div>
                   <div className="relative">
                     <img
                       src={FEATURED_IMG}
-                      alt="Jerusalem Project — Premium Property"
+                      alt="Genesis Jerusalem — Premium Residential Tower"
                       className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                       style={{ height: "350px", objectPosition: "center top" }}
                     />
