@@ -29,7 +29,7 @@ import { BLOG_POSTS } from "@/lib/data";
 const LOGO_WHITE =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white_1f2ffe27.webp";
 const FEATURED_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_e784a20d.jpeg";
 
 const services = [
   { Icon: HomeIcon, title: "Property Purchase", description: "Expert guidance through every step of buying property in Ashkelon, from search to closing." },
