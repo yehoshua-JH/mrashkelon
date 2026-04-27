@@ -1,8 +1,8 @@
 // =============================================================
-// MR. ASHKELON — Genesis Jerusalem Project Page
+// MR. ASHKELON — Genesis Jerusalem Project Page (Premium Edition)
 // Design: navy (oklch(0.285 0.055 255)), gold (oklch(0.72 0.12 75))
 // Georgia serif headings — matches existing site design exactly
-// Images: placeholder slots — replace src values when photos arrive
+// Sections: Hero → Overview → Key Details → Highlights → Gallery → Location → CTA
 // =============================================================
 
 import { useState } from "react";
@@ -25,94 +25,119 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
-  ImageIcon,
+  ArrowRight,
 } from "lucide-react";
 
 // ── Colours ───────────────────────────────────────────────────────────────────
-const NAVY = "oklch(0.285 0.055 255)";
-const GOLD = "oklch(0.72 0.12 75)";
-const MUTED = "oklch(0.42 0.025 255)";
-const CREAM = "oklch(0.975 0.008 80)";
+const NAVY   = "oklch(0.285 0.055 255)";
+const GOLD   = "oklch(0.72 0.12 75)";
+const MUTED  = "oklch(0.42 0.025 255)";
+const CREAM  = "oklch(0.975 0.008 80)";
+const DARK   = "oklch(0.16 0.04 255)";
 
-// ── Hero background — replace with real tower image URL when available ────────
-  const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_a964c6a2.jpeg";
+// ── Images ────────────────────────────────────────────────────────────────────
+const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg";
 
-// ── Gallery images — replace each src with real project photo URLs ─────────────
-// To add images: replace the src "" with the actual CDN URL for each photo.
-const GALLERY: { src: string; caption: string }[] = [
-  { src: "", caption: "Tower exterior" },
-  { src: "", caption: "Jerusalem hills view" },
-  { src: "", caption: "Lobby & entrance" },
-  { src: "", caption: "Living area" },
-  { src: "", caption: "Park & nature nearby" },
-  { src: "", caption: "Neighbourhood" },
+const GALLERY: { src: string; caption: string; category: string }[] = [
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg",
+    caption: "Jerusalem residential towers at sunset",
+    category: "Exterior",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-tower-render_5d155ce3.jpg",
+    caption: "Modern tower with green surroundings",
+    category: "Exterior",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-interior_1cd10936.jpg",
+    caption: "Premium living area with panoramic views",
+    category: "Interior",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-living-room_b2a5d329.jpg",
+    caption: "Luxury living room overlooking the city",
+    category: "Interior",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-lobby_216c139a.jpg",
+    caption: "Grand entrance lobby",
+    category: "Amenities",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-sunset_e389b2d2.jpg",
+    caption: "Jerusalem skyline at golden hour",
+    category: "Views",
+  },
 ];
 
 // ── Key Details ───────────────────────────────────────────────────────────────
 const KEY_DETAILS = [
-  { icon: Building2, label: "28-floor residential tower" },
-  { icon: BedDouble, label: "3, 4 & 5 room apartments" },
-  { icon: ShieldCheck, label: "Mamad in every apartment" },
-  { icon: Package, label: "Storage room included" },
-  { icon: Car, label: "Underground parking" },
-  { icon: MapPin, label: "Western Jerusalem" },
+  { icon: Building2, label: "28-Floor Tower",        sub: "Residential" },
+  { icon: BedDouble, label: "3, 4 & 5 Rooms",        sub: "Apartment sizes" },
+  { icon: ShieldCheck, label: "Mamad Included",       sub: "Every apartment" },
+  { icon: Package,   label: "Storage Room",           sub: "Private storage" },
+  { icon: Car,       label: "Underground Parking",    sub: "Secure & covered" },
+  { icon: MapPin,    label: "Western Jerusalem",      sub: "Prime location" },
 ];
 
 // ── Highlights ────────────────────────────────────────────────────────────────
 const HIGHLIGHTS = [
   {
     icon: Mountain,
-    title: "Open Views",
-    body: "Enjoy breathtaking panoramas of the Jerusalem hills, spectacular sunsets, and the iconic city skyline — all from the comfort of your own home.",
-    bg: CREAM,
+    number: "01",
+    title: "Open Views & Sunsets",
+    body: "Wake up to breathtaking panoramas of the Jerusalem hills. Watch the city transform at golden hour as the sun sets over the iconic skyline — a view that never grows old.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-sunset_e389b2d2.jpg",
   },
   {
     icon: Trees,
+    number: "02",
     title: "Lifestyle & Nature",
-    body: "Steps away from a beautiful park, a serene lake, and scenic walking and cycling trails — a rare combination of urban living and natural tranquillity.",
-    bg: "oklch(1 0 0)",
+    body: "Steps from a beautifully landscaped park, a serene lake, and scenic walking and cycling trails. Genesis Jerusalem offers a rare balance of urban convenience and natural tranquillity.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg",
   },
   {
     icon: Train,
+    number: "03",
     title: "Transport & Accessibility",
-    body: "Excellent connectivity via the Jerusalem Light Rail and major highways. Malha train station and the Begin Highway provide fast access to central Jerusalem, Tel Aviv, and beyond — making every commute effortless.",
-    bg: CREAM,
+    body: "Seamlessly connected via the Jerusalem Light Rail and the Begin Highway. Malha train station is minutes away, providing fast access to central Jerusalem, Tel Aviv, and beyond.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-tower-render_5d155ce3.jpg",
   },
   {
     icon: Sparkles,
-    title: "Luxury Amenities",
-    body: "Every apartment is designed to the highest standard, featuring premium finishes, a secure Mamad safe room, private storage, and underground parking.",
-    bg: "oklch(1 0 0)",
+    number: "04",
+    title: "Building Features",
+    body: "Every apartment is finished to the highest standard — featuring a secure Mamad safe room, private storage, underground parking, and premium materials throughout.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-lobby_216c139a.jpg",
   },
   {
     icon: Star,
-    title: "Location Benefits",
-    body: "Minutes from Hadassah Medical Centre, Malha Mall, Teddy Stadium, and the Jerusalem Biblical Zoo. Close to schools, synagogues, and all essential amenities — in one of Jerusalem's most rapidly developing western neighbourhoods.",
-    bg: CREAM,
+    number: "05",
+    title: "Location Advantages",
+    body: "Minutes from Hadassah Medical Centre, Malha Mall, Teddy Stadium, and the Jerusalem Biblical Zoo. Schools, synagogues, and all essential amenities are within easy reach.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-interior_1cd10936.jpg",
   },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
-function GoldDivider() {
+function GoldDivider({ align = "center" }: { align?: "center" | "left" }) {
   return (
     <div
-      className="mx-auto mb-10 rounded-full"
+      className={`mb-8 rounded-full ${align === "left" ? "" : "mx-auto"}`}
       style={{ width: "3.5rem", height: "3px", backgroundColor: GOLD }}
     />
   );
 }
 
-function PlaceholderImage({ caption, className = "" }: { caption: string; className?: string }) {
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      className={`flex flex-col items-center justify-center gap-2 rounded-xl ${className}`}
-      style={{ backgroundColor: "oklch(0.92 0.01 255)", border: "2px dashed oklch(0.75 0.03 255)" }}
+    <p
+      className="text-xs font-bold tracking-[0.2em] mb-3 uppercase"
+      style={{ color: GOLD }}
     >
-      <ImageIcon style={{ width: "2rem", height: "2rem", color: "oklch(0.60 0.04 255)" }} />
-      <span className="text-xs text-center px-2" style={{ color: "oklch(0.55 0.04 255)" }}>
-        {caption}
-      </span>
-    </div>
+      {children}
+    </p>
   );
 }
 
@@ -134,40 +159,44 @@ function Lightbox({
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center"
-      style={{ backgroundColor: "rgba(0,0,0,0.92)" }}
+      style={{ backgroundColor: "rgba(0,0,0,0.94)" }}
       onClick={onClose}
     >
       <button
-        className="absolute top-5 right-5 text-white opacity-80 hover:opacity-100 transition"
+        className="absolute top-5 right-5 text-white opacity-70 hover:opacity-100 transition"
         onClick={onClose}
         aria-label="Close"
       >
-        <X size={32} />
+        <X size={28} />
       </button>
       <button
-        className="absolute left-4 text-white opacity-80 hover:opacity-100 transition p-2"
+        className="absolute left-4 text-white opacity-70 hover:opacity-100 transition p-2"
         onClick={(e) => { e.stopPropagation(); onPrev(); }}
         aria-label="Previous"
       >
         <ChevronLeft size={40} />
       </button>
       <div
-        className="flex flex-col items-center max-w-4xl w-full px-16"
+        className="flex flex-col items-center max-w-5xl w-full px-16"
         onClick={(e) => e.stopPropagation()}
       >
-        {img.src ? (
-          <img
-            src={img.src}
-            alt={img.caption}
-            className="w-full max-h-[75vh] object-contain rounded-lg"
-          />
-        ) : (
-          <PlaceholderImage caption={img.caption} className="w-full h-64" />
-        )}
-        <p className="mt-4 text-sm text-white/70">{img.caption}</p>
+        <img
+          src={img.src}
+          alt={img.caption}
+          className="w-full max-h-[78vh] object-contain rounded-lg"
+        />
+        <div className="mt-4 flex items-center gap-3">
+          <span
+            className="text-xs font-bold tracking-widest px-2 py-1 rounded"
+            style={{ backgroundColor: GOLD, color: "#fff" }}
+          >
+            {img.category}
+          </span>
+          <p className="text-sm text-white/70">{img.caption}</p>
+        </div>
       </div>
       <button
-        className="absolute right-4 text-white opacity-80 hover:opacity-100 transition p-2"
+        className="absolute right-4 text-white opacity-70 hover:opacity-100 transition p-2"
         onClick={(e) => { e.stopPropagation(); onNext(); }}
         aria-label="Next"
       >
@@ -201,59 +230,59 @@ export default function GenesisJerusalem() {
     <div className="min-h-screen" style={{ backgroundColor: "oklch(1 0 0)" }}>
       <Navbar />
 
-      {/* ── 1. HERO ─────────────────────────────────────────────── */}
+      {/* ══════════════════════════════════════════════════════
+          SECTION 1 — HERO
+      ══════════════════════════════════════════════════════ */}
       <section
-        className="relative w-full flex flex-col justify-end"
+        className="relative w-full flex flex-col justify-end overflow-hidden"
         style={{
           paddingTop: "64px",
-          minHeight: "85vh",
-          backgroundImage: `linear-gradient(to bottom, rgba(10,18,40,0.60) 0%, rgba(10,18,40,0.78) 100%), url(${HERO_IMAGE})`,
+          minHeight: "92vh",
+          backgroundImage: `linear-gradient(to bottom, rgba(8,14,32,0.30) 0%, rgba(8,14,32,0.78) 80%), url(${HERO_IMAGE})`,
           backgroundSize: "cover",
-          backgroundPosition: "center center",
+          backgroundPosition: "top center",
         }}
       >
-        {/* Subtle gold shimmer overlay */}
+        {/* Gold shimmer overlay */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            background:
-              "radial-gradient(ellipse at 70% 30%, oklch(0.72 0.12 75 / 0.08) 0%, transparent 60%)",
+            background: "radial-gradient(ellipse at 65% 25%, oklch(0.72 0.12 75 / 0.07) 0%, transparent 55%)",
           }}
         />
 
-        {/* PRE-SALE badge */}
-        <div className="absolute top-20 left-6 md:left-10 z-10">
+        {/* PRE-SALE badge — top left */}
+        <div className="absolute top-24 left-6 md:left-12 z-10">
           <div
-            className="px-5 py-2 font-bold text-xs tracking-widest"
+            className="px-5 py-2 text-xs font-bold tracking-[0.18em]"
             style={{ backgroundColor: GOLD, color: "#fff" }}
           >
-            PRE-SALE
+            PRE-SALE NOW OPEN
           </div>
         </div>
 
-        {/* PRE-SALE gold ribbon top-right */}
-        <div className="absolute top-20 right-6 md:right-10 z-10">
+        {/* WESTERN JERUSALEM badge — top right */}
+        <div className="absolute top-24 right-6 md:right-12 z-10">
           <div
-            className="px-4 py-1.5 text-xs font-bold tracking-widest"
-            style={{ backgroundColor: "rgba(255,255,255,0.15)", color: GOLD, border: `1px solid ${GOLD}`, borderRadius: "2px" }}
+            className="px-4 py-2 text-xs font-bold tracking-[0.15em]"
+            style={{
+              backgroundColor: "rgba(255,255,255,0.10)",
+              color: GOLD,
+              border: `1px solid ${GOLD}`,
+            }}
           >
             WESTERN JERUSALEM
           </div>
         </div>
 
-        {/* Hero text */}
-        <div className="relative z-10 px-6 md:px-14 pb-14 max-w-3xl">
-          <p
-            className="text-sm font-bold tracking-widest mb-3"
-            style={{ color: GOLD }}
-          >
-            GENESIS JERUSALEM
-          </p>
+        {/* Hero content */}
+        <div className="relative z-10 px-6 md:px-14 pb-20 max-w-4xl">
+          <SectionLabel>GENESIS JERUSALEM</SectionLabel>
           <h1
-            className="font-bold leading-tight mb-4"
+            className="font-bold leading-[1.08] mb-5"
             style={{
               fontFamily: "Georgia, serif",
-              fontSize: "clamp(2.4rem, 6vw, 4.8rem)",
+              fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
               color: "#ffffff",
             }}
           >
@@ -264,33 +293,52 @@ export default function GenesisJerusalem() {
             in Western Jerusalem
           </h1>
           <p
-            className="text-lg md:text-xl font-light mb-8 max-w-xl"
-            style={{ color: "rgba(255,255,255,0.85)" }}
+            className="text-lg md:text-xl font-light mb-10 max-w-xl"
+            style={{ color: "rgba(255,255,255,0.80)", lineHeight: 1.7 }}
           >
             28 floors. Premium apartments. Open Jerusalem views.
           </p>
+
+          {/* Stat pills */}
+          <div className="flex flex-wrap gap-6 mb-10">
+            {[
+              { value: "28", label: "Floors" },
+              { value: "3–5", label: "Room Apartments" },
+              { value: "100%", label: "Mamad Included" },
+            ].map(({ value, label }) => (
+              <div key={label} className="flex flex-col">
+                <span
+                  className="text-3xl font-bold"
+                  style={{ fontFamily: "Georgia, serif", color: GOLD }}
+                >
+                  {value}
+                </span>
+                <span className="text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.55)" }}>
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
 
           {/* CTA buttons */}
           <div className="flex flex-wrap gap-4">
             <a
               href="tel:054-731-2118"
-              className="inline-flex items-center gap-2 px-7 py-4 font-semibold text-base rounded transition-all duration-200"
-              style={{ backgroundColor: NAVY, color: "#fff", border: `2px solid rgba(255,255,255,0.25)` }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.85")}
+              className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base transition-all duration-200"
+              style={{ backgroundColor: GOLD, color: "#fff" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
               Contact Us
+              <ArrowRight size={16} />
             </a>
             <a
               href="https://wa.me/972547312118"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-4 font-semibold text-base rounded transition-all duration-200"
+              className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base transition-all duration-200"
               style={{ backgroundColor: "#25D366", color: "#fff" }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.85")}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
             >
               <WASvg />
@@ -298,140 +346,238 @@ export default function GenesisJerusalem() {
             </a>
           </div>
         </div>
+
+        {/* Bottom gradient fade */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, oklch(1 0 0))" }}
+        />
       </section>
 
-      {/* ── 2. PROJECT DESCRIPTION ──────────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(1 0 0)" }}>
-        <div className="container max-w-3xl mx-auto text-center">
-          <h2
-            className="font-bold mb-3"
-            style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: NAVY }}
-          >
-            About Genesis Jerusalem
-          </h2>
-          <GoldDivider />
-          <p className="text-base md:text-lg leading-relaxed" style={{ color: MUTED }}>
-            Genesis is a premium residential tower project located in one of Jerusalem's most rapidly
-            developing areas, offering a rare combination of open green views, modern infrastructure,
-            and excellent connectivity.
-          </p>
+      {/* ══════════════════════════════════════════════════════
+          SECTION 2 — OVERVIEW
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-24" style={{ backgroundColor: "oklch(1 0 0)" }}>
+        <div className="container max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <SectionLabel>OVERVIEW</SectionLabel>
+              <h2
+                className="font-bold mb-4 leading-tight"
+                style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: NAVY }}
+              >
+                About Genesis Jerusalem
+              </h2>
+              <GoldDivider align="left" />
+              <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: MUTED }}>
+                Genesis is a premium residential tower project located in one of Jerusalem's most
+                rapidly developing areas, offering a rare combination of open green views, modern
+                infrastructure, and excellent connectivity.
+              </p>
+              <p className="text-base leading-relaxed" style={{ color: MUTED }}>
+                Designed for those who demand the very best — religious and traditional families,
+                young couples, and international investors seeking a foothold in one of the world's
+                most iconic cities.
+              </p>
+            </div>
+            <div className="relative">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg"
+                alt="Genesis Jerusalem tower"
+                className="w-full rounded-xl object-cover"
+                style={{ maxHeight: "420px", boxShadow: "0 20px 60px rgba(0,0,0,0.18)" }}
+              />
+              <div
+                className="absolute -bottom-5 -left-5 px-5 py-4 rounded-lg"
+                style={{ backgroundColor: NAVY, boxShadow: "0 8px 30px rgba(0,0,0,0.22)" }}
+              >
+                <p className="text-xs tracking-widest uppercase mb-1" style={{ color: GOLD }}>Status</p>
+                <p className="text-sm font-bold text-white">Pre-Sale Open</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── 3. KEY DETAILS ──────────────────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: CREAM }}>
+      {/* ══════════════════════════════════════════════════════
+          SECTION 3 — KEY DETAILS
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-24" style={{ backgroundColor: CREAM }}>
         <div className="container">
-          <h2
-            className="font-bold text-center mb-3"
-            style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: NAVY }}
-          >
-            Project Details
-          </h2>
-          <GoldDivider />
+          <div className="text-center mb-14">
+            <SectionLabel>SPECIFICATIONS</SectionLabel>
+            <h2
+              className="font-bold"
+              style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: NAVY }}
+            >
+              Project Details
+            </h2>
+            <GoldDivider />
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
-            {KEY_DETAILS.map(({ icon: Icon, label }) => (
+            {KEY_DETAILS.map(({ icon: Icon, label, sub }) => (
               <div
                 key={label}
-                className="flex flex-col items-center gap-3 p-6 rounded-xl transition-all duration-200"
-                style={{ backgroundColor: "oklch(1 0 0)", border: "1px solid oklch(0.88 0.01 255)" }}
+                className="flex flex-col items-center gap-3 p-7 rounded-xl transition-all duration-250 cursor-default"
+                style={{ backgroundColor: "oklch(1 0 0)", border: "1px solid oklch(0.90 0.01 255)" }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
                   el.style.borderColor = GOLD;
-                  el.style.boxShadow = "0 4px 20px oklch(0.72 0.12 75 / 0.12)";
-                  el.style.transform = "translateY(-2px)";
+                  el.style.boxShadow = "0 6px 28px oklch(0.72 0.12 75 / 0.13)";
+                  el.style.transform = "translateY(-3px)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "oklch(0.88 0.01 255)";
+                  el.style.borderColor = "oklch(0.90 0.01 255)";
                   el.style.boxShadow = "none";
                   el.style.transform = "translateY(0)";
                 }}
               >
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.12)" }}
+                  className="w-14 h-14 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.10)" }}
                 >
-                  <Icon style={{ width: "1.3rem", height: "1.3rem", color: GOLD, strokeWidth: 1.5 }} />
+                  <Icon style={{ width: "1.4rem", height: "1.4rem", color: GOLD, strokeWidth: 1.5 }} />
                 </div>
-                <span className="text-sm font-semibold text-center leading-snug" style={{ color: NAVY }}>
-                  {label}
-                </span>
+                <div className="text-center">
+                  <p className="text-sm font-bold leading-snug mb-1" style={{ color: NAVY }}>{label}</p>
+                  <p className="text-xs" style={{ color: MUTED }}>{sub}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 4. HIGHLIGHTS ───────────────────────────────────────── */}
-      {HIGHLIGHTS.map(({ icon: Icon, title, body, bg }, idx) => (
-        <section key={title} className="py-16" style={{ backgroundColor: bg }}>
-          <div className="container max-w-4xl mx-auto">
-            <div className={`flex flex-col md:flex-row items-start gap-8 ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
-              <div className="flex-shrink-0 flex flex-col items-center gap-3 pt-1">
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
-                >
-                  <Icon style={{ width: "1.6rem", height: "1.6rem", color: GOLD, strokeWidth: 1.5 }} />
+      {/* ══════════════════════════════════════════════════════
+          SECTION 4 — HIGHLIGHTS
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-6" style={{ backgroundColor: "oklch(1 0 0)" }}>
+        <div className="container">
+          <div className="text-center mb-14 pt-16">
+            <SectionLabel>WHY GENESIS JERUSALEM</SectionLabel>
+            <h2
+              className="font-bold"
+              style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: NAVY }}
+            >
+              Highlights
+            </h2>
+            <GoldDivider />
+          </div>
+        </div>
+
+        {HIGHLIGHTS.map(({ icon: Icon, number, title, body, image }, idx) => (
+          <div
+            key={title}
+            className={`flex flex-col ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+            style={{ minHeight: "420px" }}
+          >
+            {/* Image half */}
+            <div className="w-full md:w-1/2 relative overflow-hidden" style={{ minHeight: "300px" }}>
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover"
+                style={{ minHeight: "300px" }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: idx % 2 === 0
+                    ? "linear-gradient(to right, transparent 60%, oklch(1 0 0))"
+                    : "linear-gradient(to left, transparent 60%, oklch(1 0 0))",
+                }}
+              />
+            </div>
+
+            {/* Text half */}
+            <div
+              className={`w-full md:w-1/2 flex items-center px-8 md:px-14 py-14 ${idx % 2 === 0 ? "" : ""}`}
+              style={{ backgroundColor: "oklch(1 0 0)" }}
+            >
+              <div className="max-w-md">
+                <div className="flex items-center gap-4 mb-5">
+                  <span
+                    className="text-4xl font-bold"
+                    style={{ fontFamily: "Georgia, serif", color: "oklch(0.88 0.02 255)", lineHeight: 1 }}
+                  >
+                    {number}
+                  </span>
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.12)" }}
+                  >
+                    <Icon style={{ width: "1.1rem", height: "1.1rem", color: GOLD, strokeWidth: 1.5 }} />
+                  </div>
                 </div>
-              </div>
-              <div>
                 <h3
-                  className="font-bold mb-3"
-                  style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)", color: NAVY }}
+                  className="font-bold mb-3 leading-tight"
+                  style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)", color: NAVY }}
                 >
                   {title}
                 </h3>
-                <div className="mb-4 rounded-full" style={{ width: "2.5rem", height: "2px", backgroundColor: GOLD }} />
+                <div className="mb-5 rounded-full" style={{ width: "2.5rem", height: "2px", backgroundColor: GOLD }} />
                 <p className="text-base leading-relaxed" style={{ color: MUTED }}>{body}</p>
               </div>
             </div>
           </div>
-        </section>
-      ))}
+        ))}
+      </section>
 
-      {/* ── 5. IMAGE GALLERY ────────────────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: CREAM }}>
+      {/* ══════════════════════════════════════════════════════
+          SECTION 5 — GALLERY
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-24" style={{ backgroundColor: CREAM }}>
         <div className="container">
-          <h2
-            className="font-bold text-center mb-3"
-            style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: NAVY }}
-          >
-            Gallery
-          </h2>
-          <GoldDivider />
-          <p className="text-center text-sm mb-10" style={{ color: MUTED }}>
-            Project images coming soon — gallery will be updated when photography is available
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <SectionLabel>VISUAL TOUR</SectionLabel>
+            <h2
+              className="font-bold"
+              style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: NAVY }}
+            >
+              Gallery
+            </h2>
+            <GoldDivider />
+            <p className="text-sm" style={{ color: MUTED }}>
+              Click any image to view full screen
+            </p>
+          </div>
+
+          {/* Masonry-style grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
             {GALLERY.map((img, i) => (
-              img.src ? (
-                <button
-                  key={i}
-                  className="relative overflow-hidden rounded-xl group focus:outline-none"
-                  style={{ aspectRatio: "4/3" }}
-                  onClick={() => openLightbox(i)}
-                  aria-label={`View ${img.caption}`}
+              <button
+                key={i}
+                className={`relative overflow-hidden group focus:outline-none rounded-xl ${i === 0 ? "sm:col-span-2 sm:row-span-1" : ""}`}
+                style={{ aspectRatio: i === 0 ? "16/7" : "4/3" }}
+                onClick={() => openLightbox(i)}
+                aria-label={`View ${img.caption}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Hover overlay */}
+                <div
+                  className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: "linear-gradient(to top, rgba(8,14,32,0.78) 0%, transparent 55%)" }}
                 >
-                  <img
-                    src={img.src}
-                    alt={img.caption}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%)" }}
+                  <span
+                    className="text-xs font-bold tracking-widest mb-1 self-start px-2 py-0.5 rounded"
+                    style={{ backgroundColor: GOLD, color: "#fff" }}
                   >
-                    <p className="text-white text-sm font-medium">{img.caption}</p>
-                  </div>
-                </button>
-              ) : (
-                <div key={i} style={{ aspectRatio: "4/3", minHeight: "180px" }}>
-                  <PlaceholderImage caption={img.caption} className="w-full h-full" />
+                    {img.category}
+                  </span>
+                  <p className="text-white text-sm font-medium text-left">{img.caption}</p>
                 </div>
-              )
+              </button>
             ))}
           </div>
+
+          <p className="text-center text-xs mt-8" style={{ color: "oklch(0.65 0.02 255)" }}>
+            Additional project photography will be added as construction progresses.
+          </p>
         </div>
       </section>
 
@@ -439,49 +585,103 @@ export default function GenesisJerusalem() {
         <Lightbox images={GALLERY} index={lightboxIdx} onClose={closeLightbox} onPrev={prevImage} onNext={nextImage} />
       )}
 
-      {/* ── 6. TARGET AUDIENCE ──────────────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(1 0 0)" }}>
-        <div className="container max-w-3xl mx-auto text-center">
-          <div
-            className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6"
-            style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.12)" }}
-          >
-            <Users style={{ width: "1.5rem", height: "1.5rem", color: GOLD, strokeWidth: 1.5 }} />
+      {/* ══════════════════════════════════════════════════════
+          SECTION 6 — LOCATION / LIFESTYLE + TARGET AUDIENCE
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-24" style={{ backgroundColor: DARK }}>
+        <div className="container max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <SectionLabel>LOCATION & LIFESTYLE</SectionLabel>
+            <h2
+              className="font-bold"
+              style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: "#ffffff" }}
+            >
+              Everything Within Reach
+            </h2>
+            <div className="mx-auto mb-0 rounded-full" style={{ width: "3.5rem", height: "3px", backgroundColor: GOLD, marginTop: "1.5rem" }} />
           </div>
-          <h2
-            className="font-bold mb-3"
-            style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: NAVY }}
-          >
-            Who Is This For?
-          </h2>
-          <GoldDivider />
-          <p className="text-base md:text-lg leading-relaxed" style={{ color: MUTED }}>
-            Genesis Jerusalem is ideally suited for{" "}
-            <strong style={{ color: NAVY }}>religious and traditional families</strong>,{" "}
-            <strong style={{ color: NAVY }}>young couples</strong>, and{" "}
-            <strong style={{ color: NAVY }}>international buyers</strong> seeking a premium home
-            or investment property in one of the world's most iconic cities.
-          </p>
+
+          <div className="grid md:grid-cols-2 gap-10 mb-16">
+            {/* Nearby landmarks */}
+            <div
+              className="rounded-xl p-8"
+              style={{ backgroundColor: "oklch(0.20 0.04 255)", border: "1px solid oklch(0.30 0.04 255)" }}
+            >
+              <p className="text-xs font-bold tracking-widest mb-5 uppercase" style={{ color: GOLD }}>
+                Nearby
+              </p>
+              {[
+                { name: "Hadassah Medical Centre", dist: "5 min" },
+                { name: "Malha Mall", dist: "7 min" },
+                { name: "Teddy Stadium", dist: "8 min" },
+                { name: "Jerusalem Biblical Zoo", dist: "6 min" },
+                { name: "Jerusalem Light Rail", dist: "Walking distance" },
+                { name: "Begin Highway", dist: "Direct access" },
+              ].map(({ name, dist }) => (
+                <div
+                  key={name}
+                  className="flex items-center justify-between py-3"
+                  style={{ borderBottom: "1px solid oklch(0.28 0.04 255)" }}
+                >
+                  <span className="text-sm font-medium text-white">{name}</span>
+                  <span className="text-xs" style={{ color: GOLD }}>{dist}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Who is this for */}
+            <div className="flex flex-col justify-center">
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center mb-6"
+                style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.15)" }}
+              >
+                <Users style={{ width: "1.5rem", height: "1.5rem", color: GOLD, strokeWidth: 1.5 }} />
+              </div>
+              <p className="text-xs font-bold tracking-widest mb-3 uppercase" style={{ color: GOLD }}>
+                Who Is This For?
+              </p>
+              <h3
+                className="font-bold mb-4 leading-tight"
+                style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)", color: "#ffffff" }}
+              >
+                A Home for Every Vision
+              </h3>
+              <div className="mb-5 rounded-full" style={{ width: "2.5rem", height: "2px", backgroundColor: GOLD }} />
+              <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.72)" }}>
+                Genesis Jerusalem is ideally suited for{" "}
+                <strong style={{ color: "#ffffff" }}>religious and traditional families</strong>,{" "}
+                <strong style={{ color: "#ffffff" }}>young couples</strong>, and{" "}
+                <strong style={{ color: "#ffffff" }}>international buyers</strong> seeking a premium
+                home or investment property in one of the world's most iconic cities.
+              </p>
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Pre-sale pricing available for early registrants.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── 7. FINAL CTA ────────────────────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: NAVY }}>
+      {/* ══════════════════════════════════════════════════════
+          SECTION 7 — FINAL CTA
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-24" style={{ backgroundColor: NAVY }}>
         <div className="container max-w-2xl mx-auto text-center">
+          <SectionLabel>GET IN TOUCH</SectionLabel>
           <h2
             className="font-bold mb-4"
-            style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#ffffff" }}
+            style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: "#ffffff" }}
           >
             Interested in Genesis Jerusalem?
           </h2>
-          <div className="mx-auto mb-6 rounded-full" style={{ width: "3.5rem", height: "3px", backgroundColor: GOLD }} />
-          <p className="text-base md:text-lg mb-10 font-light" style={{ color: "rgba(255,255,255,0.80)" }}>
-            Contact us today for full details, floor plans, and pricing.
+          <div className="mx-auto mb-8 rounded-full" style={{ width: "3.5rem", height: "3px", backgroundColor: GOLD }} />
+          <p className="text-base md:text-lg mb-10 font-light" style={{ color: "rgba(255,255,255,0.78)" }}>
+            Contact us today for full details, floor plans, and pre-sale pricing.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:054-731-2118"
-              className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base rounded transition-all duration-200"
+              className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base transition-all duration-200"
               style={{ backgroundColor: GOLD, color: "#fff" }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
@@ -495,7 +695,7 @@ export default function GenesisJerusalem() {
               href="https://wa.me/972547312118"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base rounded transition-all duration-200"
+              className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base transition-all duration-200"
               style={{ backgroundColor: "#25D366", color: "#fff" }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
@@ -507,10 +707,10 @@ export default function GenesisJerusalem() {
         </div>
       </section>
 
-      {/* ── Contact Form ─────────────────────────────────────────── */}
+      {/* Contact Form */}
       <ContactForm
         title="Send Us a Message"
-        subtitle="We'll get back to you with full project details as soon as possible."
+        subtitle="We'll get back to you with full project details and pre-sale pricing as soon as possible."
         showContactInfo
       />
 
