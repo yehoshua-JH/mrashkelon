@@ -11,6 +11,47 @@ export const CONTACT = {
   twitter: "https://x.com/mrashkelon",
 };
 
+// =============================================================
+// HOW TO ADD A NEW PROPERTY
+// Copy the template below, fill in all fields, and add it to
+// the PROPERTIES array. The slug must be unique (URL-safe, no spaces).
+// Images: upload to CDN via `manus-upload-file --webdev` and paste the URL.
+// =============================================================
+//
+// PROPERTY TEMPLATE:
+// {
+//   slug: "my-property-slug",          // URL: /property/my-property-slug
+//   title: "Property Title",           // Main heading shown on card & detail page
+//   tagline: "Short tagline here",     // Subtitle shown on card
+//   location: "City / Neighbourhood", // Shown on card and detail page
+//   description: "One or two sentences describing the property.",
+//   details: "Longer paragraph with more detail about the property.",
+//   image: "https://cdn.example.com/main-image.jpg",  // Main card image
+//   galleryImages: [                   // Shown in the detail page gallery
+//     "https://cdn.example.com/image1.jpg",
+//     "https://cdn.example.com/image2.jpg",
+//   ],
+//   specs: {                           // Key-value pairs in the specs table
+//     Location: "City, Israel",
+//     Size: "100 sqm + 10 sqm balcony",
+//     Rooms: "3",
+//     Bathrooms: "2",
+//     Parking: "1 space",
+//     Features: "Sea view, storage room",
+//   },
+//   highlights: [                      // Bullet points shown as feature chips
+//     "Feature one",
+//     "Feature two",
+//     "Feature three",
+//   ],
+//   note: "Optional note shown at bottom of detail page.",
+//   seo: {
+//     title: "Property Title for Sale in City | Mr. Ashkelon",
+//     description: "SEO meta description, ~150 characters.",
+//   },
+// },
+// =============================================================
+
 export const PROPERTIES = [
   {
     slug: "luxury-high-rise",
@@ -54,10 +95,10 @@ export const PROPERTIES = [
   {
     slug: "penthouse",
     title: "Penthouse Apartment",
-    tagline: "Spacious luxury in Afridar, Ashkelon",
-    location: "Afridar, Ashkelon",
+    tagline: "Spacious luxury in Ashkelon",
+    location: "Ashkelon",
     description:
-      "This stunning penthouse apartment, built by the renowned Mivnim Neivim, offers an unparalleled combination of space, comfort, and location. With 125 square meters of living space, plus a 25-square-meter balcony, this home is perfect for those seeking luxury and convenience.",
+      "This stunning penthouse apartment offers an unparalleled combination of space, comfort, and location. With 125 square meters of living space, plus a 25-square-meter balcony, this home is perfect for those seeking luxury and convenience.",
     details:
       "The double-size master bedroom provides a private retreat, while the open-concept living area flows seamlessly to the spacious balcony, where you can enjoy a partial sea view and fresh coastal breezes. Located just five minutes from the beach.",
     image: "https://mrashkelon.com/wp-content/uploads/2025/02/image0-400x516.jpeg",
@@ -68,7 +109,7 @@ export const PROPERTIES = [
       "https://mrashkelon.com/wp-content/uploads/2025/02/image3-400x516.jpeg",
     ],
     specs: {
-      Location: "Afridar, Ashkelon",
+      Location: "Ashkelon",
       Size: "125 sqm + 25 sqm balcony",
       Rooms: "4 (including double-size master)",
       Bathrooms: "2.5",
@@ -81,13 +122,13 @@ export const PROPERTIES = [
       "Open-concept living area",
       "5 minutes from the beach",
       "2 private parking spaces",
-      "Built by Mivnim Neivim",
+      "Storage room included",
     ],
     note: "Contact us today for pricing and to schedule a viewing.",
     seo: {
-      title: "Penthouse Apartment for Sale in Afridar, Ashkelon | Mr. Ashkelon",
+      title: "Penthouse Apartment for Sale in Ashkelon | Mr. Ashkelon",
       description:
-        "Stunning 125 sqm penthouse with 25 sqm balcony and partial sea view in Afridar, Ashkelon. Built by Mivnim Neivim. Contact Mr. Ashkelon for details.",
+        "Stunning 125 sqm penthouse with 25 sqm balcony and partial sea view in Ashkelon. Contact Mr. Ashkelon for details.",
     },
   },
   {
@@ -311,7 +352,7 @@ export const ACCORDION_DATA = [
   {
     id: "about-ashkelon",
     title: "About Ashkelon",
-    content: `Ashkelon, the City of Gardens, is located along Israel's southern coast and is considered the capital of the Ashkelon District. It has recreation and tourism centres and is in a constant development boom. The city has a population of 128,000 and its jurisdiction extends over 55,000 dunams, not far short of the size of Tel Aviv, making it one of Israel's largest population centres.
+    content: `Ashkelon, the City of Gardens, is located along Israel's southern coast and is considered the capital of the Ashkelon District. It has recreation and tourism centres and is in a constant development boom. The city has a population of approximately 180,000 and its jurisdiction extends over 55,000 dunams, not far short of the size of Tel Aviv, making it one of Israel's largest population centres.
 
 The city's location between the sea and the outskirts of the desert give the residents a comfortable, temperate climate throughout the year.
 

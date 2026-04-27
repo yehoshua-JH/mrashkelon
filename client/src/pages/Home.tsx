@@ -110,25 +110,25 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Right: Featured Property Card */}
+            {/* Right: Featured Property Card — Jerusalem Project */}
             <div>
-              <Link href="/briza-penthouse" className="block group">
+              <Link href="/jerusalem-project" className="block group">
                 <div className="relative rounded-xl overflow-hidden shadow-2xl">
                   <div
                     className="text-center py-3 px-4"
                     style={{ backgroundColor: "var(--accent)" }}
                   >
                     <p className="font-bold text-lg tracking-wide" style={{ color: "var(--accent-foreground)" }}>
-                      LAST AVAILABLE!
+                      COMING SOON
                     </p>
                     <p className="text-sm" style={{ color: "rgba(34,40,60,0.80)" }}>
-                      BRIZA BY EFGAD — Penthouse with Sea Views
+                      Jerusalem Project — Register Your Interest
                     </p>
                   </div>
                   <div className="relative">
                     <img
                       src={FEATURED_IMG}
-                      alt="BRIZA BY EFGAD Penthouse — Ashkelon"
+                      alt="Jerusalem Project — Premium Property"
                       className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                       style={{ height: "350px", objectPosition: "center top" }}
                     />
@@ -139,7 +139,7 @@ export default function Home() {
                         color: "var(--secondary-foreground)",
                       }}
                     >
-                      VIEW PROPERTY →
+                      VIEW DETAILS →
                     </div>
                   </div>
                 </div>

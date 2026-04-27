@@ -59,9 +59,10 @@ export default function About() {
       <section className="py-16 md:py-24">
         <div className="container px-4 max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2">
-            Mr Ashkelon is Motti Ben Yitzhack
+            Mr &amp; Mrs Ashkelon
           </h2>
-          <div className="w-20 h-1 bg-secondary mb-8" />
+          <div className="w-20 h-1 bg-secondary mb-2" />
+          <p className="text-sm text-muted-foreground italic mb-8">Profile of Mrs Ashkelon to follow</p>
 
           <div className="text-muted-foreground leading-relaxed">
             <img

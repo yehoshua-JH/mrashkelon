@@ -53,8 +53,8 @@ export default function AboutAshkelon() {
                 <p>
                   Ashkelon, the City of Gardens, is located along Israel's southern coast and is
                   considered the capital of the Southern district. It has recreation and tourism
-                  centres and is in a constant development boom. The city has a population of
-                  128,000 and its jurisdiction extends over 55,000 dunams, not far short of the
+                  centres and is in a constant development boom. The city has a population of approximately
+                  180,000 and its jurisdiction extends over 55,000 dunams, not far short of the
                   size of Tel Aviv, making it one of Israel's largest population centres.
                 </p>
                 <p>
