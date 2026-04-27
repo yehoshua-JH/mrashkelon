@@ -83,7 +83,7 @@ export default function FeaturedProperties() {
                     asChild
                     className="bg-secondary text-secondary-foreground hover:bg-secondary/80"
                   >
-                    <Link href={`/property/${property.slug}`}>View Full Details</Link>
+                    <Link href={(property as any).customLink ?? `/property/${property.slug}`}>View Full Details</Link>
                   </Button>
                   <Button
                     asChild

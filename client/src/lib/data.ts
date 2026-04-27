@@ -171,6 +171,44 @@ export const PROPERTIES = [
     },
   },
   {
+    slug: "genesis-jerusalem",
+    title: "Genesis Jerusalem",
+    tagline: "Pre-Sale — Western Jerusalem luxury tower",
+    location: "Western Jerusalem",
+    description:
+      "Genesis is a premium residential tower project located in one of Jerusalem's most rapidly developing areas, offering a rare combination of open green views, modern infrastructure, and excellent connectivity.",
+    details:
+      "A 28-floor residential tower offering 3, 4 & 5 room apartments, each with a Mamad safe room, storage room, and underground parking. Situated in one of Jerusalem's most rapidly developing western neighbourhoods — close to shopping, schools, synagogues, and cultural landmarks.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_e784a20d.jpeg",
+    galleryImages: [
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_e784a20d.jpeg",
+    ],
+    specs: {
+      Location: "Western Jerusalem",
+      Floors: "28",
+      Apartments: "3, 4 & 5 rooms",
+      "Safe Room": "Mamad in every unit",
+      Storage: "Included",
+      Parking: "Underground",
+      Status: "Pre-Sale — register now",
+    },
+    highlights: [
+      "28-floor residential tower",
+      "3, 4 & 5 room apartments",
+      "Mamad in every apartment",
+      "Storage room included",
+      "Underground parking",
+      "Open Jerusalem hills views",
+    ],
+    note: "Pre-Sale now open. Contact us for pricing and floor plans.",
+    customLink: "/genesis-jerusalem",
+    seo: {
+      title: "Genesis Jerusalem — Premium Apartments for Sale | Mr. Ashkelon",
+      description:
+        "Genesis Jerusalem: 28-floor luxury residential tower in Western Jerusalem. Pre-sale now open. 3–5 room apartments with Mamad, storage, and underground parking.",
+    },
+  },
+  {
     slug: "briza-penthouse",
     title: "BRIZA BY EFGAD Penthouse",
     tagline: "Last available — stunning sea views",
