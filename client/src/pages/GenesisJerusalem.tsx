@@ -5,10 +5,11 @@
 // Sections: Hero → Overview → Key Details → Highlights → Gallery → Location → CTA
 // =============================================================
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import {
   Building2,
   MapPin,
@@ -141,68 +142,139 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-// ── Lightbox ──────────────────────────────────────────────────────────────────
+// ── Premium Lightbox (Dialog-based) ───────────────────────────────────────────
 function Lightbox({
   images,
   index,
+  open,
   onClose,
   onPrev,
   onNext,
 }: {
   images: typeof GALLERY;
   index: number;
+  open: boolean;
   onClose: () => void;
   onPrev: () => void;
   onNext: () => void;
 }) {
   const img = images[index];
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open, onPrev, onNext]);
+
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center"
-      style={{ backgroundColor: "rgba(0,0,0,0.94)" }}
-      onClick={onClose}
-    >
-      <button
-        className="absolute top-5 right-5 text-white opacity-70 hover:opacity-100 transition"
-        onClick={onClose}
-        aria-label="Close"
+    <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
+      <DialogContent
+        showCloseButton={false}
+        className="p-0 border-none overflow-hidden"
+        style={{
+          maxWidth: "90vw",
+          width: "90vw",
+          maxHeight: "92vh",
+          background: "rgba(4, 8, 20, 0.97)",
+          backdropFilter: "blur(8px)",
+          borderRadius: "12px",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.7)",
+        }}
       >
-        <X size={28} />
-      </button>
-      <button
-        className="absolute left-4 text-white opacity-70 hover:opacity-100 transition p-2"
-        onClick={(e) => { e.stopPropagation(); onPrev(); }}
-        aria-label="Previous"
-      >
-        <ChevronLeft size={40} />
-      </button>
-      <div
-        className="flex flex-col items-center max-w-5xl w-full px-16"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <img
-          src={img.src}
-          alt={img.caption}
-          className="w-full max-h-[78vh] object-contain rounded-lg"
-        />
-        <div className="mt-4 flex items-center gap-3">
+        {/* Close button */}
+        <button
+          className="absolute top-4 right-4 z-20 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200"
+          style={{
+            backgroundColor: "rgba(255,255,255,0.10)",
+            color: "#fff",
+            border: "1px solid rgba(255,255,255,0.18)",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.22)")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.10)")}
+          onClick={onClose}
+          aria-label="Close gallery"
+        >
+          <X size={18} />
+        </button>
+
+        {/* Counter */}
+        <div
+          className="absolute top-4 left-1/2 -translate-x-1/2 z-20 text-xs font-bold tracking-widest px-3 py-1 rounded-full"
+          style={{ backgroundColor: "rgba(255,255,255,0.10)", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.15)" }}
+        >
+          {index + 1} / {images.length}
+        </div>
+
+        {/* Image area */}
+        <div className="flex items-center justify-center w-full" style={{ minHeight: "60vh", maxHeight: "80vh", padding: "3.5rem 4.5rem" }}>
+          <img
+            key={img.src}
+            src={img.src}
+            alt={img.caption}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "74vh",
+              objectFit: "contain",
+              borderRadius: "8px",
+              display: "block",
+              margin: "0 auto",
+              animation: "galleryFadeIn 0.28s ease",
+            }}
+          />
+        </div>
+
+        {/* Caption bar */}
+        <div
+          className="flex items-center justify-center gap-3 pb-5 px-6"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "0.9rem" }}
+        >
           <span
-            className="text-xs font-bold tracking-widest px-2 py-1 rounded"
+            className="text-xs font-bold tracking-widest px-2 py-0.5 rounded"
             style={{ backgroundColor: GOLD, color: "#fff" }}
           >
             {img.category}
           </span>
-          <p className="text-sm text-white/70">{img.caption}</p>
+          <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>{img.caption}</p>
         </div>
-      </div>
-      <button
-        className="absolute right-4 text-white opacity-70 hover:opacity-100 transition p-2"
-        onClick={(e) => { e.stopPropagation(); onNext(); }}
-        aria-label="Next"
-      >
-        <ChevronRight size={40} />
-      </button>
-    </div>
+
+        {/* Left arrow */}
+        <button
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-11 h-11 rounded-full transition-all duration-200"
+          style={{
+            backgroundColor: "rgba(255,255,255,0.10)",
+            color: "#fff",
+            border: "1px solid rgba(255,255,255,0.18)",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.22)")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.10)")}
+          onClick={(e) => { e.stopPropagation(); onPrev(); }}
+          aria-label="Previous image"
+        >
+          <ChevronLeft size={22} />
+        </button>
+
+        {/* Right arrow */}
+        <button
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-11 h-11 rounded-full transition-all duration-200"
+          style={{
+            backgroundColor: "rgba(255,255,255,0.10)",
+            color: "#fff",
+            border: "1px solid rgba(255,255,255,0.18)",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.22)")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.10)")}
+          onClick={(e) => { e.stopPropagation(); onNext(); }}
+          aria-label="Next image"
+        >
+          <ChevronRight size={22} />
+        </button>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -581,9 +653,14 @@ export default function GenesisJerusalem() {
         </div>
       </section>
 
-      {lightboxIdx !== null && (
-        <Lightbox images={GALLERY} index={lightboxIdx} onClose={closeLightbox} onPrev={prevImage} onNext={nextImage} />
-      )}
+      <Lightbox
+        images={GALLERY}
+        index={lightboxIdx ?? 0}
+        open={lightboxIdx !== null}
+        onClose={closeLightbox}
+        onPrev={prevImage}
+        onNext={nextImage}
+      />
 
       {/* ══════════════════════════════════════════════════════
           SECTION 6 — LOCATION / LIFESTYLE + TARGET AUDIENCE
