@@ -92,7 +92,7 @@ export const PROPERTIES = [
   },
   {
     slug: "sea-view",
-    title: "Amazing Sea View Apartment",
+    title: "Amazing Sea Views with",
     tagline: "Breathtaking ocean views in Afridar",
     location: "Afridar, Ashkelon",
     description:
@@ -224,7 +224,7 @@ export const BLOG_POSTS = [
     slug: "aware-buying-property-ashkelon",
     title: "What to Be Aware of When Buying a Property in Ashkelon",
     excerpt:
-      "Israel's property sector is continuously evolving and many investors are seeing the potential of purchasing in up and coming areas such as Ashkelon.",
+      "Israel's property sector is continuously evolving and many investors recognize the potential of purchasing in up and coming areas such as Ashkelon.",
     date: "2024-11-10",
     readTime: "7 min read",
     category: "Buying Guide",
@@ -235,10 +235,10 @@ export const BLOG_POSTS = [
         "Essential due diligence checklist and key considerations for buying property in Ashkelon, Israel. Avoid common pitfalls with expert advice from Mr. Ashkelon.",
     },
     content: [
-      "Israel's property sector is continuously evolving and many investors are seeing the potential of purchasing in up and coming areas such as Ashkelon.",
+      "Israel's property sector is continuously evolving and many investors recognize the potential of purchasing in up and coming areas such as Ashkelon.",
       "If you are considering investing in a property, especially as a foreigner, there are a few things that you should probably be aware of before you begin the buying process.",
-      "1. If you happen to be living in a country such as the United States, you should be aware of the fact that Israeli properties are viewed a little differently to those in the States. For example, features such as hardwood floors or open plan kitchens might often be seen as luxuries in Israel while these features might be quite common in homes elsewhere in the world.",
-      "2. If you're bringing in money from your home country, it's wise to pay attention to the exchange rate as some contracts contain a price that's been based on the exchange rate hitting a certain level.",
+      "1. If you happen to be living in a country such as the United States, you should be aware of the fact that Israeli properties are viewed a little differently to those in the States. For example, features such as hardwood floors or walk in closets might often be seen as luxuries in Israel while these features might be quite common in homes elsewhere in the world.",
+      "2. If you're transferring money from your home country, it's wise to pay attention to the exchange rate as some contracts contain a price that's been based on the exchange rate hitting a certain level.",
       "3. Look out for potential price increases if you are investing in a property that's still under construction as prices are linked to the consumer price index.",
       "4. Keep in mind that Israel boasts a strong negotiation culture so almost every price can be negotiated. This is something that usually catches a lot of foreigners off-guard.",
       "5. Checking the land registry is part of the buying process in Israel and this is something that you or your lawyer will need to do yourself.",
@@ -338,7 +338,7 @@ Mayor of Ashkelon`,
   {
     id: "olim-info",
     title: "Information for Olim",
-    content: `**Glossary of Useful Administrative Terms**
+    content: `**Glossary of Useful planning Terms**
 
 - **Bituach Leumi** — The National Insurance
 - **Kupat Cholim** — Health Insurance fund

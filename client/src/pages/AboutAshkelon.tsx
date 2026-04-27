@@ -52,7 +52,7 @@ export default function AboutAshkelon() {
               <AccordionContent className="text-muted-foreground leading-relaxed space-y-4">
                 <p>
                   Ashkelon, the City of Gardens, is located along Israel's southern coast and is
-                  considered the capital of the Ashkelon District. It has recreation and tourism
+                  considered the capital of the Southern district. It has recreation and tourism
                   centres and is in a constant development boom. The city has a population of
                   128,000 and its jurisdiction extends over 55,000 dunams, not far short of the
                   size of Tel Aviv, making it one of Israel's largest population centres.
@@ -64,7 +64,7 @@ export default function AboutAshkelon() {
                 <p>
                   Ashkelon is one of the oldest cities in the world and is replete with history. At
                   its centre there are ancient sites, among the rarest in the world, alongside green
-                  agricultural area extending into the horizon. In the last decade alone, Ashkelon
+                  agricultural areas extending into the horizon. In the last decade alone, Ashkelon
                   has absorbed over 40,000 new residents including immigrants and young families who
                   have been drawn by the charm of its quality of life.
                 </p>
@@ -242,7 +242,11 @@ export default function AboutAshkelon() {
                     <span className="font-medium text-foreground">
                       Central Synagogue, Afridar
                     </span>{" "}
-                    — Tel: (Gary Donovan) 08 6843171
+                    — Tel: (Marc Steinberg) 0526647006
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground">Ohel Hanna</span>{" "}
+                    — Ashkenazi English speakers – Jonty 0525666600
                   </li>
                   <li>
                     <span className="font-medium text-foreground">Barnea Synagogue</span> — Tel:
@@ -266,13 +270,13 @@ export default function AboutAshkelon() {
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed space-y-3">
                 <p>
-                  The 10 kilometer-long Ashkelon beach attracts both local and foreign
+                  The 10 kilometer-long Ashkelon beach attracts both local and out of towners
                   beach-goers. Ashkelon, proclaimed a national tourism site, is rapidly developing
                   this sphere.
                 </p>
                 <p>
                   Tourists and vacationers have at their disposal restaurants and pubs, sports
-                  facilities and heated swimming pools, the "Ashkeluna" water amusement park, two
+                  facilities and heated swimming pools, two
                   country clubs, an amphitheater, a tennis club, museums, cinemas, bowling alleys,
                   fishing spots, and bathing beaches equipped with all the necessary amenities.
                 </p>
@@ -299,8 +303,9 @@ export default function AboutAshkelon() {
                 <div>
                   <p className="font-semibold text-foreground mb-1">Railways</p>
                   <p>
-                    The Ashkelon Railway Station is situated on the outskirts of the city. Trains
+                    The Ashkelon Railway Station is conveniently located. Trains
                     run towards Tel Aviv and the North with connections to all parts of the country.
+                    The hi-speed train to Tel Aviv is just a 41 minute ride.
                   </p>
                 </div>
                 <div>

@@ -74,7 +74,7 @@ export default function About() {
             </p>
             <p className="mb-6">
               Founded by Motti Ben Yitzhack, Mr Ashkelon has helped countless real estate investors
-              with the purchase of property and homes in the Ashkelon area. Ben has extensive
+              with the purchase of property and homes in the Ashkelon area. Motti has extensive
               experience in the real estate market in Israel and because he knows the ins and outs of
               this specific market he is able to make the process of buying property in Israel a more
               pleasant experience. His experience is especially helpful when it comes to navigating
@@ -85,7 +85,7 @@ export default function About() {
               Ashkelon is a beautiful coastal town that is situated towards the south of Israel.
               It's fast becoming the go-to area for property investors as development is happening at
               a rapid pace. Please get in touch if you're interested in finding out more about the
-              investment opportunities available in this area or if you're looking to relocate in the
+              investment opportunities available the city or if you're looking to relocate in the
               near future.
             </p>
           </div>

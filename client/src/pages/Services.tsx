@@ -41,7 +41,7 @@ export default function Services() {
               <div className="w-20 h-1 bg-secondary mb-6" />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Mr Ashkelon, the city's only Anglo Licensed Real Estate Broker, provides Sales
+                  Mr Ashkelon, the city's leading Anglo Licensed Real Estate Broker, provides Sales
                   Advice, Assistance, Management, Project Supervision and Investment consultancy
                   throughout the beautiful Mediterranean coastal city of Ashkelon.
                 </p>

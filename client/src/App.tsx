@@ -23,11 +23,13 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BrizaPenthouse from "./pages/BrizaPenthouse";
 import NotFound from "./pages/NotFound";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function Router() {
   return (
     <>
       <ScrollToTop />
+      <WhatsAppButton />
       <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
