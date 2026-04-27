@@ -179,9 +179,9 @@ export const PROPERTIES = [
       "Genesis is a premium residential tower project located in one of Jerusalem's most rapidly developing areas, offering a rare combination of open green views, modern infrastructure, and excellent connectivity.",
     details:
       "A 28-floor residential tower offering 3, 4 & 5 room apartments, each with a Mamad safe room, storage room, and underground parking. Situated in one of Jerusalem's most rapidly developing western neighbourhoods — close to shopping, schools, synagogues, and cultural landmarks.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_e784a20d.jpeg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_a964c6a2.jpeg",
     galleryImages: [
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_e784a20d.jpeg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_a964c6a2.jpeg",
     ],
     specs: {
       Location: "Western Jerusalem",

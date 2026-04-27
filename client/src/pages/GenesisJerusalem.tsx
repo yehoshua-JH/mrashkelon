@@ -35,7 +35,7 @@ const MUTED = "oklch(0.42 0.025 255)";
 const CREAM = "oklch(0.975 0.008 80)";
 
 // ── Hero background — replace with real tower image URL when available ────────
-// const HERO_IMAGE = "REPLACE_WITH_TOWER_IMAGE_URL";
+  const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-tower_a964c6a2.jpeg";
 
 // ── Gallery images — replace each src with real project photo URLs ─────────────
 // To add images: replace the src "" with the actual CDN URL for each photo.
@@ -75,7 +75,7 @@ const HIGHLIGHTS = [
   {
     icon: Train,
     title: "Transport & Accessibility",
-    body: "Excellent road and public transport connections to central Jerusalem, the light rail network, and major highways — making every commute effortless.",
+    body: "Excellent connectivity via the Jerusalem Light Rail and major highways. Malha train station and the Begin Highway provide fast access to central Jerusalem, Tel Aviv, and beyond — making every commute effortless.",
     bg: CREAM,
   },
   {
@@ -87,7 +87,7 @@ const HIGHLIGHTS = [
   {
     icon: Star,
     title: "Location Benefits",
-    body: "Situated in one of Jerusalem's most rapidly developing western neighbourhoods — close to shopping, schools, synagogues, and cultural landmarks.",
+    body: "Minutes from Hadassah Medical Centre, Malha Mall, Teddy Stadium, and the Jerusalem Biblical Zoo. Close to schools, synagogues, and all essential amenities — in one of Jerusalem's most rapidly developing western neighbourhoods.",
     bg: CREAM,
   },
 ];
@@ -207,11 +207,9 @@ export default function GenesisJerusalem() {
         style={{
           paddingTop: "64px",
           minHeight: "85vh",
-          // Replace the background below with the real tower image:
-          // backgroundImage: `url(${HERO_IMAGE})`,
-          background: `linear-gradient(135deg, oklch(0.18 0.06 255) 0%, oklch(0.28 0.055 255) 50%, oklch(0.22 0.05 255) 100%)`,
+          backgroundImage: `linear-gradient(to bottom, rgba(10,18,40,0.60) 0%, rgba(10,18,40,0.78) 100%), url(${HERO_IMAGE})`,
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "center center",
         }}
       >
         {/* Subtle gold shimmer overlay */}
@@ -233,15 +231,14 @@ export default function GenesisJerusalem() {
           </div>
         </div>
 
-        {/* Image placeholder note — remove when real image is added */}
-        <div
-          className="absolute top-20 right-6 md:right-10 z-10 flex items-center gap-2 px-4 py-2 rounded"
-          style={{ backgroundColor: "rgba(255,255,255,0.10)", border: "1px dashed rgba(255,255,255,0.30)" }}
-        >
-          <ImageIcon style={{ width: "1rem", height: "1rem", color: "rgba(255,255,255,0.60)" }} />
-          <span className="text-xs" style={{ color: "rgba(255,255,255,0.60)" }}>
-            Tower image — coming soon
-          </span>
+        {/* PRE-SALE gold ribbon top-right */}
+        <div className="absolute top-20 right-6 md:right-10 z-10">
+          <div
+            className="px-4 py-1.5 text-xs font-bold tracking-widest"
+            style={{ backgroundColor: "rgba(255,255,255,0.15)", color: GOLD, border: `1px solid ${GOLD}`, borderRadius: "2px" }}
+          >
+            WESTERN JERUSALEM
+          </div>
         </div>
 
         {/* Hero text */}
