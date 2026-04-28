@@ -37,12 +37,12 @@ const CREAM  = "oklch(0.975 0.008 80)";
 const DARK   = "oklch(0.16 0.04 255)";
 
 // ── Images ────────────────────────────────────────────────────────────────────
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg";
+const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png";
 
 const GALLERY: { src: string; caption: string; category: string }[] = [
   {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg",
-    caption: "Jerusalem residential towers at sunset",
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png",
+    caption: "Genesis Jerusalem tower — aerial view at sunset",
     category: "Exterior",
   },
   {
@@ -101,7 +101,7 @@ const HIGHLIGHTS = [
     number: "02",
     title: "Lifestyle & Nature",
     body: "Steps from a beautifully landscaped park, a serene lake, and scenic walking and cycling trails. Genesis Jerusalem offers a rare balance of urban convenience and natural tranquillity.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png",
   },
   {
     icon: Train,
@@ -459,7 +459,7 @@ export default function GenesisJerusalem() {
             </div>
             <div className="relative">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-towers-sunset_f6d09662.jpg"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png"
                 alt="Genesis Jerusalem tower"
                 className="w-full rounded-xl object-cover"
                 style={{ maxHeight: "420px", boxShadow: "0 20px 60px rgba(0,0,0,0.18)" }}
