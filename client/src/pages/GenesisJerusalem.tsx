@@ -46,31 +46,6 @@ const GALLERY: { src: string; caption: string; category: string }[] = [
     category: "Exterior",
   },
   {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-tower-render_5d155ce3.jpg",
-    caption: "Modern tower with green surroundings",
-    category: "Exterior",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-interior_1cd10936.jpg",
-    caption: "Premium living area with panoramic views",
-    category: "Interior",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-living-room_b2a5d329.jpg",
-    caption: "Luxury living room overlooking the city",
-    category: "Interior",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-lobby_216c139a.jpg",
-    caption: "Grand entrance lobby",
-    category: "Amenities",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-sunset_e389b2d2.jpg",
-    caption: "Jerusalem skyline at golden hour",
-    category: "Views",
-  },
-  {
     src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-floorplan-typical_fbdeaf41.jpg",
     caption: "Typical Floor Plan — Floors 2–22",
     category: "Floor Plan",
@@ -94,7 +69,7 @@ const HIGHLIGHTS = [
     number: "01",
     title: "Open Views & Sunsets",
     body: "Wake up to breathtaking panoramas of the Jerusalem hills. Watch the city transform at golden hour as the sun sets over the iconic skyline — a view that never grows old.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-sunset_e389b2d2.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png",
   },
   {
     icon: Trees,
@@ -108,21 +83,21 @@ const HIGHLIGHTS = [
     number: "03",
     title: "Transport & Accessibility",
     body: "Seamlessly connected via the Jerusalem Light Rail and the Begin Highway. Malha train station is minutes away, providing fast access to central Jerusalem, Tel Aviv, and beyond.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-tower-render_5d155ce3.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png",
   },
   {
     icon: Sparkles,
     number: "04",
     title: "Building Features",
     body: "Every apartment is finished to the highest standard — featuring a secure Mamad safe room, private storage, underground parking, and premium materials throughout.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-lobby_216c139a.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png",
   },
   {
     icon: Star,
     number: "05",
     title: "Location Advantages",
     body: "Minutes from Hadassah Medical Centre, Malha Mall, Teddy Stadium, and the Jerusalem Biblical Zoo. Schools, synagogues, and all essential amenities are within easy reach.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-interior_1cd10936.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png",
   },
 ];
 

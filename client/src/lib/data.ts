@@ -182,11 +182,7 @@ export const PROPERTIES = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png",
     galleryImages: [
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-tower-render_5d155ce3.jpg",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-interior_1cd10936.jpg",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/modern-living-room_b2a5d329.jpg",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/luxury-lobby_216c139a.jpg",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/jerusalem-sunset_e389b2d2.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-floorplan-typical_fbdeaf41.jpg",
     ],
     specs: {
       Location: "Western Jerusalem",
