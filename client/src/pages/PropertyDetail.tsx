@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { PROPERTIES } from "@/lib/data";
 import { CheckCircle, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -169,6 +169,7 @@ export default function PropertyDetail() {
       {/* Lightbox */}
       <Dialog open={lightboxIndex !== null} onOpenChange={() => setLightboxIndex(null)}>
         <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 border-none bg-black/95 flex items-center justify-center">
+          <DialogTitle className="sr-only">Property Image Gallery</DialogTitle>
           {lightboxIndex !== null && property && (
             <>
               <img

@@ -522,6 +522,138 @@ export default function GenesisJerusalem() {
       </section>
 
       {/* ══════════════════════════════════════════════════════
+          SECTION 3b — APARTMENT SPECIFICATIONS
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-24" style={{ backgroundColor: "oklch(1 0 0)" }}>
+        <div className="container max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <SectionLabel>APARTMENT FINISHES</SectionLabel>
+            <h2
+              className="font-bold"
+              style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: NAVY }}
+            >
+              What's Included in Every Apartment
+            </h2>
+            <GoldDivider />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Electricity & Smart Home",
+                items: [
+                  "Three-phase electrical supply",
+                  "Colour video intercom",
+                  "Smart home infrastructure",
+                  "Communications, phone & TV points in every room",
+                  "USB socket in kitchen & living room",
+                  "Master lighting switch at entrance",
+                  "Hot water timer",
+                ],
+              },
+              {
+                title: "Heating & Cooling",
+                items: [
+                  "Mini-central inverter air conditioning",
+                  "Underfloor heating",
+                ],
+              },
+              {
+                title: "Kitchen",
+                items: [
+                  "Fitted kitchen with built-in storage",
+                  "Three-phase socket for electric hob",
+                  "Quartz or equivalent stone worktop",
+                  "Flush-fit acrylic sink",
+                  "Pull-out tap",
+                  "Water point for refrigerator",
+                ],
+              },
+              {
+                title: "Bathrooms",
+                items: [
+                  "Floor-to-ceiling porcelain tiles (25×75, 30×60, 30×90)",
+                  "Wall-hung toilets with concealed cisterns",
+                  "4-way shower mixer in every bathroom",
+                  "Acrylic bath",
+                  "Floating vanity with integrated basin & mirror",
+                  "Water-saving fixtures",
+                ],
+              },
+              {
+                title: "Doors & Windows",
+                items: [
+                  "Designer entrance door",
+                  "Premium interior doors",
+                  "Timber door inside the Mamad",
+                  "Electric shutters (excluding Mamad & bedrooms)",
+                  "Motorised mechanism in living room",
+                  "Double-glazed insulating windows",
+                ],
+              },
+              {
+                title: "Flooring",
+                items: [
+                  "Porcelain throughout (3–4 room: 80×80 cm; 5 room: 100×100 cm)",
+                  "Balcony: anti-slip porcelain 33×33 & 65×15 cm",
+                  "Master bedroom: parquet option available",
+                ],
+              },
+              {
+                title: "Building & Common Areas",
+                items: [
+                  "Designer lobby with high ceilings",
+                  "Residents' club lounge",
+                  "4 lifts including 2 Shabbat lifts",
+                  "Stroller / storage room",
+                  "Private storage room per apartment",
+                  "Covered parking per apartment",
+                  "EV charging infrastructure",
+                  "Rooftop garden of approx. 450 m²",
+                ],
+              },
+              {
+                title: "Balcony",
+                items: [
+                  "Garden tap point included",
+                ],
+              },
+            ].map(({ title, items }) => (
+              <div
+                key={title}
+                className="rounded-xl p-6"
+                style={{
+                  backgroundColor: CREAM,
+                  border: "1px solid oklch(0.90 0.01 255)",
+                }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-2 h-8 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: GOLD }}
+                  />
+                  <h3
+                    className="font-bold text-base leading-tight"
+                    style={{ fontFamily: "Georgia, serif", color: NAVY }}
+                  >
+                    {title}
+                  </h3>
+                </div>
+                <ul className="space-y-2">
+                  {items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm" style={{ color: MUTED }}>
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: GOLD }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
           SECTION 4 — HIGHLIGHTS
       ══════════════════════════════════════════════════════ */}
       <section className="py-6" style={{ backgroundColor: "oklch(1 0 0)" }}>
