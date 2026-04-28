@@ -70,6 +70,11 @@ const GALLERY: { src: string; caption: string; category: string }[] = [
     caption: "Jerusalem skyline at golden hour",
     category: "Views",
   },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-floorplan-typical_fbdeaf41.jpg",
+    caption: "Typical Floor Plan — Floors 2–22",
+    category: "Floor Plan",
+  },
 ];
 
 // ── Key Details ───────────────────────────────────────────────────────────────
