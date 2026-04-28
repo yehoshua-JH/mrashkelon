@@ -26,8 +26,8 @@ import JerusalemProject from "./pages/JerusalemProject";
 import GenesisJerusalem from "./pages/GenesisJerusalem";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <>
       <ScrollToTop />

@@ -14,12 +14,20 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const submitMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      setFormData({ name: "", phone: "", email: "", message: "" });
+      setErrors({});
+    },
+  });
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -34,15 +42,15 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 500));
-    setSubmitted(true);
-    setFormData({ name: "", phone: "", email: "", message: "" });
-    setErrors({});
-    setIsSubmitting(false);
+    submitMutation.mutate({
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      email: formData.email.trim(),
+      message: formData.message.trim(),
+    });
   };
 
   return (
@@ -144,12 +152,17 @@ export default function Contact() {
                     <p className="text-destructive text-xs mt-1">{errors.message}</p>
                   )}
                 </div>
+                {submitMutation.isError && (
+                  <p className="text-destructive text-xs">
+                    Something went wrong. Please try again or contact us directly.
+                  </p>
+                )}
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={submitMutation.isPending}
                   className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg py-6"
                 >
-                  {isSubmitting ? "Sending..." : "SEND"}
+                  {submitMutation.isPending ? "Sending..." : "SEND"}
                 </Button>
               </form>
             )}

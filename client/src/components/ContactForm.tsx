@@ -1,6 +1,6 @@
 // =============================================================
 // MR. ASHKELON — ContactForm Component
-// Reusable contact form with validation
+// Reusable contact form with validation + real email notification
 // Icon set: Lucide Phone / Mail / MapPin in gold circular badges
 // — matches the Contact page icon style exactly
 // =============================================================
@@ -8,6 +8,7 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { CONTACT } from "@/lib/data";
+import { trpc } from "@/lib/trpc";
 
 interface ContactFormProps {
   title?: string;
@@ -23,6 +24,15 @@ export default function ContactForm({
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+
+  const submitMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+    },
+    onError: (err) => {
+      console.error("[ContactForm] Submission error:", err);
+    },
+  });
 
   const validate = () => {
     const e: Record<string, string> = {};
@@ -41,7 +51,12 @@ export default function ContactForm({
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    submitMutation.mutate({
+      name: form.name.trim(),
+      phone: form.phone.trim(),
+      email: form.email.trim(),
+      message: form.message.trim(),
+    });
   };
 
   const inputClass = (field: string) =>
@@ -132,21 +147,29 @@ export default function ContactForm({
               {errors.message && <p className="text-xs text-red-500 mt-1">{errors.message}</p>}
             </div>
 
+            {submitMutation.isError && (
+              <p className="text-xs text-red-500">
+                Something went wrong. Please try again or contact us directly.
+              </p>
+            )}
+
             <button
               type="submit"
-              className="w-full py-3 rounded font-semibold text-sm transition-all duration-200"
+              disabled={submitMutation.isPending}
+              className="w-full py-3 rounded font-semibold text-sm transition-all duration-200 disabled:opacity-60"
               style={{
                 backgroundColor: "oklch(0.72 0.12 75)",
                 color: "oklch(0.235 0.058 250)",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.82 0.10 75)";
+                if (!submitMutation.isPending)
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.82 0.10 75)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.backgroundColor = "oklch(0.72 0.12 75)";
               }}
             >
-              Send Message
+              {submitMutation.isPending ? "Sending..." : "Send Message"}
             </button>
           </form>
 
