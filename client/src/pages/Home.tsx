@@ -29,7 +29,7 @@ import { BLOG_POSTS } from "@/lib/data";
 const LOGO_WHITE =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white_1f2ffe27.webp";
 const FEATURED_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png";
 
 const services = [
   { Icon: HomeIcon, title: "Property Purchase", description: "Expert guidance through every step of buying property in Ashkelon, from search to closing." },
@@ -109,9 +109,9 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Right: Featured Property Card — BRIZA Penthouse */}
+            {/* Right: Featured Property Card — Genesis Jerusalem */}
             <div>
-              <Link href="/property/briza-penthouse" className="block group">
+              <Link href="/property/genesis-jerusalem" className="block group">
                 <div className="relative rounded-xl overflow-hidden shadow-2xl">
                   <div
                     className="text-center py-3 px-4"
@@ -121,13 +121,13 @@ export default function Home() {
                       FEATURED PROPERTY
                     </p>
                     <p className="text-sm" style={{ color: "rgba(34,40,60,0.80)" }}>
-                      BRIZA Penthouse — Last Available Unit
+                      Genesis Jerusalem — New Project
                     </p>
                   </div>
                   <div className="relative">
                     <img
                       src={FEATURED_IMG}
-                      alt="BRIZA Penthouse — Stunning Sea Views"
+                      alt="Genesis Jerusalem — Luxury Tower"
                       className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                       style={{ height: "350px", objectPosition: "center top" }}
                     />
