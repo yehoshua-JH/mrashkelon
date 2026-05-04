@@ -7,7 +7,6 @@ import { z } from "zod";
 import { Resend } from "resend";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
@@ -44,14 +43,15 @@ export const appRouter = router({
           .filter(Boolean)
           .join("\n\n");
 
-        // Send email via Resend
         const resendApiKey = process.env.RESEND_API_KEY;
         if (resendApiKey) {
           try {
             const resend = new Resend(resendApiKey);
+
+            // 1. Notification email to Motti
             await resend.emails.send({
-              from: "Mr. Ashkelon <motti@mrashkelon.com>",
-              to: ["moshe@jivehire.com"],
+              from: "Mr. Ashkelon Website <motti@mrashkelon.com>",
+              to: ["motti@mrashkelon.com"],
               replyTo: email,
               subject: `New Enquiry from ${name} — ${sourcePage}`,
               html: `
@@ -87,7 +87,49 @@ export const appRouter = router({
                 </div>
               `,
             });
-            console.log(`[Contact] Email sent via Resend to moshe@jivehire.com from page: ${sourcePage}`);
+
+            // 2. Auto-reply confirmation email to the visitor
+            await resend.emails.send({
+              from: "Motti Yitzhack — Mr. Ashkelon <motti@mrashkelon.com>",
+              to: [email],
+              subject: "Thank you for contacting Mr. Ashkelon",
+              html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                  <div style="text-align: center; margin-bottom: 24px;">
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white_1f2ffe27.webp"
+                      alt="Mr. Ashkelon"
+                      style="height: 60px; background: #1a2744; padding: 10px 20px; border-radius: 8px;"
+                    />
+                  </div>
+                  <h2 style="color: #1a2744; border-bottom: 2px solid #c9a84c; padding-bottom: 10px;">
+                    Thank You, ${name}!
+                  </h2>
+                  <p style="color: #444; line-height: 1.6;">
+                    Thank you for reaching out to Mr. Ashkelon. I have received your message and will be in touch with you shortly.
+                  </p>
+                  <p style="color: #444; line-height: 1.6;">
+                    In the meantime, feel free to call or WhatsApp me directly:
+                  </p>
+                  <ul style="color: #444; line-height: 2;">
+                    <li><strong>Israel:</strong> <a href="tel:054-731-2118" style="color: #1a2744;">054-731-2118</a></li>
+                    <li><strong>USA:</strong> <a href="tel:1-612-424-5387" style="color: #1a2744;">1-612-424-5387</a></li>
+                  </ul>
+                  <div style="margin-top: 24px; padding: 16px; background: #f0e8d0; border-left: 4px solid #c9a84c; border-radius: 4px;">
+                    <p style="margin: 0; color: #1a2744; font-style: italic;">
+                      "Making your property journey in Israel smooth, professional, and stress-free."
+                    </p>
+                    <p style="margin: 8px 0 0; color: #666; font-size: 13px;">— Motti Yitzhack, Mr. Ashkelon</p>
+                  </div>
+                  <p style="margin-top: 24px; color: #999; font-size: 12px; border-top: 1px solid #eee; padding-top: 12px;">
+                    Mr. Ashkelon Real Estate Brokers · Hatayassim St., Ashkelon 78573, Israel<br/>
+                    <a href="https://mrashkelon.com" style="color: #c9a84c;">mrashkelon.com</a>
+                  </p>
+                </div>
+              `,
+            });
+
+            console.log(`[Contact] Notification sent to motti@mrashkelon.com, auto-reply sent to ${email} — page: ${sourcePage}`);
           } catch (err) {
             console.error("[Contact] Resend email failed:", err);
           }
