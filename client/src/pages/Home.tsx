@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { PROPERTIES } from "@/lib/data";
 import { BLOG_POSTS } from "@/lib/data";
+import RealContactForm from "@/components/ContactForm";
 
 const LOGO_WHITE =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white_1f2ffe27.webp";
@@ -523,8 +524,8 @@ export default function Home() {
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {/* Contact Form */}
-            <ContactForm />
+            {/* Contact Form — wired to tRPC, sends email via Resend */}
+            <RealContactForm title="" subtitle="" showContactInfo={false} />
             {/* Contact Details — matches Contact page icon set exactly */}
             <div className="space-y-6">
               {/* Israel phone */}
@@ -591,70 +592,4 @@ export default function Home() {
   );
 }
 
-// ── Inline Contact Form ───────────────────────────────────────
-function ContactForm() {
-  return (
-    <form
-      className="space-y-4"
-      onSubmit={(e) => {
-        e.preventDefault();
-        alert("Thank you! We will be in touch shortly.");
-      }}
-    >
-      <div>
-        <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
-          Name <span style={{ color: "red" }}>*</span>
-        </label>
-        <input
-          type="text"
-          required
-          className="w-full px-3 py-2 rounded border text-sm"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }}
-          placeholder="Your full name"
-        />
-      </div>
-      <div>
-        <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
-          Phone
-        </label>
-        <input
-          type="tel"
-          className="w-full px-3 py-2 rounded border text-sm"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }}
-          placeholder="Your phone number"
-        />
-      </div>
-      <div>
-        <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
-          Email <span style={{ color: "red" }}>*</span>
-        </label>
-        <input
-          type="email"
-          required
-          className="w-full px-3 py-2 rounded border text-sm"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }}
-          placeholder="Your email address"
-        />
-      </div>
-      <div>
-        <label className="block text-sm font-medium mb-1" style={{ color: "var(--foreground)" }}>
-          Message <span style={{ color: "red" }}>*</span>
-        </label>
-        <textarea
-          required
-          rows={4}
-          className="w-full px-3 py-2 rounded border text-sm"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)", resize: "vertical" }}
-          placeholder="Tell us about your property needs..."
-        />
-      </div>
-      <button
-        type="submit"
-        className="w-full py-3 rounded font-semibold text-sm transition-colors"
-        style={{ backgroundColor: "var(--secondary)", color: "var(--secondary-foreground)" }}
-      >
-        Send Message
-      </button>
-    </form>
-  );
-}
+
