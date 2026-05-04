@@ -50,7 +50,7 @@ export const appRouter = router({
 
             // 1. Notification email to Motti
             await resend.emails.send({
-              from: "Mr. Ashkelon Website <motti@mrashkelon.com>",
+              from: "Mr. Ashkelon Website <onboarding@resend.dev>",
               to: ["motti@mrashkelon.com"],
               replyTo: email,
               subject: `New Enquiry from ${name} — ${sourcePage}`,
@@ -90,7 +90,7 @@ export const appRouter = router({
 
             // 2. Auto-reply confirmation email to the visitor
             await resend.emails.send({
-              from: "Motti Yitzhack — Mr. Ashkelon <motti@mrashkelon.com>",
+              from: "Motti Yitzhack — Mr. Ashkelon <onboarding@resend.dev>",
               to: [email],
               subject: "Thank you for contacting Mr. Ashkelon",
               html: `
