@@ -154,7 +154,7 @@ export default function BlogArticle() {
         </div>
       </section>
 
-      <ContactForm />
+      <ContactForm sourcePage="Blog Article" />
       <Footer />
     </div>
   );

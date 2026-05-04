@@ -76,7 +76,7 @@ export default function Resources() {
         </div>
       </section>
 
-      <ContactForm />
+      <ContactForm sourcePage="Resources Page" />
       <Footer />
     </div>
   );

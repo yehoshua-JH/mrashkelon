@@ -26,6 +26,7 @@ describe("contact.submit", () => {
       phone: "054-000-0000",
       email: "test@example.com",
       message: "I am interested in a property.",
+      sourcePage: "Genesis Jerusalem Page",
     });
     expect(result).toEqual({ success: true });
   });

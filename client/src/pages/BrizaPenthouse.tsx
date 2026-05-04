@@ -431,6 +431,7 @@ export default function BrizaPenthouse() {
 
       {/* ── Contact form ────────────────────────────────────── */}
       <ContactForm
+        sourcePage="Briza Penthouse Page"
         title="Send an Enquiry"
         subtitle="Fill in the form below and Motti will get back to you shortly about this property."
       />

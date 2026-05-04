@@ -114,6 +114,7 @@ export default function FeaturedProperties() {
       ))}
 
       <ContactForm
+        sourcePage="Featured Properties Page"
         title="Interested in a Property?"
         subtitle="Contact us to arrange a viewing or to discuss your requirements."
       />

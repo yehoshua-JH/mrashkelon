@@ -163,6 +163,7 @@ export default function PropertyDetail() {
         title="Interested in This Property?"
         subtitle="Get in touch and Motti will arrange a viewing at your convenience."
         showContactInfo={false}
+        sourcePage={`Property: ${property.title}`}
       />
       <Footer />
 

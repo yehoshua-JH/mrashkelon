@@ -136,7 +136,7 @@ export default function About() {
         </div>
       </section>
 
-      <ContactForm />
+      <ContactForm sourcePage="About Page" />
       <Footer />
     </div>
   );

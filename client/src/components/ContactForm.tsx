@@ -14,12 +14,14 @@ interface ContactFormProps {
   title?: string;
   subtitle?: string;
   showContactInfo?: boolean;
+  sourcePage?: string;
 }
 
 export default function ContactForm({
   title = "Get in Touch",
   subtitle = "Ready to find your dream property in Ashkelon? Contact us for a free consultation.",
   showContactInfo = true,
+  sourcePage = "Website",
 }: ContactFormProps) {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -56,6 +58,7 @@ export default function ContactForm({
       phone: form.phone.trim(),
       email: form.email.trim(),
       message: form.message.trim(),
+      sourcePage,
     });
   };
 

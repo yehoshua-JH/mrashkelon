@@ -525,7 +525,7 @@ export default function Home() {
           </div>
           <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Contact Form — wired to tRPC, sends email via Resend */}
-            <RealContactForm title="" subtitle="" showContactInfo={false} />
+            <RealContactForm title="" subtitle="" showContactInfo={false} sourcePage="Home Page" />
             {/* Contact Details — matches Contact page icon set exactly */}
             <div className="space-y-6">
               {/* Israel phone */}

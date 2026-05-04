@@ -28,12 +28,14 @@ export const appRouter = router({
           phone: z.string().max(30).optional().default(""),
           email: z.string().email("Invalid email").max(255),
           message: z.string().min(1, "Message is required").max(2000),
+          sourcePage: z.string().max(100).optional().default("Website"),
         })
       )
       .mutation(async ({ input }) => {
-        const { name, phone, email, message } = input;
+        const { name, phone, email, message, sourcePage } = input;
 
         const notificationContent = [
+          `**Page:** ${sourcePage}`,
           `**Name:** ${name}`,
           phone ? `**Phone:** ${phone}` : null,
           `**Email:** ${email}`,
@@ -48,9 +50,10 @@ export const appRouter = router({
           try {
             const resend = new Resend(resendApiKey);
             await resend.emails.send({
-              from: "Mr. Ashkelon <onboarding@resend.dev>",
+              from: "Mr. Ashkelon <motti@mrashkelon.com>",
               to: ["moshe@jivehire.com"],
-              subject: `New Enquiry from ${name} — Mr. Ashkelon`,
+              replyTo: email,
+              subject: `New Enquiry from ${name} — ${sourcePage}`,
               html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
                   <h2 style="color: #1a2744; border-bottom: 2px solid #c9a84c; padding-bottom: 10px;">
@@ -58,29 +61,33 @@ export const appRouter = router({
                   </h2>
                   <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
                     <tr>
-                      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold; width: 120px;">Name</td>
+                      <td style="padding: 8px 12px; background: #f0e8d0; font-weight: bold; width: 120px; color: #1a2744;">Page</td>
+                      <td style="padding: 8px 12px; border-bottom: 1px solid #eee; font-weight: bold; color: #c9a84c;">${sourcePage}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold; color: #1a2744;">Name</td>
                       <td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${name}</td>
                     </tr>
                     ${phone ? `<tr>
-                      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold;">Phone</td>
+                      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold; color: #1a2744;">Phone</td>
                       <td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${phone}</td>
                     </tr>` : ""}
                     <tr>
-                      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold;">Email</td>
-                      <td style="padding: 8px 12px; border-bottom: 1px solid #eee;"><a href="mailto:${email}">${email}</a></td>
+                      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold; color: #1a2744;">Email</td>
+                      <td style="padding: 8px 12px; border-bottom: 1px solid #eee;"><a href="mailto:${email}" style="color: #1a2744;">${email}</a></td>
                     </tr>
                     <tr>
-                      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold; vertical-align: top;">Message</td>
+                      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold; vertical-align: top; color: #1a2744;">Message</td>
                       <td style="padding: 8px 12px; border-bottom: 1px solid #eee; white-space: pre-wrap;">${message}</td>
                     </tr>
                   </table>
                   <p style="margin-top: 20px; color: #666; font-size: 12px;">
-                    Sent from mrashkelon.jivepilot.com contact form
+                    Sent from mrashkelon.com — ${sourcePage}
                   </p>
                 </div>
               `,
             });
-            console.log("[Contact] Email sent via Resend to moshe@jivehire.com");
+            console.log(`[Contact] Email sent via Resend to moshe@jivehire.com from page: ${sourcePage}`);
           } catch (err) {
             console.error("[Contact] Resend email failed:", err);
           }
@@ -90,7 +97,7 @@ export const appRouter = router({
 
         // Also send in-app Manus notification as supplement
         await notifyOwner({
-          title: `New Contact Form Submission from ${name}`,
+          title: `New Contact Form Submission from ${name} — ${sourcePage}`,
           content: notificationContent,
         });
 
