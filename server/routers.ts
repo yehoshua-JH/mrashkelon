@@ -137,11 +137,15 @@ export const appRouter = router({
           console.warn("[Contact] RESEND_API_KEY not set, skipping email");
         }
 
-        // Also send in-app Manus notification as supplement
-        await notifyOwner({
-          title: `New Contact Form Submission from ${name} — ${sourcePage}`,
-          content: notificationContent,
-        });
+        // Also send in-app Manus notification as supplement (optional — may not be configured on VPS)
+        try {
+          await notifyOwner({
+            title: `New Contact Form Submission from ${name} — ${sourcePage}`,
+            content: notificationContent,
+          });
+        } catch (err) {
+          console.warn("[Contact] notifyOwner skipped (not configured):", (err as Error).message);
+        }
 
         return { success: true };
       }),
