@@ -30,7 +30,7 @@ export default function FeaturedProperties() {
           Featured Properties
         </h1>
         <div className="relative flex flex-wrap justify-center gap-3">
-          {PROPERTIES.map((p) => (
+          {PROPERTIES.filter((p) => !p.hidden).map((p) => (
             <Button
               key={p.slug}
               asChild
@@ -44,7 +44,7 @@ export default function FeaturedProperties() {
       </section>
 
       {/* Properties */}
-      {PROPERTIES.map((property, index) => (
+      {PROPERTIES.filter((p) => !p.hidden).map((property, index) => (
         <section
           key={property.slug}
           id={property.slug}

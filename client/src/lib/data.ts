@@ -55,6 +55,7 @@ export const CONTACT = {
 export const PROPERTIES = [
   {
     slug: "luxury-high-rise",
+    hidden: true, // Same property as Genesis Jerusalem — hidden from listings
     title: "Luxury High-Rise Living",
     tagline: "Panoramic views & premium amenities",
     location: "Prime city center location",
