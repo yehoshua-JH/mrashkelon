@@ -429,7 +429,7 @@ export default function GenesisJerusalem() {
                 most iconic cities.
               </p>
             </div>
-            <div className="relative">
+            <div className="flex flex-col gap-3">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png"
                 alt="Genesis Jerusalem tower"
@@ -437,10 +437,10 @@ export default function GenesisJerusalem() {
                 style={{ maxHeight: "420px", boxShadow: "0 20px 60px rgba(0,0,0,0.18)" }}
               />
               <div
-                className="absolute -bottom-5 -left-5 px-5 py-4 rounded-lg"
-                style={{ backgroundColor: NAVY, boxShadow: "0 8px 30px rgba(0,0,0,0.22)" }}
+                className="inline-flex items-center gap-4 px-5 py-3 rounded-lg self-start"
+                style={{ backgroundColor: NAVY, boxShadow: "0 4px 16px rgba(0,0,0,0.18)" }}
               >
-                <p className="text-xs tracking-widest uppercase mb-1" style={{ color: GOLD }}>Status</p>
+                <p className="text-xs tracking-widest uppercase" style={{ color: GOLD }}>Status</p>
                 <p className="text-sm font-bold text-white">Pre-Sale Open</p>
               </div>
             </div>
