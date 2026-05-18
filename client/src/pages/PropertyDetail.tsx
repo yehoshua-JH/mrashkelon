@@ -12,7 +12,6 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { PROPERTIES } from "@/lib/data";
 import { CheckCircle, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -167,47 +166,56 @@ export default function PropertyDetail() {
       />
       <Footer />
 
-      {/* Lightbox */}
-      <Dialog open={lightboxIndex !== null} onOpenChange={() => setLightboxIndex(null)}>
-        <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 border-none bg-black/95 flex items-center justify-center">
-          <DialogTitle className="sr-only">Property Image Gallery</DialogTitle>
-          {lightboxIndex !== null && property && (
+      {/* Lightbox - full screen custom overlay */}
+      {lightboxIndex !== null && property && (
+        <div
+          className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
+          onClick={() => setLightboxIndex(null)}
+        >
+          <img
+            src={property.galleryImages[lightboxIndex]}
+            alt={`${property.title} - ${lightboxIndex + 1}`}
+            className="max-w-full max-h-full object-contain"
+            style={{ maxWidth: '100vw', maxHeight: '100vh' }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          {/* Close button */}
+          <button
+            onClick={() => setLightboxIndex(null)}
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors text-xl font-bold"
+          >
+            ✕
+          </button>
+          {property.galleryImages.length > 1 && (
             <>
-              <img
-                src={property.galleryImages[lightboxIndex]}
-                alt={`${property.title} - ${lightboxIndex + 1}`}
-                className="max-w-full max-h-[85vh] object-contain"
-              />
-              {property.galleryImages.length > 1 && (
-                <>
-                  <button
-                    onClick={() =>
-                      setLightboxIndex(
-                        (lightboxIndex - 1 + property.galleryImages.length) %
-                          property.galleryImages.length
-                      )
-                    }
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={() =>
-                      setLightboxIndex((lightboxIndex + 1) % property.galleryImages.length)
-                    }
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-                </>
-              )}
-              <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
-                {lightboxIndex + 1} / {property.galleryImages.length}
-              </span>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex(
+                    (lightboxIndex - 1 + property.galleryImages.length) %
+                      property.galleryImages.length
+                  );
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
+              >
+                <ChevronLeft className="w-7 h-7" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex((lightboxIndex + 1) % property.galleryImages.length);
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors"
+              >
+                <ChevronRight className="w-7 h-7" />
+              </button>
             </>
           )}
-        </DialogContent>
-      </Dialog>
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+            {lightboxIndex + 1} / {property.galleryImages.length}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
