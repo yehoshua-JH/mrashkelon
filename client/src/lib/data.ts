@@ -258,7 +258,7 @@ export const PROPERTIES = [
     description:
       "A delightful three room apartment in a sought after location in the heart of the Anglo area. This bright and well-maintained home offers everything you need for comfortable living in Ashkelon's most popular English-speaking neighbourhood.",
     details:
-      "The apartment features a high quality kitchen, a Mamad safe room, a spacious open-plan living and dining area, and a private balcony. The building is well-maintained with a welcoming entrance lobby. Located steps from local amenities, synagogues, and the vibrant Anglo community.",
+      "The apartment features a high quality kitchen, a Mamad safe room, a spacious open-plan living and dining area, and a private balcony. Situated on the 8th floor of a 9-storey building with a Shabbat elevator, the apartment comes with private parking. The building is well-maintained with a welcoming entrance lobby. Located close to bus lines, shops, Ashkelon Marina and beach, and both Sephardic and Ashkenazi synagogues.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/anglo-apt-building_47d8a15a.png",
     galleryImages: [
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/anglo-apt-building_47d8a15a.png",
@@ -275,24 +275,27 @@ export const PROPERTIES = [
     ],
     specs: {
       Location: "Anglo Area, Ashkelon",
+      Floor: "8 of 9",
       Rooms: "3",
+      Size: "80 m²",
+      Parking: "Private parking",
+      Elevator: "Shabbat elevator",
       Features: "High quality kitchen, Mamad, balcony",
-      "Living Area": "Spacious open-plan living & dining",
       Status: "Available now",
     },
     highlights: [
       "Heart of the Anglo community",
-      "High quality kitchen",
-      "Mamad safe room",
-      "Spacious living & dining area",
-      "Private balcony",
-      "Well-maintained building",
+      "Floor 8 of 9 with Shabbat elevator",
+      "80 m² — spacious 3-room layout",
+      "Private parking included",
+      "High quality kitchen & Mamad",
+      "Close to Marina, beach & synagogues",
     ],
     note: "Contact us for pricing and to arrange a viewing.",
     seo: {
       title: "3-Room Apartment for Sale in Anglo Area, Ashkelon | Mr. Ashkelon",
       description:
-        "Delightful 3-room apartment in the heart of Ashkelon's Anglo area. High quality kitchen, Mamad, spacious living area and balcony. Contact Mr. Ashkelon.",
+        "Delightful 3-room apartment (80 m²) on floor 8 of 9 in Ashkelon's Anglo area. Private parking, Shabbat elevator, Mamad, high quality kitchen. Close to Marina, beach and synagogues.",
     },
   },
 ];
