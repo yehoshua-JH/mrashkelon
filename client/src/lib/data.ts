@@ -102,12 +102,12 @@ export const PROPERTIES = [
       "This stunning penthouse apartment offers an unparalleled combination of space, comfort, and location. With 125 square meters of living space, plus a 25-square-meter balcony, this home is perfect for those seeking luxury and convenience.",
     details:
       "The double-size master bedroom provides a private retreat, while the open-concept living area flows seamlessly to the spacious balcony, where you can enjoy a partial sea view and fresh coastal breezes. Located just five minutes from the beach.",
-    image: "https://mrashkelon.com/wp-content/uploads/2025/02/image0-400x516.jpeg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image0-400x516_eaefe592.jpeg",
     galleryImages: [
-      "https://mrashkelon.com/wp-content/uploads/2025/02/image0-400x516.jpeg",
-      "https://mrashkelon.com/wp-content/uploads/2025/02/image1-400x516.jpeg",
-      "https://mrashkelon.com/wp-content/uploads/2025/02/image2-400x516.jpeg",
-      "https://mrashkelon.com/wp-content/uploads/2025/02/image3-400x516.jpeg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image0-400x516_eaefe592.jpeg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image1-400x516_6b98bc1d.jpeg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image2-400x516_2c5fd251.jpeg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image3-400x516_ce215583.jpeg",
     ],
     specs: {
       Location: "Ashkelon",
@@ -141,12 +141,12 @@ export const PROPERTIES = [
       "This beautiful apartment offers a perfect blend of luxury and convenience. With 130 square meters of living space and a 13-square-meter patio, this home is designed for those who appreciate both comfort and style.",
     details:
       "The four bedrooms include a spacious master bedroom with an en suite bathroom, providing a private retreat. The modern kitchen island is perfect for culinary enthusiasts. Enjoy breathtaking ocean views from your patio.",
-    image: "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0008-400x284.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/IMG-20250316-WA0008-400x284_342814f6.jpg",
     galleryImages: [
-      "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0008-400x284.jpg",
-      "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0010-400x284.jpg",
-      "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0013-400x284.jpg",
-      "https://mrashkelon.com/wp-content/uploads/2025/03/IMG-20250316-WA0012-400x284.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/IMG-20250316-WA0008-400x284_342814f6.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/IMG-20250316-WA0010-400x284_14c7cbfb.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/IMG-20250316-WA0013-400x284_f25c1f73.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/IMG-20250316-WA0012-400x284_c7c03f30.jpg",
     ],
     specs: {
       Location: "Afridar, Ashkelon",
@@ -260,7 +260,7 @@ export const BLOG_POSTS = [
     date: "2025-03-15",
     readTime: "8 min read",
     category: "Buying Guide",
-    image: "https://mrashkelon.com/wp-content/uploads/2016/10/Ashkelon-Israel_Mr-Ashkelon.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/Ashkelon-Israel_Mr-Ashkelon_6b6c1b12.jpg",
     seo: {
       title: "Foreigner's Guide to Buying Property in Ashkelon, Israel | Mr. Ashkelon",
       description:
@@ -286,7 +286,7 @@ export const BLOG_POSTS = [
     date: "2025-01-20",
     readTime: "10 min read",
     category: "Building Guide",
-    image: "https://mrashkelon.com/wp-content/uploads/2022/02/Depositphotos_339337302_L.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/Depositphotos_339337302_L_fd78ca0a.jpg",
     seo: {
       title: "Building a House in Ashkelon, Israel: Complete Guide | Mr. Ashkelon",
       description:
@@ -309,7 +309,7 @@ export const BLOG_POSTS = [
     date: "2024-11-10",
     readTime: "7 min read",
     category: "Buying Guide",
-    image: "https://mrashkelon.com/wp-content/uploads/2022/02/Depositphotos_295423952_L.jpg",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/Depositphotos_295423952_L_ecb6afd2.jpg",
     seo: {
       title: "What to Know Before Buying Property in Ashkelon | Mr. Ashkelon",
       description:
