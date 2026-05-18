@@ -250,6 +250,51 @@ export const PROPERTIES = [
         "Last available penthouse in the BRIZA BY EFGAD project, Ashkelon. Floor 22, open sea views, 70 m\u00b2 terrace, 6 rooms. Contact Mr. Ashkelon for details.",
     },
   },
+  {
+    slug: "anglo-area-apartment",
+    title: "3-Room Apartment in the Anglo Area",
+    tagline: "Delightful home in the heart of the Anglo community",
+    location: "Anglo Area, Ashkelon",
+    description:
+      "A delightful three room apartment in a sought after location in the heart of the Anglo area. This bright and well-maintained home offers everything you need for comfortable living in Ashkelon's most popular English-speaking neighbourhood.",
+    details:
+      "The apartment features a high quality kitchen, a Mamad safe room, a spacious open-plan living and dining area, and a private balcony. The building is well-maintained with a welcoming entrance lobby. Located steps from local amenities, synagogues, and the vibrant Anglo community.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/anglo-apt-building_47d8a15a.png",
+    galleryImages: [
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/anglo-apt-building_47d8a15a.png",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_01_41c072a6.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_02_3cd5cb6f.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_03_24d0e1ce.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_04_a330f244.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_05_4727bf9f.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_06_97c7be0e.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_07_8d73f2eb.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_08_4f8d0726.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_09_b1687de8.jpg",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/interior_10_c43c7e83.jpg",
+    ],
+    specs: {
+      Location: "Anglo Area, Ashkelon",
+      Rooms: "3",
+      Features: "High quality kitchen, Mamad, balcony",
+      "Living Area": "Spacious open-plan living & dining",
+      Status: "Available now",
+    },
+    highlights: [
+      "Heart of the Anglo community",
+      "High quality kitchen",
+      "Mamad safe room",
+      "Spacious living & dining area",
+      "Private balcony",
+      "Well-maintained building",
+    ],
+    note: "Contact us for pricing and to arrange a viewing.",
+    seo: {
+      title: "3-Room Apartment for Sale in Anglo Area, Ashkelon | Mr. Ashkelon",
+      description:
+        "Delightful 3-room apartment in the heart of Ashkelon's Anglo area. High quality kitchen, Mamad, spacious living area and balcony. Contact Mr. Ashkelon.",
+    },
+  },
 ];
 
 export const BLOG_POSTS = [
