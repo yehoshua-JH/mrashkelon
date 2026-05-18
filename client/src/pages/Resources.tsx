@@ -24,7 +24,7 @@ export default function Resources() {
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
             backgroundImage:
-              "url(https://mrashkelon.com/wp-content/uploads/2016/10/Ashkelon-Israel_Mr-Ashkelon.jpg)",
+              "url(https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/Ashkelon-Israel_Mr-Ashkelon_6b6c1b12.jpg)",
           }}
         />
         <div className="relative text-center px-4">

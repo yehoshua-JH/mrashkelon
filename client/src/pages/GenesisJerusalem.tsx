@@ -303,32 +303,29 @@ export default function GenesisJerusalem() {
           }}
         />
 
-        {/* PRE-SALE badge — top left */}
-        <div className="absolute top-24 left-6 md:left-12 z-10">
-          <div
-            className="px-5 py-2 text-xs font-bold tracking-[0.18em]"
-            style={{ backgroundColor: GOLD, color: "#fff" }}
-          >
-            PRE-SALE NOW OPEN
-          </div>
-        </div>
-
-        {/* WESTERN JERUSALEM badge — top right */}
-        <div className="absolute top-24 right-6 md:right-12 z-10">
-          <div
-            className="px-4 py-2 text-xs font-bold tracking-[0.15em]"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.10)",
-              color: GOLD,
-              border: `1px solid ${GOLD}`,
-            }}
-          >
-            WESTERN JERUSALEM
-          </div>
-        </div>
+        {/* PRE-SALE badge + WESTERN JERUSALEM badge — inside hero content, not absolute */}
 
         {/* Hero content */}
         <div className="relative z-10 px-6 md:px-14 pb-20 max-w-4xl">
+          {/* Badges row */}
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div
+              className="px-5 py-2 text-xs font-bold tracking-[0.18em]"
+              style={{ backgroundColor: GOLD, color: "#fff" }}
+            >
+              PRE-SALE NOW OPEN
+            </div>
+            <div
+              className="px-4 py-2 text-xs font-bold tracking-[0.15em]"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.10)",
+                color: GOLD,
+                border: `1px solid ${GOLD}`,
+              }}
+            >
+              WESTERN JERUSALEM
+            </div>
+          </div>
           <SectionLabel>GENESIS JERUSALEM</SectionLabel>
           <h1
             className="font-bold leading-[1.08] mb-5"

@@ -5,7 +5,7 @@
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Redirect } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -37,6 +37,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
       <Route path="/featured-properties" component={FeaturedProperties} />
+      <Route path="/properties">{() => <Redirect to="/featured-properties" />}</Route>
       <Route path="/property/:slug" component={PropertyDetail} />
       <Route path="/about-ashkelon" component={AboutAshkelon} />
       <Route path="/resources" component={Resources} />

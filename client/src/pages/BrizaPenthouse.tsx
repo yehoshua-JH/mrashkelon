@@ -76,8 +76,8 @@ export default function BrizaPenthouse() {
           }}
         />
 
-        {/* BRIZA logo — top left */}
-        <div className="absolute top-20 left-6 md:left-10 z-10">
+        {/* BRIZA logo — top left (inside content flow to avoid overlap) */}
+        <div className="absolute top-24 left-6 md:left-10 z-10">
           <div
             className="border-2 p-3 inline-block"
             style={{ borderColor: "oklch(0.72 0.12 75)" }}
