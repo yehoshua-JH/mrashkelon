@@ -1,7 +1,7 @@
 // =============================================================
 // MR. ASHKELON — Featured Properties Listing Page
-// Premium alternating split layout: large image one side,
-// details the other — alternating per property (Genesis Jerusalem style)
+// Clean card layout: centered title, description left, 2 images right,
+// specs in white card, note + CTA buttons below
 // =============================================================
 
 import { Link } from "wouter";
@@ -11,23 +11,18 @@ import ContactForm from "@/components/ContactForm";
 import { PROPERTIES } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
-const NAVY = "oklch(0.235 0.058 250)";
-const GOLD = "oklch(0.72 0.12 75)";
-const MUTED = "oklch(0.45 0.03 250)";
-const CREAM = "oklch(0.975 0.008 85)";
-
 export default function FeaturedProperties() {
   const visibleProperties = PROPERTIES.filter((p) => !p.hidden);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "oklch(1 0 0)" }}>
+    <div className="min-h-screen flex flex-col bg-[#f0f2f5]">
       <Navbar />
 
       {/* ── Hero Banner ──────────────────────────────────── */}
       <section
-        className="relative flex flex-col items-center justify-center gap-6 overflow-hidden"
+        className="relative flex flex-col items-center justify-center overflow-hidden"
         style={{
-          minHeight: "340px",
+          minHeight: "260px",
           paddingTop: "64px",
           backgroundImage:
             "url(https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/featured-project-src_c3fc7609.jpg)",
@@ -35,147 +30,84 @@ export default function FeaturedProperties() {
           backgroundPosition: "center",
         }}
       >
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(to bottom, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.75) 100%)" }}
-        />
-        <div className="relative z-10 text-center px-4">
-          <p
-            className="text-xs font-bold tracking-[0.2em] mb-3 uppercase"
-            style={{ color: GOLD }}
-          >
+        <div className="absolute inset-0 bg-[rgba(15,23,42,0.65)]" />
+        <div className="relative z-10 text-center px-4 py-12">
+          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-[#c9a84c]">
             Mr. Ashkelon
           </p>
           <h1
-            className="font-bold text-white mb-6"
-            style={{ fontFamily: "Georgia, serif", fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
+            className="font-bold text-white"
+            style={{ fontFamily: "Georgia, serif", fontSize: "clamp(2rem, 5vw, 3.2rem)" }}
           >
             Featured Properties
           </h1>
-
         </div>
       </section>
 
-      {/* ── Properties — alternating split ───────────────── */}
-      {visibleProperties.map((property, index) => {
-        const isEven = index % 2 === 0;
-        const bg = isEven ? "oklch(1 0 0)" : CREAM;
+      {/* ── Properties list ──────────────────────────────── */}
+      <div className="flex flex-col gap-0 py-10 px-4 max-w-5xl mx-auto w-full">
+        {visibleProperties.map((property) => {
+          // Show up to 4 thumbnail images (skip the hero image which is galleryImages[0])
+          const thumbs = property.galleryImages.slice(0, 4);
 
-        return (
-          <section
-            key={property.slug}
-            id={property.slug}
-            style={{ backgroundColor: bg }}
-          >
-            {/* Section heading */}
-            <div className="text-center pt-16 pb-2 px-4">
-              <p
-                className="text-xs font-bold tracking-[0.2em] uppercase mb-2"
-                style={{ color: GOLD }}
-              >
-                Featured Property
-              </p>
-              <h2
-                className="font-bold"
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
-                  color: NAVY,
-                }}
-              >
-                {property.title}
-              </h2>
-              <div
-                className="mx-auto mt-3 mb-0 rounded-full"
-                style={{ width: "2.5rem", height: "2px", backgroundColor: GOLD }}
-              />
-            </div>
-
-            {/* Split row */}
+          return (
             <div
-              className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
+              key={property.slug}
+              className="bg-white rounded-2xl shadow-sm mb-10 overflow-hidden"
             >
-              {/* Image half */}
-              <div
-                className="w-full md:w-1/2 relative overflow-hidden"
-                style={{ height: "420px" }}
-              >
-                <img
-                  src={property.image}
-                  alt={property.title}
-                  className="w-full h-full object-cover"
-                />
-                {/* Fade gradient toward text side */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: isEven
-                      ? "linear-gradient(to right, transparent 55%, " + bg + ")"
-                      : "linear-gradient(to left, transparent 55%, " + bg + ")",
-                  }}
-                />
+              {/* Property title */}
+              <div className="px-8 pt-8 pb-4 border-b border-gray-100">
+                <h2
+                  className="font-bold text-[#1a2744] text-center"
+                  style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)" }}
+                >
+                  {property.title}
+                </h2>
               </div>
 
-              {/* Text half */}
-              <div
-                className="w-full md:w-1/2 flex items-center px-8 md:px-14 py-12"
-                style={{ backgroundColor: bg }}
-              >
-                <div className="max-w-lg w-full">
-                  {/* Description */}
-                  <p
-                    className="text-base leading-relaxed mb-4"
-                    style={{ color: MUTED }}
-                  >
+              {/* Main body: text left, images right */}
+              <div className="flex flex-col md:flex-row gap-6 p-8">
+                {/* Left: description + specs + note + CTAs */}
+                <div className="flex-1 flex flex-col gap-4">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {property.description}
                   </p>
                   {property.details && (
-                    <p
-                      className="text-sm leading-relaxed mb-6"
-                      style={{ color: MUTED }}
-                    >
+                    <p className="text-gray-600 leading-relaxed text-sm">
                       {property.details}
                     </p>
                   )}
 
-                  {/* Specs grid */}
+                  {/* Specs card */}
                   {Object.keys(property.specs).length > 0 && (
-                    <div
-                      className="grid grid-cols-2 gap-x-6 gap-y-3 mb-6 p-5 rounded-xl"
-                      style={{ backgroundColor: isEven ? CREAM : "oklch(1 0 0)" }}
-                    >
-                      {Object.entries(property.specs).map(([key, value]) => (
-                        <div key={key}>
-                          <p
-                            className="text-xs font-semibold uppercase tracking-wide mb-0.5"
-                            style={{ color: GOLD }}
-                          >
-                            {key}
-                          </p>
-                          <p className="text-sm font-medium" style={{ color: NAVY }}>
-                            {value}
-                          </p>
-                        </div>
-                      ))}
+                    <div className="border border-gray-200 rounded-xl p-5 bg-gray-50 mt-2">
+                      <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                        {Object.entries(property.specs).map(([key, value]) => (
+                          <div key={key} className="flex flex-col">
+                            <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
+                              {key}
+                            </span>
+                            <span className="text-sm font-medium text-[#1a2744]">
+                              {value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   )}
 
                   {/* Note */}
                   {property.note && (
-                    <p
-                      className="text-sm font-semibold mb-6"
-                      style={{ color: GOLD }}
-                    >
+                    <p className="text-sm font-semibold text-[#c9a84c]">
                       {property.note}
                     </p>
                   )}
 
                   {/* CTAs */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 mt-2">
                     <Button
                       asChild
-                      className="rounded-full px-7 font-semibold"
-                      style={{ backgroundColor: GOLD, color: NAVY }}
+                      className="rounded-md px-6 font-semibold bg-[#c9a84c] hover:bg-[#b8973b] text-[#1a2744]"
                     >
                       <Link href={(property as any).customLink ?? `/property/${property.slug}`}>
                         View Full Details
@@ -184,34 +116,33 @@ export default function FeaturedProperties() {
                     <Button
                       asChild
                       variant="outline"
-                      className="rounded-full px-7 font-semibold"
-                      style={{ borderColor: NAVY, color: NAVY }}
+                      className="rounded-md px-6 font-semibold border-[#1a2744] text-[#1a2744]"
                     >
                       <Link href="/contact">Contact Us</Link>
                     </Button>
                   </div>
                 </div>
+
+                {/* Right: up to 4 thumbnail images */}
+                {thumbs.length > 0 && (
+                  <div className="md:w-[340px] flex-shrink-0">
+                    <div className="grid grid-cols-2 gap-2">
+                      {thumbs.map((img, i) => (
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`${property.title} ${i + 1}`}
+                          className="w-full h-36 object-cover rounded-lg"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-
-            {/* Gallery strip — up to 4 thumbnail images */}
-            {property.galleryImages.length > 1 && (
-              <div
-                className="grid grid-cols-2 sm:grid-cols-4 gap-2 px-4 pb-12 max-w-5xl mx-auto w-full"
-              >
-                {property.galleryImages.slice(0, 4).map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt={`${property.title} ${i + 1}`}
-                    className="w-full h-32 sm:h-40 object-cover rounded-lg"
-                  />
-                ))}
-              </div>
-            )}
-          </section>
-        );
-      })}
+          );
+        })}
+      </div>
 
       <ContactForm
         sourcePage="Featured Properties Page"
