@@ -121,29 +121,36 @@
         s.setAttribute("data-account", "7JqRVpNkzZ");
         s.setAttribute("src", "https://cdn.userway.org/widget.js");
         (d.body || d.head).appendChild(s);
-        // On mobile (<768px): hide the icon so it doesn't overlap the hamburger menu
+        // On mobile (<768px): hide the UserWay icon visually but keep it in DOM
+        // so our custom navbar accessibility button can still trigger it
+        function applyUserWayMobile() {
+          var icon = d.getElementById("userwayAccessibilityIcon");
+          if (!icon) return;
+          if (window.innerWidth < 768) {
+            icon.style.setProperty("visibility", "hidden", "important");
+            icon.style.setProperty("pointer-events", "none", "important");
+            icon.style.setProperty("position", "fixed", "important");
+            icon.style.setProperty("bottom", "0", "important");
+            icon.style.setProperty("right", "0", "important");
+            icon.style.setProperty("width", "1px", "important");
+            icon.style.setProperty("height", "1px", "important");
+          } else {
+            icon.style.removeProperty("visibility");
+            icon.style.removeProperty("pointer-events");
+            icon.style.removeProperty("width");
+            icon.style.removeProperty("height");
+          }
+        }
         var attempts = 0;
         var interval = setInterval(function() {
           var icon = d.getElementById("userwayAccessibilityIcon");
           if (icon) {
-            if (window.innerWidth < 768) {
-              icon.style.setProperty("display", "none", "important");
-            }
+            applyUserWayMobile();
             attempts++;
             if (attempts > 100) clearInterval(interval);
           }
         }, 100);
-        // Also hide on resize
-        window.addEventListener('resize', function() {
-          var icon = d.getElementById("userwayAccessibilityIcon");
-          if (icon) {
-            if (window.innerWidth < 768) {
-              icon.style.setProperty("display", "none", "important");
-            } else {
-              icon.style.removeProperty("display");
-            }
-          }
-        });
+        window.addEventListener('resize', applyUserWayMobile);
       })(document);
     </script>
   </body>
