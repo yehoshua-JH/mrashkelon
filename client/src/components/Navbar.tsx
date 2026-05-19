@@ -78,21 +78,8 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile: accessibility button on RIGHT to balance hamburger on left — hidden on desktop */}
-        <button
-          className="lg:hidden p-2 rounded"
-          style={{ color: "rgba(255,255,255,0.9)", background: "transparent", border: "none" }}
-          onClick={() => {
-            const icon = document.getElementById("userwayAccessibilityIcon");
-            if (icon) (icon as HTMLElement).click();
-          }}
-          aria-label="Accessibility menu"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: "1.5rem", height: "1.5rem" }}>
-            <circle cx="12" cy="4" r="2" />
-            <path d="M19 9H5a1 1 0 000 2h5.5l-1.5 9h2l1-6 1 6h2l-1.5-9H19a1 1 0 000-2z" />
-          </svg>
-        </button>
+        {/* Spacer on mobile to keep logo centered */}
+        <div className="lg:hidden w-10" />
       </div>
 
       {/* Mobile drawer — slides in from LEFT */}
