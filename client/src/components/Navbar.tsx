@@ -1,6 +1,6 @@
 // MR. ASHKELON — Navbar
-// Exact match of Lovable source Header.tsx
-// logo-white.webp, no box/filter, navy bg, gold CTA
+// Mobile: hamburger LEFT, logo CENTER, no accessibility widget overlap
+// Desktop: logo LEFT, nav links + Contact CTA RIGHT
 
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
@@ -8,6 +8,10 @@ import { Menu, X } from "lucide-react";
 
 const LOGO =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white-src_f0231a59.webp";
+
+// Logo natural size: 138×102px. At 48px height → width = 65px
+const LOGO_STYLE = { height: "3rem", width: "65px", objectFit: "contain" as const };
+const LOGO_SMALL_STYLE = { height: "2rem", width: "43px", objectFit: "contain" as const };
 
 const navLinks = [
   { label: "About", href: "/about" },
@@ -24,19 +28,30 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 border-b"
+      className="sticky top-0 z-[60] border-b"
       style={{
         backgroundColor: "var(--primary)",
         borderColor: "rgba(255,255,255,0.1)",
       }}
     >
       <div className="container flex h-16 items-center justify-between">
-        {/* Logo — white webp, no filter, no box */}
-        <Link href="/" className="flex items-center">
-          <img src={LOGO} alt="Mr. Ashkelon" style={{ height: "3rem", width: "auto" }} />
+
+        {/* Mobile: hamburger on LEFT — hidden on desktop */}
+        <button
+          className="lg:hidden p-2 rounded"
+          style={{ color: "rgba(255,255,255,0.9)", background: "transparent", border: "none" }}
+          onClick={() => setOpen(true)}
+          aria-label="Open menu"
+        >
+          <Menu style={{ width: "1.5rem", height: "1.5rem" }} />
+        </button>
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center shrink-0 overflow-visible lg:mr-auto">
+          <img src={LOGO} alt="Mr. Ashkelon" style={LOGO_STYLE} />
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav — hidden on mobile */}
         <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
@@ -63,27 +78,20 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          className="lg:hidden p-2 rounded"
-          style={{ color: "rgba(255,255,255,0.9)", background: "transparent", border: "none" }}
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-        >
-          <Menu style={{ width: "1.25rem", height: "1.25rem" }} />
-        </button>
+        {/* Spacer on mobile to keep logo centered */}
+        <div className="lg:hidden w-10" />
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — slides in from LEFT */}
       {open && (
-        <div className="fixed inset-0 z-50 flex">
+        <div className="fixed inset-0 z-[70] flex">
           <div className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
           <div
-            className="relative ml-auto w-72 h-full flex flex-col gap-6 p-6"
+            className="relative mr-auto w-72 h-full flex flex-col gap-6 p-6"
             style={{ backgroundColor: "var(--primary)" }}
           >
             <div className="flex items-center justify-between">
-              <img src={LOGO} alt="Mr. Ashkelon" style={{ height: "2rem", width: "auto" }} />
+              <img src={LOGO} alt="Mr. Ashkelon" style={LOGO_SMALL_STYLE} />
               <button
                 onClick={() => setOpen(false)}
                 style={{ color: "rgba(255,255,255,0.8)", background: "transparent", border: "none" }}
