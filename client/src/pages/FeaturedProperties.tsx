@@ -52,31 +52,7 @@ export default function FeaturedProperties() {
           >
             Featured Properties
           </h1>
-          {/* Quick-nav anchor buttons */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {visibleProperties.map((p) => (
-              <a
-                key={p.slug}
-                href={`#${p.slug}`}
-                className="px-5 py-2 text-sm font-semibold rounded-full border transition-all duration-200"
-                style={{
-                  borderColor: GOLD,
-                  color: GOLD,
-                  backgroundColor: "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = GOLD;
-                  (e.currentTarget as HTMLElement).style.color = NAVY;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
-                  (e.currentTarget as HTMLElement).style.color = GOLD;
-                }}
-              >
-                {p.title}
-              </a>
-            ))}
-          </div>
+
         </div>
       </section>
 

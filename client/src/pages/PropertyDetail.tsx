@@ -5,7 +5,7 @@
 // gallery with lightbox, sidebar with specs card + note + CTA
 // =============================================================
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -20,6 +20,17 @@ export default function PropertyDetail() {
   const { slug } = useParams<{ slug: string }>();
   const property = PROPERTIES.find((p) => p.slug === slug);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (property) {
+      document.title = `Mr. Ashkelon | ${property.title}`;
+    } else {
+      document.title = "Mr. Ashkelon | Property Not Found";
+    }
+    return () => {
+      document.title = "Mr. Ashkelon — Real Estate Brokers";
+    };
+  }, [property]);
 
   if (!property) {
     return (
