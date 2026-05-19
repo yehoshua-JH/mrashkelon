@@ -170,3 +170,10 @@
     transform: scale(1);
   }
 }
+
+/* Hide UserWay accessibility widget on mobile to avoid overlapping hamburger menu */
+@media (max-width: 767px) {
+  #userwayAccessibilityIcon {
+    display: none !important;
+  }
+}
