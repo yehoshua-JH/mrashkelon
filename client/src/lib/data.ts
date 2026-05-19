@@ -134,7 +134,7 @@ export const PROPERTIES = [
   },
   {
     slug: "sea-view",
-    title: "Amazing Sea Views with",
+    title: "Amazing Sea Views — Afridar Apartment",
     tagline: "Breathtaking ocean views in Afridar",
     location: "Afridar, Ashkelon",
     description:
