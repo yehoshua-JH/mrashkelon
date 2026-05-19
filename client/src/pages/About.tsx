@@ -64,31 +64,35 @@ export default function About() {
           <div className="w-20 h-1 bg-secondary mb-2" />
           <p className="text-sm text-muted-foreground italic mb-8">Profile of Mrs Ashkelon to follow</p>
 
-          <div className="text-muted-foreground leading-relaxed">
-            <img
-              src={MOTTI_SUSAN_FORMAL}
-              alt="Motti and Susan Yitzhack"
-              className="float-right ml-6 mb-4 w-48 md:w-56 rounded-lg shadow-md"
-            />
-            <p className="mb-6">
-              Mr Ashkelon specializes in property sales and management in the Ashkelon area.
-            </p>
-            <p className="mb-6">
-              Founded by Motti Yitzhack, Mr Ashkelon has helped countless real estate investors
-              with the purchase of property and homes in the Ashkelon area. Motti has extensive
-              experience in the real estate market in Israel and because he knows the ins and outs of
-              this specific market he is able to make the process of buying property in Israel a more
-              pleasant experience. His experience is especially helpful when it comes to navigating
-              language barriers, cultural acclimatization and understanding property laws and
-              regulations in this region.
-            </p>
-            <p>
-              Ashkelon is a beautiful coastal town that is situated towards the south of Israel.
-              It's fast becoming the go-to area for property investors as development is happening at
-              a rapid pace. Please get in touch if you're interested in finding out more about the
-              investment opportunities available the city or if you're looking to relocate in the
-              near future.
-            </p>
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div className="md:col-span-2 text-muted-foreground leading-relaxed space-y-6">
+              <p>
+                Mr Ashkelon specializes in property sales and management in the Ashkelon area.
+              </p>
+              <p>
+                Founded by Motti Yitzhack, Mr Ashkelon has helped countless real estate investors
+                with the purchase of property and homes in the Ashkelon area. Motti has extensive
+                experience in the real estate market in Israel and because he knows the ins and outs of
+                this specific market he is able to make the process of buying property in Israel a more
+                pleasant experience. His experience is especially helpful when it comes to navigating
+                language barriers, cultural acclimatization and understanding property laws and
+                regulations in this region.
+              </p>
+              <p>
+                Ashkelon is a beautiful coastal town that is situated towards the south of Israel.
+                It's fast becoming the go-to area for property investors as development is happening at
+                a rapid pace. Please get in touch if you're interested in finding out more about the
+                investment opportunities available the city or if you're looking to relocate in the
+                near future.
+              </p>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <img
+                src={MOTTI_SUSAN_FORMAL}
+                alt="Motti and Susan Yitzhack"
+                className="w-48 sm:w-56 md:w-full rounded-lg shadow-md object-cover"
+              />
+            </div>
           </div>
 
           <div className="mt-12 flex justify-center">

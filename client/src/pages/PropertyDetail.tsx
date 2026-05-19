@@ -105,7 +105,7 @@ export default function PropertyDetail() {
               {property.galleryImages.length > 0 && (
                 <div>
                   <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Gallery</h2>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {property.galleryImages.map((img, i) => (
                       <button
                         key={i}

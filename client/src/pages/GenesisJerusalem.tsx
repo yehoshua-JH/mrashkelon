@@ -306,7 +306,7 @@ export default function GenesisJerusalem() {
         {/* PRE-SALE badge + WESTERN JERUSALEM badge — inside hero content, not absolute */}
 
         {/* Hero content */}
-        <div className="relative z-10 px-6 md:px-14 pb-20 max-w-4xl">
+        <div className="relative z-10 px-4 sm:px-6 md:px-14 pb-12 md:pb-20 max-w-4xl">
           {/* Badges row */}
           <div className="flex flex-wrap gap-3 mb-6">
             <div

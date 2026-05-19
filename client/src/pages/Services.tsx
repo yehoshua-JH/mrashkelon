@@ -54,7 +54,7 @@ export default function Services() {
             </div>
             <div className="rounded-lg overflow-hidden">
               <img
-                src="https://mrashkelon.com/wp-content/uploads/2016/08/Things-to-Do-in-Ashkelon_MrAshkelon.jpg"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/Ashkelon-Israel_Mr-Ashkelon_6b6c1b12.jpg"
                 alt="Ashkelon Marina at night"
                 className="w-full h-80 object-cover rounded-lg"
               />
@@ -108,7 +108,7 @@ export default function Services() {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="rounded-lg overflow-hidden">
               <img
-                src="https://mrashkelon.com/wp-content/uploads/2022/02/briza-view.jpg"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png"
                 alt="Ashkelon coastal view"
                 className="w-full h-80 object-cover rounded-lg"
               />

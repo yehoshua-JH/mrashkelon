@@ -75,25 +75,24 @@ export default function JerusalemProject() {
           }}
         />
 
-        {/* Location badge — top left */}
-        <div className="absolute top-20 left-6 md:left-10 z-10">
-          <div
-            className="border-2 p-3 inline-block"
-            style={{ borderColor: "oklch(0.72 0.12 75)" }}
-          >
-            <p
-              className="text-xs font-bold tracking-widest leading-tight text-center"
-              style={{ color: "oklch(0.72 0.12 75)" }}
-            >
-              JERUSALEM
-              <br />
-              <span className="font-normal">PROJECT</span>
-            </p>
-          </div>
-        </div>
-
         {/* Headline text — bottom left */}
-        <div className="relative z-10 px-6 md:px-12 pb-8">
+        <div className="relative z-10 px-6 md:px-12 pb-8 pt-8">
+          {/* Location badge — inside content flow to avoid overlap */}
+          <div className="mb-6">
+            <div
+              className="border-2 p-3 inline-block"
+              style={{ borderColor: "oklch(0.72 0.12 75)" }}
+            >
+              <p
+                className="text-xs font-bold tracking-widest leading-tight text-center"
+                style={{ color: "oklch(0.72 0.12 75)" }}
+              >
+                JERUSALEM
+                <br />
+                <span className="font-normal">PROJECT</span>
+              </p>
+            </div>
+          </div>
           <h1
             className="font-bold leading-tight mb-2"
             style={{

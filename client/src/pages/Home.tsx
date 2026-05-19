@@ -80,7 +80,7 @@ export default function Home() {
             backgroundImage: "radial-gradient(circle at 20% 80%, oklch(0.72 0.12 75 / 0.15) 0%, transparent 50%)",
           }}
         />
-        <div className="relative z-10 container px-4 py-20">
+        <div className="relative z-10 container px-4 py-12 md:py-20">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left: Text */}
             <div>
