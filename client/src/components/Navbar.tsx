@@ -78,8 +78,31 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Spacer on mobile to keep logo centered */}
-        <div className="lg:hidden w-10" />
+        {/* Mobile: accessibility button on RIGHT — triggers UserWay panel */}
+        <button
+          className="lg:hidden p-2 rounded flex items-center justify-center"
+          style={{ color: "rgba(255,255,255,0.9)", background: "transparent", border: "none", width: "2.5rem", height: "2.5rem" }}
+          onClick={() => {
+            // Try UserWay JS API first, then fall back to clicking the hidden icon
+            const uw = (window as any).UserWay;
+            if (uw && typeof uw.widgetOpen === 'function') {
+              uw.widgetOpen();
+            } else {
+              const icon = document.getElementById('userwayAccessibilityIcon');
+              if (icon) {
+                icon.style.removeProperty('display');
+                (icon as HTMLElement).click();
+                setTimeout(() => { icon.style.setProperty('display','none','important'); }, 500);
+              }
+            }
+          }}
+          aria-label="Accessibility menu"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+            <circle cx="12" cy="4" r="2" />
+            <path d="M19 9H5a1 1 0 000 2h5.5l-1.5 9h2l1-6 1 6h2l-1.5-9H19a1 1 0 000-2z" />
+          </svg>
+        </button>
       </div>
 
       {/* Mobile drawer — slides in from LEFT */}
