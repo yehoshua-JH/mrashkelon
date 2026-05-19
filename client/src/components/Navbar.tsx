@@ -81,7 +81,7 @@ export default function Navbar() {
         {/* Mobile: accessibility button on RIGHT — triggers UserWay panel */}
         <button
           className="lg:hidden p-2 rounded flex items-center justify-center"
-          style={{ color: "rgba(255,255,255,0.9)", background: "transparent", border: "none", width: "2.5rem", height: "2.5rem" }}
+          style={{ color: "#fff", background: "#146ef5", border: "none", width: "2.5rem", height: "2.5rem", borderRadius: "50%" }}
           onClick={() => {
             // Try UserWay JS API first, then fall back to clicking the hidden icon
             const uw = (window as any).UserWay;
