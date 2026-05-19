@@ -94,18 +94,16 @@ export default function FeaturedProperties() {
             {/* Split row */}
             <div
               className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
-              style={{ minHeight: "480px" }}
             >
               {/* Image half */}
               <div
                 className="w-full md:w-1/2 relative overflow-hidden"
-                style={{ minHeight: "320px" }}
+                style={{ height: "420px" }}
               >
                 <img
                   src={property.image}
                   alt={property.title}
                   className="w-full h-full object-cover"
-                  style={{ minHeight: "320px" }}
                 />
                 {/* Fade gradient toward text side */}
                 <div
