@@ -10,8 +10,8 @@ const LOGO =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white-src_f0231a59.webp";
 
 // Logo natural size: 138×102px. At 48px height → width = 65px
-const LOGO_STYLE = { height: "3rem", width: "65px", objectFit: "contain" as const };
-const LOGO_SMALL_STYLE = { height: "2rem", width: "43px", objectFit: "contain" as const };
+const LOGO_STYLE = { height: "3.5rem", width: "76px", objectFit: "contain" as const };
+const LOGO_SMALL_STYLE = { height: "2.5rem", width: "54px", objectFit: "contain" as const };
 
 const navLinks = [
   { label: "About", href: "/about" },
