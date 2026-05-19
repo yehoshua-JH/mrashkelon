@@ -16,7 +16,6 @@ const navLinks = [
   { label: "Genesis Jerusalem", href: "/genesis-jerusalem" },
   { label: "Ashkelon", href: "/about-ashkelon" },
   { label: "Resources", href: "/resources" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -60,7 +59,7 @@ export default function Navbar() {
               color: "var(--secondary-foreground)",
             }}
           >
-            Get in Touch
+            Contact
           </Link>
         </nav>
 
@@ -113,7 +112,7 @@ export default function Navbar() {
                 color: "var(--secondary-foreground)",
               }}
             >
-              Get in Touch
+              Contact
             </Link>
           </div>
         </div>
