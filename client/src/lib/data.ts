@@ -340,6 +340,7 @@ export const PROPERTIES = [
       Elevator: "Shabbat elevator",
       Features: "High quality kitchen, Mamad, balcony",
       Status: "Available now",
+      Price: "₪1,700,000",
     },
     highlights: [
       "Heart of the Anglo community",
@@ -349,7 +350,7 @@ export const PROPERTIES = [
       "High quality kitchen & Mamad",
       "Close to Marina, beach & synagogues",
     ],
-    note: "Contact us for pricing and to arrange a viewing.",
+    note: "Price: ₪1,700,000. Contact us to arrange a viewing.",
     seo: {
       title: "3-Room Apartment for Sale in Anglo Area, Ashkelon | Mr. Ashkelon",
       description:
