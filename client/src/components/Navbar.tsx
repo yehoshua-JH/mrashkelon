@@ -83,16 +83,19 @@ export default function Navbar() {
           className="lg:hidden p-2 rounded flex items-center justify-center"
           style={{ color: "#fff", background: "#146ef5", border: "none", width: "2.5rem", height: "2.5rem", borderRadius: "50%" }}
           onClick={() => {
-            // Try UserWay JS API first, then fall back to clicking the hidden icon
             const uw = (window as any).UserWay;
             if (uw && typeof uw.widgetOpen === 'function') {
               uw.widgetOpen();
+            } else if (uw && typeof uw.iconClick === 'function') {
+              uw.iconClick();
             } else {
+              // Direct click on hidden icon — no delay
               const icon = document.getElementById('userwayAccessibilityIcon');
               if (icon) {
+                const prev = icon.style.display;
                 icon.style.removeProperty('display');
                 (icon as HTMLElement).click();
-                setTimeout(() => { icon.style.setProperty('display','none','important'); }, 500);
+                icon.style.setProperty('display', 'none', 'important');
               }
             }
           }}
