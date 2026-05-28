@@ -360,8 +360,8 @@ export const PROPERTIES = [
   {
     slug: "briza-3em7",
     title: "BRIZA 3E-M7 — 3-Room Apartment",
-    tagline: "Modern living in Ashkelon's premier new development",
-    location: "BRIZA BY EFGAD, Ashkelon",
+    tagline: "Modern living in Jerusalem's premier new development",
+    location: "BRIZA BY EFGAD, Talpiot, Jerusalem",
     description:
       "A beautifully designed 3-room apartment in the prestigious BRIZA BY EFGAD project. Spanning 88 square meters with a generous 12 m² balcony, this apartment combines contemporary design with practical luxury.",
     details:
@@ -373,7 +373,7 @@ export const PROPERTIES = [
     ],
     specs: {
       Project: "BRIZA BY EFGAD",
-      Location: "Ashkelon",
+      Location: "Talpiot, Jerusalem",
       Type: "3E-M7",
       Size: "88 m²",
       Balcony: "12 m²",
@@ -394,9 +394,53 @@ export const PROPERTIES = [
     ],
     note: "Contact us for pricing and availability.",
     seo: {
-      title: "3-Room Apartment for Sale in BRIZA, Ashkelon | Mr. Ashkelon",
+      title: "3-Room Apartment for Sale in BRIZA, Talpiot Jerusalem | Mr. Ashkelon",
       description:
-        "Modern 3-room apartment (88 m²) in BRIZA BY EFGAD, Ashkelon. 12 m² balcony, 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
+        "Modern 3-room apartment (88 m²) in BRIZA BY EFGAD, Talpiot Jerusalem. 12 m² balcony, 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
+    },
+  },
+  {
+    slug: "briza-4g-m6-m16",
+    title: "BRIZA 4G-M6+M16 — 4-Room Apartment",
+    tagline: "Spacious family living with panoramic views in Jerusalem",
+    location: "BRIZA BY EFGAD, Talpiot, Jerusalem",
+    description:
+      "A stunning 4-room apartment in the prestigious BRIZA BY EFGAD project in Talpiot, Jerusalem. Spanning 111 square meters with two balconies totalling over 23 m², this apartment offers exceptional space and light.",
+    details:
+      "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The generous 20 m² main balcony and a 3.9 m² balcony off the master bedroom provide outdoor living space with beautiful views.",
+    image: "/manus-storage/briza-4g-interior_f4b7d09b.png",
+    galleryImages: [
+      "/manus-storage/briza-4g-interior_f4b7d09b.png",
+      "/manus-storage/briza-4g-floorplan_6ec1ed71.png",
+    ],
+    specs: {
+      Project: "BRIZA BY EFGAD",
+      Location: "Talpiot, Jerusalem",
+      Type: "4G-M6+M16",
+      Size: "111 m²",
+      "Balcony 1": "20 m²",
+      "Balcony 2": "3.9 m² (master bedroom)",
+      Rooms: "4",
+      Bathrooms: "2",
+      "Air Conditioning": "Central",
+      Parking: "Private + EV charging point",
+      Storage: "Machsan included",
+      Status: "Available — contact us for pricing",
+    },
+    highlights: [
+      "111 m² spacious apartment",
+      "20 m² main balcony",
+      "3.9 m² master bedroom balcony",
+      "2 bathrooms",
+      "Central air conditioning",
+      "Parking with EV charging point",
+      "Storage room (machsan) included",
+    ],
+    note: "Contact us for pricing and availability.",
+    seo: {
+      title: "4-Room Apartment for Sale in BRIZA, Talpiot Jerusalem | Mr. Ashkelon",
+      description:
+        "Spacious 4-room apartment (111 m²) in BRIZA BY EFGAD, Talpiot Jerusalem. Two balconies (20 m² + 3.9 m²), 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
     },
   },
 ];
