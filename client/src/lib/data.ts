@@ -366,9 +366,9 @@ export const PROPERTIES = [
       "A beautifully designed 3-room apartment in the prestigious BRIZA BY EFGAD project. Spanning 88 square meters with a generous 12 m² balcony, this apartment combines contemporary design with practical luxury.",
     details:
       "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The open-plan living and dining area flows seamlessly to the balcony, creating a bright and airy space perfect for modern living.",
-    image: "/manus-storage/briza-3em7-interior-clean_916e341c.png",
+    image: "/manus-storage/briza-3em7-interior-clean_03625e96.webp",
     galleryImages: [
-      "/manus-storage/briza-3em7-interior-clean_916e341c.png",
+      "/manus-storage/briza-3em7-interior-clean_03625e96.webp",
       "/manus-storage/briza-3em7-floorplan_8363b037.png",
     ],
     specs: {
@@ -408,9 +408,9 @@ export const PROPERTIES = [
       "A stunning 4-room apartment in the prestigious BRIZA BY EFGAD project in Talpiot, Jerusalem. Spanning 111 square meters with two balconies totalling over 23 m², this apartment offers exceptional space and light.",
     details:
       "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The generous 20 m² main balcony and a 3.9 m² balcony off the master bedroom provide outdoor living space with beautiful views.",
-    image: "/manus-storage/briza-4g-interior_f4b7d09b.png",
+    image: "/manus-storage/briza-4g-interior-clean_c794824e.webp",
     galleryImages: [
-      "/manus-storage/briza-4g-interior_f4b7d09b.png",
+      "/manus-storage/briza-4g-interior-clean_c794824e.webp",
       "/manus-storage/briza-4g-floorplan_6ec1ed71.png",
     ],
     specs: {
@@ -452,9 +452,9 @@ export const PROPERTIES = [
       "A magnificent 5-room apartment in the prestigious BRIZA BY EFGAD project in Talpiot, Jerusalem. Spanning 134 square meters with three balconies, this apartment offers generous space, natural light, and premium finishes throughout.",
     details:
       "The apartment features 3 bathrooms, inverter air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. Three balconies provide abundant outdoor living space with stunning views over Jerusalem.",
-    image: "/manus-storage/interior5room_clean_f2fabbdf.png",
+    image: "/manus-storage/briza-5c-interior-clean_e0f6c90c.webp",
     galleryImages: [
-      "/manus-storage/interior5room_clean_f2fabbdf.png",
+      "/manus-storage/briza-5c-interior-clean_e0f6c90c.webp",
       "/manus-storage/floor_plan_5c_mrmrs_2822d432.png",
     ],
     specs: {
