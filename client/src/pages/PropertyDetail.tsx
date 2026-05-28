@@ -21,6 +21,17 @@ export default function PropertyDetail() {
   const property = PROPERTIES.find((p) => p.slug === slug);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  // Close lightbox on ESC key
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxIndex(null);
+    };
+    if (lightboxIndex !== null) {
+      document.addEventListener("keydown", handleKey);
+      return () => document.removeEventListener("keydown", handleKey);
+    }
+  }, [lightboxIndex]);
+
   useEffect(() => {
     if (property) {
       document.title = `Mr. Ashkelon | ${property.title}`;
@@ -193,9 +204,10 @@ export default function PropertyDetail() {
           {/* Close button */}
           <button
             onClick={() => setLightboxIndex(null)}
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition-colors text-xl font-bold"
+            className="absolute top-4 left-4 flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors text-sm font-semibold z-[10000]"
           >
-            ✕
+            <ArrowLeft className="w-5 h-5" />
+            Close
           </button>
           {property.galleryImages.length > 1 && (
             <>

@@ -357,6 +357,48 @@ export const PROPERTIES = [
         "Delightful 3-room apartment (80 m²) on floor 8 of 9 in Ashkelon's Anglo area. Private parking, Shabbat elevator, Mamad, high quality kitchen. Close to Marina, beach and synagogues.",
     },
   },
+  {
+    slug: "briza-3em7",
+    title: "BRIZA 3E-M7 — 3-Room Apartment",
+    tagline: "Modern living in Ashkelon's premier new development",
+    location: "BRIZA BY EFGAD, Ashkelon",
+    description:
+      "A beautifully designed 3-room apartment in the prestigious BRIZA BY EFGAD project. Spanning 88 square meters with a generous 12 m² balcony, this apartment combines contemporary design with practical luxury.",
+    details:
+      "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The open-plan living and dining area flows seamlessly to the balcony, creating a bright and airy space perfect for modern living.",
+    image: "/manus-storage/briza-3em7-interior_c2029810.png",
+    galleryImages: [
+      "/manus-storage/briza-3em7-interior_c2029810.png",
+      "/manus-storage/briza-3em7-floorplan_8363b037.png",
+    ],
+    specs: {
+      Project: "BRIZA BY EFGAD",
+      Location: "Ashkelon",
+      Type: "3E-M7",
+      Size: "88 m²",
+      Balcony: "12 m²",
+      Rooms: "3",
+      Bathrooms: "2",
+      "Air Conditioning": "Central",
+      Parking: "Private + EV charging point",
+      Storage: "Machsan included",
+      Status: "Available — contact us for pricing",
+    },
+    highlights: [
+      "88 m² modern apartment",
+      "12 m² private balcony",
+      "2 bathrooms",
+      "Central air conditioning",
+      "Parking with EV charging point",
+      "Storage room (machsan) included",
+    ],
+    note: "Contact us for pricing and availability.",
+    seo: {
+      title: "3-Room Apartment for Sale in BRIZA, Ashkelon | Mr. Ashkelon",
+      description:
+        "Modern 3-room apartment (88 m²) in BRIZA BY EFGAD, Ashkelon. 12 m² balcony, 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
+    },
+  },
 ];
 
 export const BLOG_POSTS = [
