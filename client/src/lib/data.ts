@@ -358,12 +358,12 @@ export const PROPERTIES = [
     },
   },
   {
-    slug: "briza-3em7",
-    title: "BRIZA 3E-M7 — 3-Room Apartment",
+    slug: "niya-3em7",
+    title: "NIYA 3E-M7 — 3-Room Apartment",
     tagline: "Modern living in Jerusalem's premier new development",
-    location: "BRIZA BY EFGAD, Talpiot, Jerusalem",
+    location: "NIYA, Talpiot, Jerusalem",
     description:
-      "A beautifully designed 3-room apartment in the prestigious BRIZA BY EFGAD project. Spanning 88 square meters with a generous 12 m² balcony, this apartment combines contemporary design with practical luxury.",
+      "A beautifully designed 3-room apartment in the prestigious NIYA project. Spanning 88 square meters with a generous 12 m² balcony, this apartment combines contemporary design with practical luxury.",
     details:
       "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The open-plan living and dining area flows seamlessly to the balcony, creating a bright and airy space perfect for modern living.",
     image: "/manus-storage/briza-3em7-interior-clean_03625e96.webp",
@@ -372,7 +372,7 @@ export const PROPERTIES = [
       "/manus-storage/briza-3em7-floorplan_8363b037.png",
     ],
     specs: {
-      Project: "BRIZA BY EFGAD",
+      Project: "NIYA",
       Location: "Talpiot, Jerusalem",
       Type: "3E-M7",
       Size: "88 m²",
@@ -394,18 +394,18 @@ export const PROPERTIES = [
     ],
     note: "Contact us for pricing and availability.",
     seo: {
-      title: "3-Room Apartment for Sale in BRIZA, Talpiot Jerusalem | Mr. Ashkelon",
+      title: "3-Room Apartment for Sale in NIYA, Talpiot Jerusalem | Mr. Ashkelon",
       description:
-        "Modern 3-room apartment (88 m²) in BRIZA BY EFGAD, Talpiot Jerusalem. 12 m² balcony, 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
+        "Modern 3-room apartment (88 m²) in NIYA, Talpiot Jerusalem. 12 m² balcony, 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
     },
   },
   {
-    slug: "briza-4g-m6-m16",
-    title: "BRIZA 4G-M6+M16 — 4-Room Apartment",
+    slug: "niya-4g-m6-m16",
+    title: "NIYA 4G-M6+M16 — 4-Room Apartment",
     tagline: "Spacious family living with panoramic views in Jerusalem",
-    location: "BRIZA BY EFGAD, Talpiot, Jerusalem",
+    location: "NIYA, Talpiot, Jerusalem",
     description:
-      "A stunning 4-room apartment in the prestigious BRIZA BY EFGAD project in Talpiot, Jerusalem. Spanning 111 square meters with two balconies totalling over 23 m², this apartment offers exceptional space and light.",
+      "A stunning 4-room apartment in the prestigious NIYA project in Talpiot, Jerusalem. Spanning 111 square meters with two balconies totalling over 23 m², this apartment offers exceptional space and light.",
     details:
       "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The generous 20 m² main balcony and a 3.9 m² balcony off the master bedroom provide outdoor living space with beautiful views.",
     image: "/manus-storage/briza-4g-interior-clean_c794824e.webp",
@@ -414,7 +414,7 @@ export const PROPERTIES = [
       "/manus-storage/briza-4g-floorplan_6ec1ed71.png",
     ],
     specs: {
-      Project: "BRIZA BY EFGAD",
+      Project: "NIYA",
       Location: "Talpiot, Jerusalem",
       Type: "4G-M6+M16",
       Size: "111 m²",
@@ -438,18 +438,18 @@ export const PROPERTIES = [
     ],
     note: "Contact us for pricing and availability.",
     seo: {
-      title: "4-Room Apartment for Sale in BRIZA, Talpiot Jerusalem | Mr. Ashkelon",
+      title: "4-Room Apartment for Sale in NIYA, Talpiot Jerusalem | Mr. Ashkelon",
       description:
-        "Spacious 4-room apartment (111 m²) in BRIZA BY EFGAD, Talpiot Jerusalem. Two balconies (20 m² + 3.9 m²), 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
+        "Spacious 4-room apartment (111 m²) in NIYA, Talpiot Jerusalem. Two balconies (20 m² + 3.9 m²), 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
     },
   },
   {
-    slug: "briza-5c-m6-m16-m15",
-    title: "BRIZA 5C-M6+M16+M15 — 5-Room Apartment",
+    slug: "niya-5c-m6-m16-m15",
+    title: "NIYA 5C-M6+M16+M15 — 5-Room Apartment",
     tagline: "Exceptional family living with 3 balconies in Jerusalem's premier development",
-    location: "BRIZA BY EFGAD, Talpiot, Jerusalem",
+    location: "NIYA, Talpiot, Jerusalem",
     description:
-      "A magnificent 5-room apartment in the prestigious BRIZA BY EFGAD project in Talpiot, Jerusalem. Spanning 134 square meters with three balconies, this apartment offers generous space, natural light, and premium finishes throughout.",
+      "A magnificent 5-room apartment in the prestigious NIYA project in Talpiot, Jerusalem. Spanning 134 square meters with three balconies, this apartment offers generous space, natural light, and premium finishes throughout.",
     details:
       "The apartment features 3 bathrooms, inverter air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. Three balconies provide abundant outdoor living space with stunning views over Jerusalem.",
     image: "/manus-storage/briza-5c-interior-clean_e0f6c90c.webp",
@@ -458,7 +458,7 @@ export const PROPERTIES = [
       "/manus-storage/floor_plan_5c_mrmrs_2822d432.png",
     ],
     specs: {
-      Project: "BRIZA BY EFGAD",
+      Project: "NIYA",
       Location: "Talpiot, Jerusalem",
       Type: "5C-M6+M16+M15",
       Size: "134 m²",
@@ -480,9 +480,9 @@ export const PROPERTIES = [
     ],
     note: "Contact us for pricing and availability.",
     seo: {
-      title: "5-Room Apartment for Sale in BRIZA, Talpiot Jerusalem | Mr. Ashkelon",
+      title: "5-Room Apartment for Sale in NIYA, Talpiot Jerusalem | Mr. Ashkelon",
       description:
-        "Exceptional 5-room apartment (134 m²) in BRIZA BY EFGAD, Talpiot Jerusalem. 3 balconies, 3 bathrooms, inverter AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
+        "Exceptional 5-room apartment (134 m²) in NIYA, Talpiot Jerusalem. 3 balconies, 3 bathrooms, inverter AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
     },
   },
 ];
