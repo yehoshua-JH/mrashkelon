@@ -28,7 +28,7 @@ export default function AboutJerusalem() {
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1552423314-cf29ab68ad73?w=1920&q=80)",
+              "url(/manus-storage/western-wall-jerusalem_841fa830.jpg)",
           }}
         />
         <h1 className="relative text-4xl md:text-5xl font-heading font-bold text-primary-foreground">
