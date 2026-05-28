@@ -366,9 +366,9 @@ export const PROPERTIES = [
       "A beautifully designed 3-room apartment in the prestigious BRIZA BY EFGAD project. Spanning 88 square meters with a generous 12 m² balcony, this apartment combines contemporary design with practical luxury.",
     details:
       "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The open-plan living and dining area flows seamlessly to the balcony, creating a bright and airy space perfect for modern living.",
-    image: "/manus-storage/briza-3em7-interior_c2029810.png",
+    image: "/manus-storage/briza-3em7-interior-clean_916e341c.png",
     galleryImages: [
-      "/manus-storage/briza-3em7-interior_c2029810.png",
+      "/manus-storage/briza-3em7-interior-clean_916e341c.png",
       "/manus-storage/briza-3em7-floorplan_8363b037.png",
     ],
     specs: {
