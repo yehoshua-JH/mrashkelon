@@ -443,6 +443,48 @@ export const PROPERTIES = [
         "Spacious 4-room apartment (111 m²) in BRIZA BY EFGAD, Talpiot Jerusalem. Two balconies (20 m² + 3.9 m²), 2 bathrooms, central AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
     },
   },
+  {
+    slug: "briza-5c-m6-m16-m15",
+    title: "BRIZA 5C-M6+M16+M15 — 5-Room Apartment",
+    tagline: "Exceptional family living with 3 balconies in Jerusalem's premier development",
+    location: "BRIZA BY EFGAD, Talpiot, Jerusalem",
+    description:
+      "A magnificent 5-room apartment in the prestigious BRIZA BY EFGAD project in Talpiot, Jerusalem. Spanning 134 square meters with three balconies, this apartment offers generous space, natural light, and premium finishes throughout.",
+    details:
+      "The apartment features 3 bathrooms, inverter air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. Three balconies provide abundant outdoor living space with stunning views over Jerusalem.",
+    image: "/manus-storage/interior5room_clean_f2fabbdf.png",
+    galleryImages: [
+      "/manus-storage/interior5room_clean_f2fabbdf.png",
+      "/manus-storage/floor_plan_5c_mrmrs_2822d432.png",
+    ],
+    specs: {
+      Project: "BRIZA BY EFGAD",
+      Location: "Talpiot, Jerusalem",
+      Type: "5C-M6+M16+M15",
+      Size: "134 m²",
+      Balconies: "3 balconies",
+      Rooms: "5",
+      Bathrooms: "3",
+      "Air Conditioning": "Inverter",
+      Parking: "Private + EV charging point",
+      Storage: "Machsan included",
+      Status: "Available — contact us for pricing",
+    },
+    highlights: [
+      "134 m² exceptional apartment",
+      "3 balconies",
+      "3 bathrooms",
+      "Inverter air conditioning",
+      "Parking with EV charging point",
+      "Storage room (machsan) included",
+    ],
+    note: "Contact us for pricing and availability.",
+    seo: {
+      title: "5-Room Apartment for Sale in BRIZA, Talpiot Jerusalem | Mr. Ashkelon",
+      description:
+        "Exceptional 5-room apartment (134 m²) in BRIZA BY EFGAD, Talpiot Jerusalem. 3 balconies, 3 bathrooms, inverter AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
+    },
+  },
 ];
 
 export const BLOG_POSTS = [
