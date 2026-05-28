@@ -18,6 +18,7 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Properties", href: "/featured-properties" },
   { label: "Ashkelon", href: "/about-ashkelon" },
+  { label: "Jerusalem", href: "/about-jerusalem" },
   { label: "Resources", href: "/resources" },
 ];
 

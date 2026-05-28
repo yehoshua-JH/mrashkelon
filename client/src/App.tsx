@@ -17,6 +17,7 @@ import Services from "./pages/Services";
 import FeaturedProperties from "./pages/FeaturedProperties";
 import PropertyDetail from "./pages/PropertyDetail";
 import AboutAshkelon from "./pages/AboutAshkelon";
+import AboutJerusalem from "./pages/AboutJerusalem";
 import Resources from "./pages/Resources";
 import BlogArticle from "./pages/BlogArticle";
 import Contact from "./pages/Contact";
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/properties">{() => <Redirect to="/featured-properties" />}</Route>
       <Route path="/property/:slug" component={PropertyDetail} />
       <Route path="/about-ashkelon" component={AboutAshkelon} />
+      <Route path="/about-jerusalem" component={AboutJerusalem} />
       <Route path="/resources" component={Resources} />
       <Route path="/resources/:slug" component={BlogArticle} />
       <Route path="/contact" component={Contact} />
