@@ -94,45 +94,6 @@ export const PROPERTIES = [
     },
   },
   {
-    slug: "penthouse",
-    title: "Penthouse Apartment",
-    tagline: "Spacious luxury in Ashkelon",
-    location: "Ashkelon",
-    description:
-      "This stunning penthouse apartment offers an unparalleled combination of space, comfort, and location. With 125 square meters of living space, plus a 25-square-meter balcony, this home is perfect for those seeking luxury and convenience.",
-    details:
-      "The double-size master bedroom provides a private retreat, while the open-concept living area flows seamlessly to the spacious balcony, where you can enjoy a partial sea view and fresh coastal breezes. Located just five minutes from the beach.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image0-400x516_eaefe592.jpeg",
-    galleryImages: [
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image0-400x516_eaefe592.jpeg",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image1-400x516_6b98bc1d.jpeg",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image2-400x516_2c5fd251.jpeg",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/image3-400x516_ce215583.jpeg",
-    ],
-    specs: {
-      Location: "Ashkelon",
-      Size: "125 sqm + 25 sqm balcony",
-      Rooms: "4 (including double-size master)",
-      Bathrooms: "2.5",
-      Parking: "2 private spaces",
-      Features: "Storage room, partial sea view",
-    },
-    highlights: [
-      "Double-size master bedroom",
-      "25 sqm balcony with partial sea view",
-      "Open-concept living area",
-      "5 minutes from the beach",
-      "2 private parking spaces",
-      "Storage room included",
-    ],
-    note: "Contact us today for pricing and to schedule a viewing.",
-    seo: {
-      title: "Penthouse Apartment for Sale in Ashkelon | Mr. Ashkelon",
-      description:
-        "Stunning 125 sqm penthouse with 25 sqm balcony and partial sea view in Ashkelon. Contact Mr. Ashkelon for details.",
-    },
-  },
-  {
     slug: "sea-view",
     title: "Amazing Sea Views — Afridar Apartment",
     tagline: "Breathtaking ocean views in Afridar",
