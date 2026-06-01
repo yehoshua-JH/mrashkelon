@@ -112,7 +112,7 @@ export default function Home() {
 
             {/* Right: Featured Property Card — Genesis Jerusalem */}
             <div>
-              <Link href="/property/genesis-jerusalem" className="block group">
+              <Link href="/genesis-jerusalem" className="block group">
                 <div className="relative rounded-xl overflow-hidden shadow-2xl">
                   <div
                     className="text-center py-3 px-4"

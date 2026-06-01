@@ -22,7 +22,6 @@ import Resources from "./pages/Resources";
 import BlogArticle from "./pages/BlogArticle";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import BrizaPenthouse from "./pages/BrizaPenthouse";
 import JerusalemProject from "./pages/JerusalemProject";
 import GenesisJerusalem from "./pages/GenesisJerusalem";
 import NotFound from "./pages/NotFound";
@@ -45,7 +44,6 @@ function Router() {
       <Route path="/resources" component={Resources} />
       <Route path="/resources/:slug" component={BlogArticle} />
       <Route path="/contact" component={Contact} />
-      <Route path="/briza-penthouse" component={BrizaPenthouse} />
       <Route path="/jerusalem-project" component={JerusalemProject} />
       <Route path="/genesis-jerusalem" component={GenesisJerusalem} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />

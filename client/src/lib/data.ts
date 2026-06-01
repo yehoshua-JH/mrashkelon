@@ -172,46 +172,6 @@ export const PROPERTIES = [
     },
   },
   {
-    slug: "briza-penthouse",
-    title: "BRIZA BY EFGAD Penthouse",
-    tagline: "Last available — stunning sea views",
-    location: "Ashkelon",
-    description:
-      "The last available penthouse in the prestigious BRIZA BY EFGAD project in Ashkelon. This exceptional property on floor 22 offers stunning open sea views, a spacious 70 m\u00b2 terrace, and a large open-plan living area.",
-    details:
-      "This penthouse features a large open living space connected to a dining area and kitchen. The property includes 6 rooms with a master suite, and direct access to a spacious 70 m\u00b2 terrace with stunning open sea views and outdoor seating area.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png",
-    galleryImages: [
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-floor-plan_a30e3a77.jpg",
-    ],
-    specs: {
-      Location: "Ashkelon",
-      Project: "BRIZA BY EFGAD",
-      Floor: "22",
-      Rooms: "6",
-      "Built Area": "~177 m\u00b2",
-      Balcony: "70 m\u00b2",
-      Parking: "2 underground spaces",
-      Storage: "Storage room included",
-      Status: "Last unit available",
-    },
-    highlights: [
-      "Open sea views from floor 22",
-      "70 m\u00b2 terrace with outdoor seating",
-      "6 rooms incl. master suite",
-      "~177 m\u00b2 built area",
-      "2 underground parking spaces",
-      "Prestigious BRIZA BY EFGAD project",
-    ],
-    note: "Last available unit. Call now: 054 7312 118",
-    seo: {
-      title: "BRIZA BY EFGAD Penthouse for Sale in Ashkelon | Mr. Ashkelon",
-      description:
-        "Last available penthouse in the BRIZA BY EFGAD project, Ashkelon. Floor 22, open sea views, 70 m\u00b2 terrace, 6 rooms. Contact Mr. Ashkelon for details.",
-    },
-  },
-  {
     slug: "barnea-5-room",
     title: "5-Room Apartment in Barnea",
     tagline: "Spacious family home with sea views — immediate possession",
@@ -320,17 +280,17 @@ export const PROPERTIES = [
   },
   {
     slug: "niya-3em7",
-    title: "NIYA 3E-M7 — 3-Room Apartment",
+    title: "NIYA — 3 Rooms",
     tagline: "Modern living in Jerusalem's premier new development",
     location: "NIYA, Talpiot, Jerusalem",
     description:
       "A beautifully designed 3-room apartment in the prestigious NIYA project. Spanning 88 square meters with a generous 12 m² balcony, this apartment combines contemporary design with practical luxury.",
     details:
       "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The open-plan living and dining area flows seamlessly to the balcony, creating a bright and airy space perfect for modern living.",
-    image: "/manus-storage/briza-3em7-interior-clean_03625e96.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jWJJNoQppMPmRmpp.webp",
     galleryImages: [
-      "/manus-storage/briza-3em7-interior-clean_03625e96.webp",
-      "/manus-storage/briza-3em7-floorplan_8363b037.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jWJJNoQppMPmRmpp.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/uPxmELIPrmTNHzFC.png",
     ],
     specs: {
       Project: "NIYA",
@@ -362,17 +322,17 @@ export const PROPERTIES = [
   },
   {
     slug: "niya-4g-m6-m16",
-    title: "NIYA 4G-M6+M16 — 4-Room Apartment",
+    title: "NIYA — 4 Rooms",
     tagline: "Spacious family living with panoramic views in Jerusalem",
     location: "NIYA, Talpiot, Jerusalem",
     description:
       "A stunning 4-room apartment in the prestigious NIYA project in Talpiot, Jerusalem. Spanning 111 square meters with two balconies totalling over 23 m², this apartment offers exceptional space and light.",
     details:
       "The apartment features 2 bathrooms, central air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. The generous 20 m² main balcony and a 3.9 m² balcony off the master bedroom provide outdoor living space with beautiful views.",
-    image: "/manus-storage/briza-4g-interior-clean_c794824e.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/rIWCabCStvInvJSn.webp",
     galleryImages: [
-      "/manus-storage/briza-4g-interior-clean_c794824e.webp",
-      "/manus-storage/briza-4g-floorplan_6ec1ed71.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/rIWCabCStvInvJSn.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/anXjXxOPnAIfoEaK.png",
     ],
     specs: {
       Project: "NIYA",
@@ -406,17 +366,17 @@ export const PROPERTIES = [
   },
   {
     slug: "niya-5c-m6-m16-m15",
-    title: "NIYA 5C-M6+M16+M15 — 5-Room Apartment",
+    title: "NIYA — 5 Rooms",
     tagline: "Exceptional family living with 3 balconies in Jerusalem's premier development",
     location: "NIYA, Talpiot, Jerusalem",
     description:
       "A magnificent 5-room apartment in the prestigious NIYA project in Talpiot, Jerusalem. Spanning 134 square meters with three balconies, this apartment offers generous space, natural light, and premium finishes throughout.",
     details:
       "The apartment features 3 bathrooms, inverter air conditioning, and a private parking space with an electric vehicle charging point. A storage room (machsan) is included. Three balconies provide abundant outdoor living space with stunning views over Jerusalem.",
-    image: "/manus-storage/briza-5c-interior-clean_e0f6c90c.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/lUFLIyUSWxweumyH.webp",
     galleryImages: [
-      "/manus-storage/briza-5c-interior-clean_e0f6c90c.webp",
-      "/manus-storage/floor_plan_5c_mrmrs_2822d432.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/lUFLIyUSWxweumyH.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GLCuCttQzMnfnjda.png",
     ],
     specs: {
       Project: "NIYA",
@@ -444,6 +404,54 @@ export const PROPERTIES = [
       title: "5-Room Apartment for Sale in NIYA, Talpiot Jerusalem | Mr. Ashkelon",
       description:
         "Exceptional 5-room apartment (134 m²) in NIYA, Talpiot Jerusalem. 3 balconies, 3 bathrooms, inverter AC, parking with EV charging, storage room. Contact Mr. Ashkelon.",
+    },
+  },
+  {
+    slug: "yafe-nof-4-room",
+    title: "4-Room Apartment on Yafe Nof",
+    tagline: "100m from the beach — sea views, Shirat Moshe building",
+    location: "Yafe Nof, Ashkelon",
+    description:
+      "A beautiful 4-room apartment on the 6th floor of the prestigious Shirat Moshe building, just 100 metres from the beach. Stunning sea views, large kitchen and salon, three bedrooms including a mamad.",
+    details:
+      "Located on Yafe Nof street, one of Ashkelon's most sought-after addresses, this well-presented apartment sits on the 6th floor of 14 in the Shirat Moshe building. The apartment features a large, well-fitted kitchen and salon, three bedrooms including a mamad (safe room), private parking, and a machsan (storage room). The building offers full disabled access and a Shabbat elevator. Ashkenaz and Sephardi shuls are nearby, as is a mikva. Just 100 metres from the Mediterranean beach.",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/YZoXSncqEivJukFh.png",
+    videoUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/tcZquqcPTEnsvAvd.mp4",
+    galleryImages: [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/YZoXSncqEivJukFh.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/bUfUYkhfBQeHDCNX.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/cKHzolMoYaZGcNiJ.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/BGrseqTFomDjaNiJ.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XtySUzcqmWJxQjPK.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/lTAKmvLWQNUKPMSN.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/OEMPibhTVWuhIKoL.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/WRThfNJNsRhjlOie.png",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/IUKmNPcguLGcIvQu.png",
+    ],
+    specs: {
+      Location: "Yafe Nof, Ashkelon",
+      Size: "4 rooms",
+      Floor: "6th of 14",
+      Bedrooms: "3 (including Mamad)",
+      Parking: "Private parking + Machsan",
+      Features: "Sea views, Shabbat elevator, disabled access",
+      Price: "₪2,650,000",
+    },
+    highlights: [
+      "100 metres from the beach",
+      "Sea views",
+      "Mamad (safe room) included",
+      "Private parking and machsan",
+      "Shabbat elevator",
+      "Entry for disabled",
+      "Ashkenaz and Sephardi shuls nearby",
+      "Mikva nearby",
+    ],
+    note: "Price: ₪2,650,000. Contact us for a private viewing.",
+    seo: {
+      title: "4-Room Apartment for Sale on Yafe Nof, Ashkelon | Mr. Ashkelon",
+      description:
+        "Beautiful 4-room apartment in Shirat Moshe building, Yafe Nof, Ashkelon. 6th floor, sea views, 100m from beach, mamad, private parking. Price ₪2,650,000.",
     },
   },
 ];

@@ -17,7 +17,8 @@ jobs:
           port: 22
           script: |
             cd /var/www/mrashkelon
-            git pull
-            pnpm build
+            git fetch origin
+            git reset --hard origin/main
+            pnpm run build
             pm2 restart mrashkelon
             echo "✅ Deployed successfully at $(date)"

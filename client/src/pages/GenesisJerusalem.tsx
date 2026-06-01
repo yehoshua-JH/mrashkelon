@@ -286,7 +286,7 @@ export default function GenesisJerusalem() {
           SECTION 1 — HERO
       ══════════════════════════════════════════════════════ */}
       <section
-        className="relative w-full flex flex-col justify-end overflow-hidden"
+        className="relative w-full flex flex-col justify-center overflow-hidden"
         style={{
           paddingTop: "64px",
           minHeight: "92vh",
@@ -306,7 +306,7 @@ export default function GenesisJerusalem() {
         {/* PRE-SALE badge + WESTERN JERUSALEM badge — inside hero content, not absolute */}
 
         {/* Hero content */}
-        <div className="relative z-10 px-4 sm:px-6 md:px-14 pb-12 md:pb-20 max-w-4xl">
+        <div         className="relative z-10 px-4 sm:px-6 md:px-14 pb-8 md:pb-12 max-w-4xl">
           {/* Badges row */}
           <div className="flex flex-wrap gap-3 mb-6">
             <div
@@ -331,7 +331,7 @@ export default function GenesisJerusalem() {
             className="font-bold leading-[1.08] mb-5"
             style={{
               fontFamily: "Georgia, serif",
-              fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
+              fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
               color: "#ffffff",
             }}
           >
@@ -353,7 +353,7 @@ export default function GenesisJerusalem() {
             {[
               { value: "28", label: "Floors" },
               { value: "3–5", label: "Room Apartments" },
-              { value: "100%", label: "Mamad Included" },
+              { value: "Mamad Room", label: "Included" },
             ].map(({ value, label }) => (
               <div key={label} className="flex flex-col">
                 <span
@@ -372,7 +372,7 @@ export default function GenesisJerusalem() {
           {/* CTA buttons */}
           <div className="flex flex-wrap gap-4">
             <a
-              href="tel:054-731-2118"
+              href="#contact"
               className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base transition-all duration-200"
               style={{ backgroundColor: GOLD, color: "#fff" }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
@@ -398,7 +398,7 @@ export default function GenesisJerusalem() {
 
         {/* Bottom gradient fade */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+          className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
           style={{ background: "linear-gradient(to bottom, transparent, oklch(1 0 0))" }}
         />
       </section>
@@ -406,7 +406,7 @@ export default function GenesisJerusalem() {
       {/* ══════════════════════════════════════════════════════
           SECTION 2 — OVERVIEW
       ══════════════════════════════════════════════════════ */}
-      <section className="py-24" style={{ backgroundColor: "oklch(1 0 0)" }}>
+      <section className="py-12" style={{ backgroundColor: "oklch(1 0 0)" }}>
         <div className="container max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -894,12 +894,14 @@ export default function GenesisJerusalem() {
       </section>
 
       {/* Contact Form */}
+      <div id="contact">
       <ContactForm
         sourcePage="Genesis Jerusalem Page"
         title="Send Us a Message"
         subtitle="We'll get back to you with full project details and pre-sale pricing as soon as possible."
         showContactInfo
       />
+      </div>
 
       <Footer />
     </div>

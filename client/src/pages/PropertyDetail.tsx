@@ -123,6 +123,21 @@ export default function PropertyDetail() {
                 </div>
               )}
 
+              {/* Video */}
+              {(property as any).videoUrl && (
+                <div>
+                  <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Property Video</h2>
+                  <div className="rounded-xl overflow-hidden">
+                    <video
+                      src={(property as any).videoUrl}
+                      controls
+                      playsInline
+                      className="w-full max-h-[500px] object-cover rounded-xl"
+                    />
+                  </div>
+                </div>
+              )}
+
               {/* Gallery */}
               {property.galleryImages.length > 0 && (
                 <div>
