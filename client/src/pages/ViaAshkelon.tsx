@@ -420,6 +420,8 @@ export default function ViaAshkelon() {
                 alt="VIA Ashkelon residential complex"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 style={{ aspectRatio: "4/3" }}
+                loading="eager"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 flex items-end p-5"
@@ -540,6 +542,8 @@ export default function ViaAshkelon() {
                       alt={h.title}
                       className="w-full object-cover transition-transform duration-700 hover:scale-105"
                       style={{ aspectRatio: "16/9" }}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>
@@ -581,6 +585,8 @@ export default function ViaAshkelon() {
                   alt={img.caption}
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   style={{ aspectRatio: "16/10" }}
+                  loading={i < 2 ? "eager" : "lazy"}
+                  decoding="async"
                 />
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"

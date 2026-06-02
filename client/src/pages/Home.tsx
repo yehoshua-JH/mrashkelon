@@ -271,7 +271,7 @@ export default function Home() {
                     style={{ backgroundColor: "var(--card)", borderColor: "var(--secondary)" }}
                   >
                     <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
-                      <img src={property.image} alt={property.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <img src={property.image} alt={property.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
                       <span className="absolute top-2 left-2 px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded text-white" style={{ backgroundColor: "var(--secondary)" }}>Pre-Sale</span>
                     </div>
                     <div className="p-5">
@@ -288,7 +288,7 @@ export default function Home() {
               <Link href="/niya" className="group block" style={{ textDecoration: "none" }}>
                 <div className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border-2" style={{ backgroundColor: "var(--card)", borderColor: "var(--secondary)" }}>
                   <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
-                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png" alt="NIYA Jerusalem" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png" alt="NIYA Jerusalem" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
                     <span className="absolute top-2 left-2 px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded text-white" style={{ backgroundColor: "var(--secondary)" }}>Pre-Sale</span>
                   </div>
                   <div className="p-5">
@@ -322,7 +322,7 @@ export default function Home() {
                     style={{ backgroundColor: "var(--card)", borderColor: "var(--border)" }}
                   >
                     <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
-                      <img src={property.image} alt={property.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <img src={property.image} alt={property.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
                     </div>
                     <div className="p-5">
                       <h3 className="font-semibold mb-1" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>{property.title}</h3>

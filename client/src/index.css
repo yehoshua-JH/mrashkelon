@@ -159,6 +159,12 @@
   }
 }
 
+/* Shimmer animation for image skeleton placeholders */
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* Gallery lightbox fade-in animation */
 @keyframes galleryFadeIn {
   from {

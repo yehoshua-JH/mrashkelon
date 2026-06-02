@@ -11,3 +11,8 @@
 - [x] Remove VIA from main navbar (accessible only via Properties page)
 - [x] NiyaProject key details grid: changed to grid-cols-1 sm:grid-cols-2 md:grid-cols-3
 - [x] ViaAshkelon key details grid: changed to grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+- [x] Image loading performance: added loading="lazy" + decoding="async" to all gallery/card images across all pages
+- [x] Image loading performance: added loading="eager" to above-fold hero images (NIYA, Genesis, VIA overview)
+- [x] Image loading performance: added <link rel="preload"> for homepage hero and Genesis hero in index.html
+- [x] Image loading performance: added shimmer skeleton CSS animation for placeholder states
+- [x] Image loading performance: created reusable LazyImage component with IntersectionObserver + fade-in

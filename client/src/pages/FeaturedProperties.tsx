@@ -101,6 +101,8 @@ function NiyaProjectCard() {
             alt="NIYA Jerusalem — aerial night render"
             className="w-full object-cover rounded-lg mb-2"
             style={{ height: "clamp(160px, 25vw, 176px)" }}
+            loading="eager"
+            decoding="async"
           />
           <div className="grid grid-cols-3 gap-2">
             {NIYA_GALLERY.slice(1, 4).map((img, i) => (
@@ -110,6 +112,8 @@ function NiyaProjectCard() {
                 alt={`NIYA apartment ${i + 1}`}
                 className="w-full object-cover rounded-lg"
                 style={{ height: "clamp(64px, 12vw, 96px)" }}
+                loading="lazy"
+                decoding="async"
               />
             ))}
           </div>
@@ -194,6 +198,8 @@ function GenesisProjectCard() {
             alt="Genesis Jerusalem tower"
             className="w-full object-cover rounded-lg mb-2"
             style={{ height: "clamp(160px, 25vw, 176px)" }}
+            loading="eager"
+            decoding="async"
           />
           <div className="grid grid-cols-3 gap-2">
             {thumbs.map((img, i) => (
@@ -203,6 +209,8 @@ function GenesisProjectCard() {
                 alt={`Genesis Jerusalem ${i + 1}`}
                 className="w-full object-cover rounded-lg"
                 style={{ height: "clamp(64px, 12vw, 96px)" }}
+                loading="lazy"
+                decoding="async"
               />
             ))}
           </div>
@@ -290,6 +298,8 @@ function ViaAshkelonCard() {
             alt="VIA Ashkelon residential complex"
             className="w-full object-cover rounded-lg"
             style={{ height: "clamp(160px, 25vw, 220px)" }}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
@@ -463,6 +473,8 @@ export default function FeaturedProperties() {
                             alt={`${property.title} ${i + 1}`}
                             className="w-full object-cover rounded-lg"
                             style={{ height: "clamp(100px, 18vw, 144px)" }}
+                            loading="lazy"
+                            decoding="async"
                           />
                         ))}
                       </div>

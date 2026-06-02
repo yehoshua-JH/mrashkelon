@@ -441,7 +441,7 @@ export default function NiyaProject() {
             </div>
             <div className="rounded-xl overflow-hidden" style={{ minHeight: "280px" }}>
               <img src={COURTYARD} alt="Talpiot urban renewal" className="w-full h-full object-cover"
-                style={{ minHeight: "280px" }} />
+                style={{ minHeight: "280px" }} loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -482,7 +482,8 @@ export default function NiyaProject() {
             style={{ minHeight: "420px" }}>
             {/* Image half */}
             <div className="w-full md:w-1/2 relative overflow-hidden" style={{ minHeight: "260px" }}>
-              <img src={image} alt={title} className="w-full h-full object-cover" style={{ minHeight: "260px" }} />
+              <img src={image} alt={title} className="w-full h-full object-cover" style={{ minHeight: "260px" }}
+                loading="lazy" decoding="async" />
               {/* Gradient only on md+ to blend into adjacent text panel */}
               <div className="hidden md:block absolute inset-0" style={{
                 background: idx % 2 === 0
@@ -545,7 +546,8 @@ export default function NiyaProject() {
               >
                 <div className="relative overflow-hidden" style={{ height: "220px" }}>
                   <img src={image} alt={`${rooms}-Room Apartment`}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy" decoding="async" />
                   <div className="absolute top-3 left-3">
                     <span className="text-xs font-bold tracking-widest px-3 py-1 rounded"
                       style={{ backgroundColor: GOLD, color: "#fff" }}>{badge}</span>

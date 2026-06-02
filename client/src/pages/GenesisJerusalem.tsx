@@ -435,6 +435,8 @@ export default function GenesisJerusalem() {
                 alt="Genesis Jerusalem tower"
                 className="w-full rounded-xl object-cover"
                 style={{ maxHeight: "420px", boxShadow: "0 20px 60px rgba(0,0,0,0.18)" }}
+                loading="eager"
+                decoding="async"
               />
               <div
                 className="inline-flex items-center gap-4 px-5 py-3 rounded-lg self-start"
@@ -660,6 +662,8 @@ export default function GenesisJerusalem() {
                 alt={title}
                 className="w-full h-full object-cover"
                 style={{ minHeight: "260px" }}
+                loading="lazy"
+                decoding="async"
               />
               {/* Gradient only on md+ to blend into adjacent text panel */}
               <div
@@ -739,6 +743,8 @@ export default function GenesisJerusalem() {
                   src={img.src}
                   alt={img.caption}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading={i < 3 ? "eager" : "lazy"}
+                  decoding="async"
                 />
                 {/* Hover overlay */}
                 <div
