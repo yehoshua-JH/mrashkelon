@@ -40,8 +40,8 @@ const MUTED  = "oklch(0.55 0.02 55)";   // muted text
 // ── Images ────────────────────────────────────────────────────────────────────
 // Page 3 of PDF — aerial night render of NIYA towers (hero)
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/zgxUOkvJLTWEKcnv.png";
-// Page 4 — replaced with page 16 courtyard (original had Video watermark)
-const BOULEVARD_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/gfcClugcMwVycJVP.jpg";
+// Clean aerial night photo (user screenshot, cropped)
+const BOULEVARD_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/mqTgtvEwGCVXROpf.png";
 // Page 5 — replaced with courtyard (original had Video watermark)
 const BOULEVARD_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/gfcClugcMwVycJVP.jpg";
 // Page 12 — aerial night render of towers (gallery)
