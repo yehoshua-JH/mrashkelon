@@ -43,10 +43,10 @@ const DARK   = "oklch(0.16 0.04 255)";
 // User-provided clean aerial night photo (cropped)
 const HERO_IMAGE       = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png";
 const AERIAL_NIGHT     = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png";
-const PLAYGROUND       = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jUpFXvPOmHiTwzRX.jpg";
-const ROOFTOP          = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/IijdyueCNfVbXDJq.jpg";
-const COURTYARD        = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/gfcClugcMwVycJVP.jpg";
-const PENTHOUSE_BALCONY= "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/EtYSodsDWlgTxlCI.jpg";
+const PLAYGROUND       = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/BwmpnHWeHUmRivNP.webp";
+const ROOFTOP          = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/NkxcKvpJqmtSCJHn.webp";
+const COURTYARD        = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/IDMporjalqnyXpBB.webp";
+const PENTHOUSE_BALCONY= "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/fSSCMzvOxorXRceG.webp";
 const APT_3_ROOM       = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jWJJNoQppMPmRmpp.webp";
 const APT_4_ROOM       = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/rIWCabCStvInvJSn.webp";
 const APT_5_ROOM       = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/lUFLIyUSWxweumyH.webp";
