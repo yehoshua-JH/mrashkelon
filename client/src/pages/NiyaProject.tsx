@@ -315,12 +315,16 @@ export default function NiyaProject() {
               </p>
             </div>
             <div className="relative">
-              <img
-                src={BOULEVARD_1}
-                alt="Talpiot neighbourhood render"
-                className="w-full rounded-lg object-cover"
-                style={{ height: "400px" }}
-              />
+              <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/qJnpTADcbrM"
+                  title="Talpiot Urban Renewal — Jerusalem Municipality"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full rounded-lg"
+                  style={{ border: "none" }}
+                />
+              </div>
               <div className="absolute -bottom-4 -left-4 px-5 py-3 rounded"
                 style={{ backgroundColor: COPPER }}>
                 <p className="text-white font-bold text-sm tracking-wide">Talpiot, Jerusalem</p>
