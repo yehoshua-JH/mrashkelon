@@ -40,8 +40,8 @@ const MUTED  = "oklch(0.55 0.02 55)";   // muted text
 // ── Images ────────────────────────────────────────────────────────────────────
 // Page 3 of PDF — aerial night render of NIYA towers (hero)
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/zgxUOkvJLTWEKcnv.png";
-// Page 4 — Talpiot boulevard render (jacaranda, cafes, towers)
-const BOULEVARD_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/pDSXUhdEXuDeDZyO.jpg";
+// Page 4 — replaced with page 16 courtyard (original had Video watermark)
+const BOULEVARD_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/gfcClugcMwVycJVP.jpg";
 // Page 5 — replaced with courtyard (original had Video watermark)
 const BOULEVARD_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/gfcClugcMwVycJVP.jpg";
 // Page 12 — aerial night render of towers (gallery)
@@ -63,8 +63,7 @@ const APT_5_ROOM = "https://files.manuscdn.com/user_upload_by_module/session_fil
 // ── Gallery ───────────────────────────────────────────────────────────────────
 const GALLERY = [
   { src: AERIAL_NIGHT,      caption: "NIYA towers — aerial night render",          category: "Exterior" },
-  { src: BOULEVARD_1,       caption: "Talpiot boulevard — cafés and green spaces",  category: "Neighbourhood" },
-  { src: BOULEVARD_2,       caption: "Talpiot — bike lanes and entertainment",      category: "Neighbourhood" },
+  { src: BOULEVARD_1,       caption: "NIYA courtyard and green spaces",            category: "Amenities" },
   { src: PLAYGROUND,        caption: "Residents' playground and fitness park",      category: "Amenities" },
   { src: ROOFTOP,           caption: "Rooftop terrace — 400 m² communal space",    category: "Amenities" },
   { src: COURTYARD,         caption: "Green courtyard between buildings",           category: "Amenities" },
