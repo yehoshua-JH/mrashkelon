@@ -253,12 +253,13 @@ function ViaAshkelonCard() {
           <div className="border border-gray-200 rounded-xl p-4 bg-gray-50">
             <div className="grid grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-2">
               {[
-                ["Developer", "Hay Nahmias"],
                 ["Location", "Ashkelon"],
-                ["Lifestyle", "Mediterranean coast"],
-                ["Community", "Anglo-friendly"],
+                ["Developer", "Hay Nahmias"],
+                ["Apartments", "2, 3, 4 & 5 rooms"],
+                ["Safe Room", "Mamad in every unit"],
+                ["Storage", "Included"],
+                ["Parking", "Underground"],
                 ["Status", "Coming Soon"],
-                ["Value", "Competitive pricing"],
               ].map(([key, value]) => (
                 <div key={key} className="flex flex-col">
                   <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">{key}</span>
