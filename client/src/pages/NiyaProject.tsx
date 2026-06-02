@@ -42,8 +42,8 @@ const MUTED  = "oklch(0.55 0.02 55)";   // muted text
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/zgxUOkvJLTWEKcnv.png";
 // Page 4 — Talpiot boulevard render (jacaranda, cafes, towers)
 const BOULEVARD_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/pDSXUhdEXuDeDZyO.jpg";
-// Page 5 — Talpiot bike lane boulevard
-const BOULEVARD_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/HnHEvsOhikGfdLdS.jpg";
+// Page 5 — replaced with courtyard (original had Video watermark)
+const BOULEVARD_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/gfcClugcMwVycJVP.jpg";
 // Page 12 — aerial night render of towers (gallery)
 const AERIAL_NIGHT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/zgxUOkvJLTWEKcnv.png";
 // Page 13 — playground / sportive life
@@ -315,16 +315,12 @@ export default function NiyaProject() {
               </p>
             </div>
             <div className="relative">
-              <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: "56.25%" }}>
-                <iframe
-                  src="https://www.youtube.com/embed/qJnpTADcbrM"
-                  title="Talpiot Urban Renewal — Jerusalem Municipality"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full rounded-lg"
-                  style={{ border: "none" }}
-                />
-              </div>
+              <img
+                src={BOULEVARD_1}
+                alt="Talpiot neighbourhood render"
+                className="w-full rounded-lg object-cover"
+                style={{ height: "400px" }}
+              />
               <div className="absolute -bottom-4 -left-4 px-5 py-3 rounded"
                 style={{ backgroundColor: COPPER }}>
                 <p className="text-white font-bold text-sm tracking-wide">Talpiot, Jerusalem</p>

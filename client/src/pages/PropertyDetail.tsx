@@ -126,7 +126,7 @@ export default function PropertyDetail() {
               {/* Video */}
               {(property as any).videoUrl && (
                 <div>
-                  <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Property Video</h2>
+
                   <div className="rounded-xl overflow-hidden">
                     <video
                       src={(property as any).videoUrl}
