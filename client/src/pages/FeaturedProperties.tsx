@@ -34,7 +34,7 @@ function NiyaProjectCard() {
           className="font-bold"
           style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.3rem, 3vw, 1.8rem)", color: NAVY }}
         >
-          NIYA — Jerusalem Project
+          NIYA
         </h2>
         <span
           className="px-3 py-1 text-xs font-bold tracking-[0.12em] uppercase rounded-full text-white"
@@ -133,7 +133,7 @@ function GenesisProjectCard() {
           className="font-bold"
           style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.3rem, 3vw, 1.8rem)", color: NAVY }}
         >
-          Genesis Jerusalem
+          Genesis — Jerusalem Project
         </h2>
         <span
           className="px-3 py-1 text-xs font-bold tracking-[0.12em] uppercase rounded-full text-white"
@@ -212,6 +212,91 @@ function GenesisProjectCard() {
   );
 }
 
+// ── VIA Ashkelon Project Card ────────────────────────────────────────────────
+const VIA_HERO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/aGJnumXzQjXioSLg.png";
+
+function ViaAshkelonCard() {
+  return (
+    <div className="bg-white rounded-2xl shadow-sm mb-8 overflow-hidden border-2" style={{ borderColor: GOLD }}>
+      {/* Header */}
+      <div className="px-5 sm:px-8 pt-6 sm:pt-8 pb-4 border-b border-gray-100 flex flex-wrap items-center justify-between gap-3">
+        <h2
+          className="font-bold"
+          style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.3rem, 3vw, 1.8rem)", color: NAVY }}
+        >
+          VIA — Ashkelon Project
+        </h2>
+        <span
+          className="px-3 py-1 text-xs font-bold tracking-[0.12em] uppercase rounded-full text-white"
+          style={{ backgroundColor: GOLD }}
+        >
+          Coming Soon
+        </span>
+      </div>
+
+      {/* Body */}
+      <div className="flex flex-col md:flex-row gap-6 p-5 sm:p-8">
+        {/* Left */}
+        <div className="flex-1 flex flex-col gap-4">
+          <p className="text-gray-600 leading-relaxed text-sm">
+            A landmark new residential development by Hay Nahmias in Ashkelon — offering modern apartments with premium finishes in one of Israel’s most vibrant coastal cities. Steps from the Mediterranean, parks, and a growing Anglo community.
+          </p>
+
+          <div className="border border-gray-200 rounded-xl p-4 bg-gray-50">
+            <div className="grid grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-2">
+              {[
+                ["Developer", "Hay Nahmias"],
+                ["Location", "Ashkelon"],
+                ["Lifestyle", "Mediterranean coast"],
+                ["Community", "Anglo-friendly"],
+                ["Status", "Coming Soon"],
+                ["Value", "Competitive pricing"],
+              ].map(([key, value]) => (
+                <div key={key} className="flex flex-col">
+                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">{key}</span>
+                  <span className="text-sm font-medium" style={{ color: NAVY }}>{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="text-sm font-semibold" style={{ color: GOLD }}>
+            Register your interest to receive priority access to pricing and floor plans.
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            <Button
+              asChild
+              className="rounded-md px-5 sm:px-6 font-semibold text-white text-sm"
+              style={{ backgroundColor: GOLD }}
+            >
+              <Link href="/via-ashkelon">View Project</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-md px-5 sm:px-6 font-semibold text-sm"
+              style={{ borderColor: NAVY, color: NAVY }}
+            >
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        </div>
+
+        {/* Right: image */}
+        <div className="w-full md:w-[300px] lg:w-[340px] flex-shrink-0">
+          <img
+            src={VIA_HERO}
+            alt="VIA Ashkelon residential complex"
+            className="w-full object-cover rounded-lg"
+            style={{ height: "clamp(160px, 25vw, 220px)" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Section label component ───────────────────────────────────────────────────
 function SectionHeading({ label, title, subtitle }: { label: string; title: string; subtitle?: string }) {
   return (
@@ -277,6 +362,7 @@ export default function FeaturedProperties() {
 
         <NiyaProjectCard />
         <GenesisProjectCard />
+        <ViaAshkelonCard />
 
         {/* ═══════════════════════════════════════════════
             SECTION 2 — AVAILABLE PROPERTIES (Existing)

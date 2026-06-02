@@ -25,6 +25,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import JerusalemProject from "./pages/JerusalemProject";
 import GenesisJerusalem from "./pages/GenesisJerusalem";
 import NiyaProject from "./pages/NiyaProject";
+import ViaAshkelon from "./pages/ViaAshkelon";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 function Router() {
@@ -48,6 +49,8 @@ function Router() {
       <Route path="/jerusalem-project" component={JerusalemProject} />
       <Route path="/genesis-jerusalem" component={GenesisJerusalem} />
       <Route path="/niya" component={NiyaProject} />
+      <Route path="/niya-jerusalem" component={NiyaProject} />
+      <Route path="/via-ashkelon" component={ViaAshkelon} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
