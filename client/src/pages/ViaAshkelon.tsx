@@ -32,19 +32,29 @@ const GOLD  = "oklch(0.72 0.12 75)";
 const CREAM = "oklch(0.975 0.008 80)";
 
 // ── Images ────────────────────────────────────────────────────────────────────
-const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/aGJnumXzQjXioSLg.png";
+const VIA_IMG_1  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/okInSHJEMyVmcUyl.jpg";
+const VIA_IMG_2  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/hSRIthNkLNDJisze.jpg";
+const VIA_IMG_3  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/TcbRmPsEzUfpygBN.jpg";
+const VIA_IMG_4  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/WwyyniAaICiaJSHR.jpg";
+const VIA_IMG_5  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/pnjlcJYZEZeMhknM.jpg";
+const VIA_IMG_6  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/mGBbVdvrKDDScpvh.jpg";
+const VIA_IMG_7  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/kzbEguaIpxZwTBVI.jpg";
+const VIA_IMG_8  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/ZYFMcWIWfoBKbGdE.jpg";
+const VIA_IMG_9  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/NxsvIZHCvmosZqya.jpg";
+const VIA_IMG_10 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/AMscnCKnrPjLuJOt.jpg";
+const HERO_IMAGE = VIA_IMG_1;
 
 const GALLERY: { src: string; caption: string; category: string }[] = [
-  {
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/aGJnumXzQjXioSLg.png",
-    caption: "VIA Ashkelon — aerial render of the residential complex",
-    category: "Exterior",
-  },
-  {
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/JIrrJChYodmSPwpO.png",
-    caption: "VIA Ashkelon — bird's eye view of the neighbourhood",
-    category: "Aerial",
-  },
+  { src: VIA_IMG_1,  caption: "VIA Ashkelon — aerial view of the development",       category: "Aerial"   },
+  { src: VIA_IMG_2,  caption: "VIA Ashkelon — street view render",                   category: "Exterior" },
+  { src: VIA_IMG_3,  caption: "VIA Ashkelon — evening render with pedestrians",      category: "Exterior" },
+  { src: VIA_IMG_4,  caption: "VIA Ashkelon — park and garden view",                 category: "Grounds"  },
+  { src: VIA_IMG_5,  caption: "VIA Ashkelon — landscaped promenade",                 category: "Grounds"  },
+  { src: VIA_IMG_6,  caption: "VIA Ashkelon — building facade detail",               category: "Exterior" },
+  { src: VIA_IMG_7,  caption: "VIA Ashkelon — residential complex overview",         category: "Exterior" },
+  { src: VIA_IMG_8,  caption: "VIA Ashkelon — daytime street view",                  category: "Exterior" },
+  { src: VIA_IMG_9,  caption: "VIA Ashkelon — palm-lined boulevard",                 category: "Grounds"  },
+  { src: VIA_IMG_10, caption: "VIA Ashkelon — night render of the development",      category: "Exterior" },
 ];
 
 // ── Key Details ───────────────────────────────────────────────────────────────
@@ -64,35 +74,35 @@ const HIGHLIGHTS = [
     number: "01",
     title: "Mediterranean Coastal Living",
     body: "VIA Ashkelon places you minutes from the stunning Mediterranean coast. Enjoy year-round beach access, sea breezes, and the relaxed coastal lifestyle that makes Ashkelon one of Israel's most desirable cities.",
-    image: HERO_IMAGE,
+    image: VIA_IMG_3,
   },
   {
     icon: Trees,
     number: "02",
     title: "Green Neighbourhood",
     body: "Set within a beautifully landscaped residential neighbourhood, VIA offers a rare combination of modern urban living and natural surroundings — with parks, cycling paths, and open green spaces right at your doorstep.",
-    image: HERO_IMAGE,
+    image: VIA_IMG_4,
   },
   {
     icon: Sun,
     number: "03",
     title: "300+ Days of Sunshine",
     body: "Ashkelon enjoys one of Israel's finest climates, with over 300 sunny days per year. Wake up to warm Mediterranean mornings and spend evenings watching the sun set over the sea.",
-    image: HERO_IMAGE,
+    image: VIA_IMG_5,
   },
   {
     icon: Users,
     number: "04",
     title: "Thriving Anglo Community",
     body: "Ashkelon is home to a growing and welcoming Anglo community with English-speaking services, social groups, and a strong sense of belonging — making it the ideal destination for English-speaking olim.",
-    image: HERO_IMAGE,
+    image: VIA_IMG_6,
   },
   {
     icon: Star,
     number: "05",
     title: "Exceptional Value",
     body: "Property prices in Ashkelon remain significantly lower than Tel Aviv, Jerusalem, or Netanya — offering exceptional value for money without compromising on quality of life or amenities.",
-    image: HERO_IMAGE,
+    image: VIA_IMG_7,
   },
 ];
 
