@@ -13,9 +13,10 @@ import { PROPERTIES } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
 // ── NIYA project card constants ───────────────────────────────────────────────
-const NIYA_HERO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/NAYIzcSYgKKlpynk.jpg";
+// Clean aerial night photo (user-provided, no Video watermark)
+const NIYA_HERO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png";
 const NIYA_GALLERY = [
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/pDSXUhdEXuDeDZyO.jpg",
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/gfcClugcMwVycJVP.jpg",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jWJJNoQppMPmRmpp.webp",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/rIWCabCStvInvJSn.webp",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/lUFLIyUSWxweumyH.webp",

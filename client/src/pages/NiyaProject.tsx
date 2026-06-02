@@ -230,7 +230,7 @@ export default function NiyaProject() {
         className="relative w-full flex flex-col justify-center overflow-hidden"
         style={{
           paddingTop: "64px",
-          minHeight: "92vh",
+          minHeight: "100vh",
           backgroundImage: `linear-gradient(to bottom, rgba(8,14,32,0.30) 0%, rgba(8,14,32,0.78) 80%), url(${HERO_IMAGE})`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
@@ -295,6 +295,14 @@ export default function NiyaProject() {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}>
               Enquire Now <ArrowRight size={16} />
+            </a>
+            <a href="https://wa.me/972547312118" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base transition-all duration-200"
+              style={{ backgroundColor: "#25D366", color: "#fff" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}>
+              <WASvg />
+              WhatsApp
             </a>
             <a href="#apartments"
               className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-base transition-all duration-200"
@@ -403,7 +411,7 @@ export default function NiyaProject() {
       {/* ══════════════════════════════════════════════════════
           SECTION 4 — TALPIOT FUTURE
       ══════════════════════════════════════════════════════ */}
-      <section className="py-24" style={{ backgroundColor: DARK }}>
+      <section className="py-24" style={{ backgroundColor: "oklch(0.22 0.06 240)" }}>
         <div className="container max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <SectionLabel>THE NEIGHBOURHOOD</SectionLabel>
