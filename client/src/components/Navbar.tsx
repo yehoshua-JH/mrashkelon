@@ -16,7 +16,7 @@ const LOGO_SMALL_STYLE = { height: "2.5rem", width: "54px", objectFit: "contain"
 const navLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Our Properties", href: "/featured-properties" },
+  { label: "Properties", href: "/featured-properties" },
   { label: "Ashkelon", href: "/about-ashkelon" },
   { label: "Jerusalem", href: "/about-jerusalem" },
   { label: "Resources", href: "/resources" },
