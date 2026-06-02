@@ -30,7 +30,7 @@ import RealContactForm from "@/components/ContactForm";
 const LOGO_WHITE =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white_1f2ffe27.webp";
 const FEATURED_IMG =
-  "/manus-storage/genesis-tower_b8ecc22a.webp";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp";
 
 const services = [
   { Icon: HomeIcon, title: "Property Purchase", description: "Expert guidance through every step of buying property in Ashkelon, from search to closing." },
@@ -288,7 +288,7 @@ export default function Home() {
               <Link href="/niya" className="group block" style={{ textDecoration: "none" }}>
                 <div className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border-2" style={{ backgroundColor: "var(--card)", borderColor: "var(--secondary)" }}>
                   <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
-                    <img src="/manus-storage/niya-hero_e35fa17d.webp" alt="NIYA Jerusalem" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/AQmmYHYvdyHhClrF.webp" alt="NIYA Jerusalem" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
                     <span className="absolute top-2 left-2 px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded text-white" style={{ backgroundColor: "var(--secondary)" }}>Pre-Sale</span>
                   </div>
                   <div className="p-5">
@@ -304,7 +304,7 @@ export default function Home() {
               <Link href="/via-ashkelon" className="group block" style={{ textDecoration: "none" }}>
                 <div className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border-2" style={{ backgroundColor: "var(--card)", borderColor: "var(--secondary)" }}>
                   <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
-                    <img src="/manus-storage/via-hero_d02f02f6.webp" alt="VIA Ashkelon" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/hdoqCVmUjvHQlFOe.webp" alt="VIA Ashkelon" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
                     <span className="absolute top-2 left-2 px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded text-white" style={{ backgroundColor: "var(--secondary)" }}>Coming Soon</span>
                   </div>
                   <div className="p-5">

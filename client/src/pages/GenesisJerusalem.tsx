@@ -37,11 +37,11 @@ const CREAM  = "oklch(0.975 0.008 80)";
 const DARK   = "oklch(0.16 0.04 255)";
 
 // ── Images ────────────────────────────────────────────────────────────────────
-const HERO_IMAGE = "/manus-storage/genesis-tower_b8ecc22a.webp";
+const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp";
 
 const GALLERY: { src: string; caption: string; category: string }[] = [
   {
-    src: "/manus-storage/genesis-tower_b8ecc22a.webp",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp",
     caption: "Genesis Jerusalem tower — aerial view at sunset",
     category: "Exterior",
   },
@@ -69,35 +69,35 @@ const HIGHLIGHTS = [
     number: "01",
     title: "Open Views & Sunsets",
     body: "Wake up to breathtaking panoramas of the Jerusalem hills. Watch the city transform at golden hour as the sun sets over the iconic skyline — a view that never grows old.",
-    image: "/manus-storage/genesis-tower_b8ecc22a.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp",
   },
   {
     icon: Trees,
     number: "02",
     title: "Lifestyle & Nature",
     body: "Steps from a beautifully landscaped park, a serene lake, and scenic walking and cycling trails. Genesis Jerusalem offers a rare balance of urban convenience and natural tranquillity.",
-    image: "/manus-storage/genesis-tower_b8ecc22a.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp",
   },
   {
     icon: Train,
     number: "03",
     title: "Transport & Accessibility",
     body: "Seamlessly connected via the Jerusalem Light Rail and the Begin Highway. Malha train station is minutes away, providing fast access to central Jerusalem, Tel Aviv, and beyond.",
-    image: "/manus-storage/genesis-tower_b8ecc22a.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp",
   },
   {
     icon: Sparkles,
     number: "04",
     title: "Building Features",
     body: "Every apartment is finished to the highest standard — featuring a secure Mamad safe room, private storage, underground parking, and premium materials throughout.",
-    image: "/manus-storage/genesis-tower_b8ecc22a.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp",
   },
   {
     icon: Star,
     number: "05",
     title: "Location Advantages",
     body: "Minutes from Hadassah Medical Centre, Malha Mall, Teddy Stadium, and the Jerusalem Biblical Zoo. Schools, synagogues, and all essential amenities are within easy reach.",
-    image: "/manus-storage/genesis-tower_b8ecc22a.webp",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp",
   },
 ];
 
@@ -431,7 +431,7 @@ export default function GenesisJerusalem() {
             </div>
             <div className="flex flex-col gap-3">
               <img
-                src="/manus-storage/genesis-tower_b8ecc22a.webp"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/XYIUjBziaAZuJPwh.webp"
                 alt="Genesis Jerusalem tower"
                 className="w-full rounded-xl object-cover"
                 style={{ maxHeight: "420px", boxShadow: "0 20px 60px rgba(0,0,0,0.18)" }}
