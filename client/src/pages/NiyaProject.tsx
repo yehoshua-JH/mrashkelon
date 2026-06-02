@@ -41,8 +41,8 @@ const DARK   = "oklch(0.16 0.04 255)";
 
 // ── Images ────────────────────────────────────────────────────────────────────
 // User-provided clean aerial night photo (cropped)
-const HERO_IMAGE       = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png";
-const AERIAL_NIGHT     = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png";
+const HERO_IMAGE       = "/manus-storage/niya-hero_e35fa17d.webp";
+const AERIAL_NIGHT     = "/manus-storage/niya-hero_e35fa17d.webp";
 const PLAYGROUND       = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/BwmpnHWeHUmRivNP.webp";
 const ROOFTOP          = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/NkxcKvpJqmtSCJHn.webp";
 const COURTYARD        = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/IDMporjalqnyXpBB.webp";

@@ -77,7 +77,7 @@ export default function Contact() {
           </p>
 
           {/* Contact Info Cards — always visible on top */}
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center shrink-0">
                 <Phone className="w-5 h-5 text-secondary" />

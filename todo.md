@@ -16,3 +16,10 @@
 - [x] Image loading performance: added <link rel="preload"> for homepage hero and Genesis hero in index.html
 - [x] Image loading performance: added shimmer skeleton CSS animation for placeholder states
 - [x] Image loading performance: created reusable LazyImage component with IntersectionObserver + fade-in
+- [x] VIA card added to New Projects section on homepage
+- [x] Heavy PNG/JPG images replaced with optimized WebP (82-98% size reduction): genesis 3.6MB→65KB, niya 2.1MB→130KB, via 957KB→120KB
+- [x] Contact page grid fixed to grid-cols-2 (removed non-standard xs: breakpoint)
+- [x] PropertyDetail hero text padding fixed for mobile (p-4 sm:p-8 md:p-14)
+- [x] Home.tsx hero featured card image height made responsive (clamp 200px-350px)
+- [x] Storage proxy cache headers added (7 day browser cache for images)
+- [x] storageProxy.ts created and registered in server index.ts for serving optimized WebP images

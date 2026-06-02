@@ -75,7 +75,7 @@ export default function PropertyDetail() {
           style={{ objectPosition: "center center" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 md:p-14">
           <div className="container max-w-6xl">
             <Badge variant="secondary" className="mb-3 text-sm px-4 py-1">
               Featured Project

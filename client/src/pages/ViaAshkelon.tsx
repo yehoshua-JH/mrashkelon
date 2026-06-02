@@ -32,7 +32,7 @@ const GOLD  = "oklch(0.72 0.12 75)";
 const CREAM = "oklch(0.975 0.008 80)";
 
 // ── Images ────────────────────────────────────────────────────────────────────
-const VIA_IMG_1  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/okInSHJEMyVmcUyl.jpg";
+const VIA_IMG_1  = "/manus-storage/via-hero_d02f02f6.webp";
 const VIA_IMG_2  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/hSRIthNkLNDJisze.jpg";
 const VIA_IMG_3  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/TcbRmPsEzUfpygBN.jpg";
 const VIA_IMG_4  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/WwyyniAaICiaJSHR.jpg";

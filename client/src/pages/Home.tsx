@@ -30,7 +30,7 @@ import RealContactForm from "@/components/ContactForm";
 const LOGO_WHITE =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/logo-white_1f2ffe27.webp";
 const FEATURED_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/genesis-jerusalem-tower_83b88532.png";
+  "/manus-storage/genesis-tower_b8ecc22a.webp";
 
 const services = [
   { Icon: HomeIcon, title: "Property Purchase", description: "Expert guidance through every step of buying property in Ashkelon, from search to closing." },
@@ -130,7 +130,7 @@ export default function Home() {
                       src={FEATURED_IMG}
                       alt="Genesis Jerusalem — Luxury Tower"
                       className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      style={{ height: "350px", objectPosition: "center top" }}
+                      style={{ height: "clamp(200px, 40vw, 350px)", objectPosition: "center top" }}
                     />
                     <div
                       className="absolute top-4 right-0 font-bold text-xs px-4 py-2 rounded-l-md shadow-lg"
@@ -288,13 +288,29 @@ export default function Home() {
               <Link href="/niya" className="group block" style={{ textDecoration: "none" }}>
                 <div className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border-2" style={{ backgroundColor: "var(--card)", borderColor: "var(--secondary)" }}>
                   <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
-                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png" alt="NIYA Jerusalem" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
+                    <img src="/manus-storage/niya-hero_e35fa17d.webp" alt="NIYA Jerusalem" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
                     <span className="absolute top-2 left-2 px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded text-white" style={{ backgroundColor: "var(--secondary)" }}>Pre-Sale</span>
                   </div>
                   <div className="p-5">
                     <h3 className="font-semibold mb-1" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>NIYA — Jerusalem Project</h3>
                     <p className="text-sm flex items-center gap-1 mb-3" style={{ color: "var(--muted-foreground)" }}>
                       <MapPin style={{ width: "0.875rem", height: "0.875rem" }} />Talpiot, Jerusalem
+                    </p>
+                    <div className="w-full text-center py-2 rounded border font-medium text-sm" style={{ borderColor: "var(--secondary)", color: "var(--secondary)" }}>View Project</div>
+                  </div>
+                </div>
+              </Link>
+              {/* VIA Ashkelon card */}
+              <Link href="/via-ashkelon" className="group block" style={{ textDecoration: "none" }}>
+                <div className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border-2" style={{ backgroundColor: "var(--card)", borderColor: "var(--secondary)" }}>
+                  <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
+                    <img src="/manus-storage/via-hero_d02f02f6.webp" alt="VIA Ashkelon" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
+                    <span className="absolute top-2 left-2 px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded text-white" style={{ backgroundColor: "var(--secondary)" }}>Coming Soon</span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-semibold mb-1" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>VIA — Ashkelon Project</h3>
+                    <p className="text-sm flex items-center gap-1 mb-3" style={{ color: "var(--muted-foreground)" }}>
+                      <MapPin style={{ width: "0.875rem", height: "0.875rem" }} />Ashkelon, Mediterranean Coast
                     </p>
                     <div className="w-full text-center py-2 rounded border font-medium text-sm" style={{ borderColor: "var(--secondary)", color: "var(--secondary)" }}>View Project</div>
                   </div>

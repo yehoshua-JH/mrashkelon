@@ -14,7 +14,7 @@ const NAVY = "oklch(0.285 0.055 255)";
 const GOLD = "oklch(0.72 0.12 75)";
 
 // ── NIYA project card constants ───────────────────────────────────────────────
-const NIYA_HERO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png";
+const NIYA_HERO = "/manus-storage/niya-hero_e35fa17d.webp";
 const NIYA_GALLERY = [
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/gfcClugcMwVycJVP.jpg",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jWJJNoQppMPmRmpp.webp",
@@ -221,7 +221,7 @@ function GenesisProjectCard() {
 }
 
 // ── VIA Ashkelon Project Card ────────────────────────────────────────────────
-const VIA_HERO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/aGJnumXzQjXioSLg.png";
+const VIA_HERO = "/manus-storage/via-card-hero_4f15ed67.webp";
 
 function ViaAshkelonCard() {
   return (
