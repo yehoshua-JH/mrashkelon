@@ -11,7 +11,7 @@ const LOGO_WHITE =
 const footerLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Properties", href: "/featured-properties" },
+  { label: "Our Properties", href: "/featured-properties" },
   { label: "About Ashkelon", href: "/about-ashkelon" },
   { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },

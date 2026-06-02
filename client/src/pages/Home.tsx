@@ -244,71 +244,102 @@ export default function Home() {
               className="text-3xl md:text-4xl font-bold mb-2"
               style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}
             >
-              Featured Properties
+              Our Properties
             </h2>
             <div className="w-16 h-1 mx-auto mb-4 rounded-full" style={{ backgroundColor: "var(--secondary)" }} />
             <p className="max-w-2xl mx-auto" style={{ color: "var(--muted-foreground)" }}>
-              Browse our curated selection of properties in Ashkelon's most sought-after neighborhoods.
+              New projects and available properties — find your perfect home in Israel.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PROPERTIES.filter((p) => !p.hidden).map((property) => (
-              <Link
-                href={`/property/${property.slug}`}
-                key={property.slug}
-                className="group block"
-                style={{ textDecoration: "none" }}
-              >
-                <div
-                  className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border"
-                  style={{ backgroundColor: "var(--card)", borderColor: "var(--border)" }}
+
+          {/* ── New Projects ── */}
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-6">
+              <h3 className="text-xl font-bold" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>New Projects</h3>
+              <span className="px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded-full text-white" style={{ backgroundColor: "var(--secondary)" }}>Pre-Sale</span>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PROPERTIES.filter((p) => !p.hidden && p.category === "new-project" && !p.slug.startsWith("niya-")).map((property) => (
+                <Link
+                  href={(property as any).customLink ?? `/property/${property.slug}`}
+                  key={property.slug}
+                  className="group block"
+                  style={{ textDecoration: "none" }}
                 >
+                  <div
+                    className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border-2"
+                    style={{ backgroundColor: "var(--card)", borderColor: "var(--secondary)" }}
+                  >
+                    <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
+                      <img src={property.image} alt={property.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <span className="absolute top-2 left-2 px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded text-white" style={{ backgroundColor: "var(--secondary)" }}>Pre-Sale</span>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-semibold mb-1" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>{property.title}</h3>
+                      <p className="text-sm flex items-center gap-1 mb-3" style={{ color: "var(--muted-foreground)" }}>
+                        <MapPin style={{ width: "0.875rem", height: "0.875rem" }} />{property.location}
+                      </p>
+                      <div className="w-full text-center py-2 rounded border font-medium text-sm" style={{ borderColor: "var(--secondary)", color: "var(--secondary)" }}>View Project</div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+              {/* NIYA card */}
+              <Link href="/niya" className="group block" style={{ textDecoration: "none" }}>
+                <div className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border-2" style={{ backgroundColor: "var(--card)", borderColor: "var(--secondary)" }}>
                   <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
-                    <img
-                      src={property.image}
-                      alt={property.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/GqRNOhqlqVpCcFPn.png" alt="NIYA Jerusalem" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <span className="absolute top-2 left-2 px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded text-white" style={{ backgroundColor: "var(--secondary)" }}>Pre-Sale</span>
                   </div>
                   <div className="p-5">
-                    <h3
-                      className="font-semibold mb-1"
-                      style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}
-                    >
-                      {property.title}
-                    </h3>
-                    <p
-                      className="text-sm flex items-center gap-1 mb-4"
-                      style={{ color: "var(--muted-foreground)" }}
-                    >
-                      <MapPin style={{ width: "0.875rem", height: "0.875rem" }} />
-                      {property.location || "Ashkelon, Israel"}
+                    <h3 className="font-semibold mb-1" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>NIYA — Jerusalem Project</h3>
+                    <p className="text-sm flex items-center gap-1 mb-3" style={{ color: "var(--muted-foreground)" }}>
+                      <MapPin style={{ width: "0.875rem", height: "0.875rem" }} />Talpiot, Jerusalem
                     </p>
-                    <p
-                      className="text-sm mb-4"
-                      style={{
-                        color: "var(--muted-foreground)",
-                        overflow: "hidden",
-                        display: "-webkit-box",
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: "vertical",
-                      }}
-                    >
-                      {property.tagline}
-                    </p>
-                    <div
-                      className="w-full text-center py-2 rounded border font-medium text-sm transition-colors"
-                      style={{
-                        borderColor: "var(--secondary)",
-                        color: "var(--secondary)",
-                      }}
-                    >
-                      View Details
-                    </div>
+                    <div className="w-full text-center py-2 rounded border font-medium text-sm" style={{ borderColor: "var(--secondary)", color: "var(--secondary)" }}>View Project</div>
                   </div>
                 </div>
               </Link>
-            ))}
+            </div>
+          </div>
+
+          {/* ── Available Properties ── */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <h3 className="text-xl font-bold" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>Available Now</h3>
+              <span className="px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded-full" style={{ backgroundColor: "oklch(0.93 0.02 80)", color: "var(--primary)" }}>For Sale</span>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PROPERTIES.filter((p) => !p.hidden && p.category === "available").map((property) => (
+                <Link
+                  href={(property as any).customLink ?? `/property/${property.slug}`}
+                  key={property.slug}
+                  className="group block"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div
+                    className="rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-lg h-full border"
+                    style={{ backgroundColor: "var(--card)", borderColor: "var(--border)" }}
+                  >
+                    <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
+                      <img src={property.image} alt={property.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-semibold mb-1" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>{property.title}</h3>
+                      <p className="text-sm flex items-center gap-1 mb-3" style={{ color: "var(--muted-foreground)" }}>
+                        <MapPin style={{ width: "0.875rem", height: "0.875rem" }} />{property.location}
+                      </p>
+                      <p className="text-sm mb-4" style={{ color: "var(--muted-foreground)", overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>{property.tagline}</p>
+                      <div className="w-full text-center py-2 rounded border font-medium text-sm" style={{ borderColor: "var(--secondary)", color: "var(--secondary)" }}>View Details</div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/featured-properties" className="inline-flex items-center justify-center px-6 py-3 rounded border font-semibold transition-colors" style={{ borderColor: "var(--primary)", color: "var(--primary)" }}>View All Properties</Link>
           </div>
         </div>
       </section>

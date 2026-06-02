@@ -56,6 +56,7 @@ export const PROPERTIES = [
   {
     slug: "luxury-high-rise",
     hidden: true, // Same property as Genesis Jerusalem — hidden from listings
+    category: "new-project" as const,
     title: "Luxury High-Rise Living",
     tagline: "Panoramic views & premium amenities",
     location: "Prime city center location",
@@ -95,6 +96,7 @@ export const PROPERTIES = [
   },
   {
     slug: "sea-view",
+    category: "available" as const,
     title: "Amazing Sea Views — Afridar Apartment",
     tagline: "Breathtaking ocean views in Afridar",
     location: "Afridar, Ashkelon",
@@ -134,6 +136,7 @@ export const PROPERTIES = [
   },
   {
     slug: "genesis-jerusalem",
+    category: "new-project" as const,
     title: "Genesis Jerusalem",
     tagline: "Pre-Sale — Western Jerusalem luxury tower",
     location: "Western Jerusalem",
@@ -173,6 +176,7 @@ export const PROPERTIES = [
   },
   {
     slug: "barnea-5-room",
+    category: "available" as const,
     title: "5-Room Apartment in Barnea",
     tagline: "Spacious family home with sea views — immediate possession",
     location: "Barnea, Ashkelon",
@@ -231,6 +235,7 @@ export const PROPERTIES = [
   },
   {
     slug: "anglo-area-apartment",
+    category: "available" as const,
     title: "3-Room Apartment in the Anglo Area",
     tagline: "Delightful home in the heart of the Anglo community",
     location: "Anglo Area, Ashkelon",
@@ -280,6 +285,7 @@ export const PROPERTIES = [
   },
   {
     slug: "niya-3em7",
+    category: "new-project" as const,
     title: "NIYA — 3 Rooms",
     tagline: "Modern living in Jerusalem's premier new development",
     location: "NIYA, Talpiot, Jerusalem",
@@ -322,6 +328,7 @@ export const PROPERTIES = [
   },
   {
     slug: "niya-4g-m6-m16",
+    category: "new-project" as const,
     title: "NIYA — 4 Rooms",
     tagline: "Spacious family living with panoramic views in Jerusalem",
     location: "NIYA, Talpiot, Jerusalem",
@@ -366,6 +373,7 @@ export const PROPERTIES = [
   },
   {
     slug: "niya-5c-m6-m16-m15",
+    category: "new-project" as const,
     title: "NIYA — 5 Rooms",
     tagline: "Exceptional family living with 3 balconies in Jerusalem's premier development",
     location: "NIYA, Talpiot, Jerusalem",
@@ -408,6 +416,7 @@ export const PROPERTIES = [
   },
   {
     slug: "yafe-nof-4-room",
+    category: "available" as const,
     title: "4-Room Apartment on Yafe Nof",
     tagline: "100m from the beach — sea views, Shirat Moshe building",
     location: "Yafe Nof, Ashkelon",

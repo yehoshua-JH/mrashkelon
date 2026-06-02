@@ -199,7 +199,7 @@ export default function AboutJerusalem() {
                 Emergency Telephone Numbers
               </AccordionTrigger>
               <AccordionContent>
-                <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="flex flex-col gap-1 text-sm">
                   {[
                     ["Police", "100"],
                     ["Ambulance (Magen David Adom)", "101"],
@@ -210,9 +210,9 @@ export default function AboutJerusalem() {
                     ["Hadassah Hospital Ein Kerem", "02-6777111"],
                     ["Shaare Zedek Hospital", "02-6555111"],
                   ].map(([name, number]) => (
-                    <div key={name} className="flex justify-between py-1 border-b border-border">
+                    <div key={name} className="flex justify-between items-center py-1.5 border-b border-border gap-4">
                       <span className="font-medium text-foreground">{name}</span>
-                      <span className="text-muted-foreground">{number}</span>
+                      <span className="text-muted-foreground shrink-0">{number}</span>
                     </div>
                   ))}
                 </div>
