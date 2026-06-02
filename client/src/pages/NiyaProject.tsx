@@ -9,7 +9,8 @@ import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import {
   Train,
   Trees,
@@ -184,6 +185,7 @@ function Lightbox({
         className="p-0 border-none overflow-hidden"
         style={{ maxWidth: "90vw", width: "90vw", maxHeight: "92vh", background: "rgba(4,4,8,0.97)", backdropFilter: "blur(8px)", borderRadius: "12px" }}
       >
+        <VisuallyHidden><DialogTitle>Image Gallery</DialogTitle></VisuallyHidden>
         <button
           className="absolute top-4 right-4 z-20 flex items-center justify-center w-10 h-10 rounded-full transition-all"
           style={{ backgroundColor: "rgba(255,255,255,0.10)", color: "#fff", border: "1px solid rgba(255,255,255,0.18)" }}
