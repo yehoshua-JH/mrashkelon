@@ -230,13 +230,14 @@ export default function NiyaProject() {
           SECTION 1 — HERO
       ══════════════════════════════════════════════════════ */}
       <section
-        className="relative w-full flex flex-col justify-end overflow-hidden"
+        className="relative w-full flex flex-col justify-end"
         style={{
           paddingTop: "64px",
           minHeight: "95vh",
-          backgroundImage: `linear-gradient(to bottom, rgba(10,8,6,0.25) 0%, rgba(10,8,6,0.80) 85%), url(${HERO_IMAGE})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(10,8,6,0.25) 0%, rgba(10,8,6,0.85) 100%), url(${HERO_IMAGE})`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
+          backgroundAttachment: "scroll",
         }}
       >
         {/* Copper shimmer */}
@@ -537,10 +538,7 @@ export default function NiyaProject() {
                   alt={img.caption}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
                 />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3"
-                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)" }}>
-                  <span className="text-xs text-white/80">{img.caption}</span>
-                </div>
+
               </button>
             ))}
           </div>
