@@ -39,13 +39,13 @@ const MUTED  = "oklch(0.55 0.02 55)";   // muted text
 
 // ── Images ────────────────────────────────────────────────────────────────────
 // Page 3 of PDF — aerial night render of NIYA towers (hero)
-const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/NAYIzcSYgKKlpynk.jpg";
+const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/zgxUOkvJLTWEKcnv.png";
 // Page 4 — Talpiot boulevard render (jacaranda, cafes, towers)
 const BOULEVARD_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/pDSXUhdEXuDeDZyO.jpg";
 // Page 5 — Talpiot bike lane boulevard
 const BOULEVARD_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/HnHEvsOhikGfdLdS.jpg";
 // Page 12 — aerial night render of towers (gallery)
-const AERIAL_NIGHT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/sNbFXcZcQAuGkJDC.jpg";
+const AERIAL_NIGHT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/zgxUOkvJLTWEKcnv.png";
 // Page 13 — playground / sportive life
 const PLAYGROUND = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jUpFXvPOmHiTwzRX.jpg";
 // Page 15 — rooftop terrace
