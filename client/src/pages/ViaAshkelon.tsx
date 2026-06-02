@@ -188,7 +188,7 @@ function Lightbox({
           {index + 1} / {images.length}
         </div>
 
-        <div className="flex items-center justify-center w-full" style={{ minHeight: "60vh", maxHeight: "80vh", padding: "3.5rem 4.5rem" }}>
+        <div className="flex items-center justify-center w-full" style={{ minHeight: "50vh", maxHeight: "80vh", padding: "3rem 1.5rem" }}>
           <img
             key={img.src}
             src={img.src}
@@ -450,7 +450,7 @@ export default function ViaAshkelon() {
             <GoldDivider />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {KEY_DETAILS.map(({ icon: Icon, label, sub }) => (
               <div
                 key={label}

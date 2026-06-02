@@ -191,7 +191,7 @@ function Lightbox({
         </div>
 
         {/* Image area */}
-        <div className="flex items-center justify-center w-full" style={{ minHeight: "60vh", maxHeight: "80vh", padding: "3.5rem 4.5rem" }}>
+        <div className="flex items-center justify-center w-full" style={{ minHeight: "50vh", maxHeight: "80vh", padding: "3rem 1.5rem" }}>
           <img
             key={img.src}
             src={img.src}
@@ -654,15 +654,16 @@ export default function GenesisJerusalem() {
             style={{ minHeight: "420px" }}
           >
             {/* Image half */}
-            <div className="w-full md:w-1/2 relative overflow-hidden" style={{ minHeight: "300px" }}>
+            <div className="w-full md:w-1/2 relative overflow-hidden" style={{ minHeight: "260px" }}>
               <img
                 src={image}
                 alt={title}
                 className="w-full h-full object-cover"
-                style={{ minHeight: "300px" }}
+                style={{ minHeight: "260px" }}
               />
+              {/* Gradient only on md+ to blend into adjacent text panel */}
               <div
-                className="absolute inset-0"
+                className="hidden md:block absolute inset-0"
                 style={{
                   background: idx % 2 === 0
                     ? "linear-gradient(to right, transparent 60%, oklch(1 0 0))"
@@ -673,7 +674,7 @@ export default function GenesisJerusalem() {
 
             {/* Text half */}
             <div
-              className={`w-full md:w-1/2 flex items-center px-8 md:px-14 py-14 ${idx % 2 === 0 ? "" : ""}`}
+              className={`w-full md:w-1/2 flex items-center px-6 md:px-14 py-10 md:py-14`}
               style={{ backgroundColor: "oklch(1 0 0)" }}
             >
               <div className="max-w-md">

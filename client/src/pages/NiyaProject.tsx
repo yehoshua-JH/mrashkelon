@@ -182,7 +182,7 @@ function Lightbox({
           style={{ backgroundColor: "rgba(255,255,255,0.10)", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.15)" }}>
           {index + 1} / {images.length}
         </div>
-        <div className="flex items-center justify-center w-full" style={{ minHeight: "60vh", maxHeight: "80vh", padding: "3.5rem 4.5rem" }}>
+        <div className="flex items-center justify-center w-full" style={{ minHeight: "50vh", maxHeight: "80vh", padding: "3rem 1.5rem" }}>
           <img key={img.src} src={img.src} alt={img.caption}
             style={{ maxWidth: "100%", maxHeight: "74vh", objectFit: "contain", borderRadius: "8px", display: "block", margin: "0 auto" }}
           />
@@ -376,7 +376,7 @@ export default function NiyaProject() {
             </h2>
             <GoldDivider />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
             {KEY_DETAILS.map(({ icon: Icon, label, sub }) => (
               <div key={label}
                 className="flex flex-col items-center gap-3 p-7 rounded-xl transition-all duration-250 cursor-default"
@@ -481,16 +481,17 @@ export default function NiyaProject() {
             className={`flex flex-col ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
             style={{ minHeight: "420px" }}>
             {/* Image half */}
-            <div className="w-full md:w-1/2 relative overflow-hidden" style={{ minHeight: "300px" }}>
-              <img src={image} alt={title} className="w-full h-full object-cover" style={{ minHeight: "300px" }} />
-              <div className="absolute inset-0" style={{
+            <div className="w-full md:w-1/2 relative overflow-hidden" style={{ minHeight: "260px" }}>
+              <img src={image} alt={title} className="w-full h-full object-cover" style={{ minHeight: "260px" }} />
+              {/* Gradient only on md+ to blend into adjacent text panel */}
+              <div className="hidden md:block absolute inset-0" style={{
                 background: idx % 2 === 0
                   ? "linear-gradient(to right, transparent 60%, oklch(1 0 0))"
                   : "linear-gradient(to left, transparent 60%, oklch(1 0 0))",
               }} />
             </div>
             {/* Text half */}
-            <div className={`w-full md:w-1/2 flex items-center px-8 md:px-14 py-14`}
+            <div className={`w-full md:w-1/2 flex items-center px-6 md:px-14 py-10 md:py-14`}
               style={{ backgroundColor: "oklch(1 0 0)" }}>
               <div className="max-w-md">
                 <div className="flex items-center gap-4 mb-5">
