@@ -463,6 +463,50 @@ export const PROPERTIES = [
         "Beautiful 4-room apartment in Shirat Moshe building, Yafe Nof, Ashkelon. 6th floor, sea views, 100m from beach, mamad, private parking. Price ₪2,650,000.",
     },
   },
+  {
+    slug: "briza-penthouse",
+    category: "available" as const,
+    sold: true,
+    customLink: "/briza-penthouse",
+    title: "BRIZA BY EFGAD Penthouse",
+    tagline: "Sold — Floor 22, open sea views, 70 m² terrace",
+    location: "Ashkelon",
+    description:
+      "The last penthouse in the prestigious BRIZA BY EFGAD project in Ashkelon. This exceptional property on floor 22 offered stunning open sea views, a spacious 70 m² terrace, and a large open-plan living area.",
+    details:
+      "This penthouse features a large open living space connected to a dining area and kitchen. The property includes 6 rooms with a master suite, and direct access to a spacious 70 m² terrace with stunning open sea views and outdoor seating area.",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png",
+    galleryImages: [
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-terrace-hero_e6100fa7.png",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663429873569/7oWSVrPVGVtdZF4r8qdB6x/briza-floor-plan_a30e3a77.jpg",
+    ],
+    specs: {
+      Location: "Ashkelon",
+      Project: "BRIZA BY EFGAD",
+      Floor: "22",
+      Rooms: "6",
+      "Built Area": "~177 m²",
+      Balcony: "70 m²",
+      Parking: "2 underground spaces",
+      Storage: "Storage room included",
+      Status: "SOLD",
+    },
+    highlights: [
+      "Open sea views from floor 22",
+      "70 m² terrace with outdoor seating",
+      "6 rooms incl. master suite",
+      "~177 m² built area",
+      "2 underground parking spaces",
+      "Prestigious BRIZA BY EFGAD project",
+    ],
+    note: "This property has been sold. Contact us for similar available properties.",
+    seo: {
+      title: "BRIZA BY EFGAD Penthouse — Sold | Mr. Ashkelon",
+      description:
+        "Sold penthouse in the BRIZA BY EFGAD project, Ashkelon. Floor 22, open sea views, 70 m² terrace, 6 rooms. Contact Mr. Ashkelon for similar properties.",
+    },
+  },
 ];
 
 export const BLOG_POSTS = [

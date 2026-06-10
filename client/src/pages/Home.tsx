@@ -339,6 +339,11 @@ export default function Home() {
                   >
                     <div className="overflow-hidden" style={{ aspectRatio: "16/10", position: "relative" }}>
                       <img src={property.image} alt={property.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" />
+                      {(property as any).sold && (
+                        <div className="absolute inset-0 flex items-center justify-center" style={{ backgroundColor: "rgba(0,0,0,0.45)" }}>
+                          <span className="px-5 py-2 text-base font-bold tracking-widest uppercase" style={{ backgroundColor: "#c0392b", color: "#fff", letterSpacing: "0.2em" }}>SOLD</span>
+                        </div>
+                      )}
                     </div>
                     <div className="p-5">
                       <h3 className="font-semibold mb-1" style={{ fontFamily: "Georgia, serif", color: "var(--primary)" }}>{property.title}</h3>
