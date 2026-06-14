@@ -33,6 +33,18 @@ const GALLERY_IMAGES = [
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/xjPrfVyjryVofYbn.webp",
     title: "Wine Bar",
   },
+  {
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/MPkSgvSjKWxEkpcP.webp",
+    title: "Aerial Sea View",
+  },
+  {
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/FbABzFcfiLOGfvbl.webp",
+    title: "Living Room with Sea View",
+  },
+  {
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/QdJaAwYlWGPtCIWa.webp",
+    title: "Living Room with Windows",
+  },
 ];
 
 const HIGHLIGHTS = [
