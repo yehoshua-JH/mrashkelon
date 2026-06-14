@@ -326,7 +326,7 @@ export default function Home() {
               <span className="px-2 py-0.5 text-xs font-bold tracking-wider uppercase rounded-full" style={{ backgroundColor: "oklch(0.93 0.02 80)", color: "var(--primary)" }}>For Sale</span>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PROPERTIES.filter((p) => !p.hidden && p.category === "available").map((property) => (
+              {PROPERTIES.filter((p) => !p.hidden && (p.category === "available" || p.slug === "sea-park-penthouse")).map((property) => (
                 <Link
                   href={(property as any).customLink ?? `/property/${property.slug}`}
                   key={property.slug}

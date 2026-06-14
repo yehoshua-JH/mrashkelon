@@ -507,6 +507,48 @@ export const PROPERTIES = [
         "Sold penthouse in the BRIZA BY EFGAD project, Ashkelon. Floor 22, open sea views, 70 m² terrace, 6 rooms. Contact Mr. Ashkelon for similar properties.",
     },
   },
+  {
+    slug: "sea-park-penthouse",
+    title: "Sea Park Penthouse",
+    tagline: "Skyline Luxury Above the Mediterranean",
+    location: "Sea Park, Ashkelon — Mediterranean Coast",
+    description: "Exclusive penthouse on the 23rd floor overlooking the Mediterranean Sea and Delila Beach.",
+    details: "Occupying the top floor of one of Ashkelon's most prestigious residential towers, this extraordinary penthouse offers a rare opportunity to own a truly exceptional home. Completed in 2025 by the renowned Efgad Group, the residence combines sophisticated design, premium finishes, and breathtaking panoramic sea views. Offered fully furnished and equipped to the highest standards.",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/NXWnsTEHTwOvMvNX.webp",
+    galleryImages: [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/NXWnsTEHTwOvMvNX.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/vIXDHDTIzktNAXBQ.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/WXtJDYAgbZqYfBxR.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/oRlgikvUYiVyIgSg.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/omMblcPuQkKPxgsM.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jdGkdzBQbHJIoXCA.webp",
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/xjPrfVyjryVofYbn.webp",
+    ],
+    specs: {
+      Location: "Sea Park, Ashkelon",
+      Floor: "23 (Top Floor)",
+      "Built Area": "~180 m²",
+      Terrace: "63 m² Panoramic",
+      Bedrooms: "3 Suites",
+      Bathrooms: "3",
+      Parking: "2 Spaces",
+      Status: "Available Now",
+    },
+    highlights: [
+      "Floor 23 — highest floor with panoramic views",
+      "63 m² private terrace overlooking Mediterranean",
+      "3 bedroom suites with en-suite bathrooms",
+      "Fully furnished turnkey condition",
+      "Premium finishes & designer kitchen",
+      "Completed 2025 by Efgad Group",
+    ],
+    price: "₪9,500,000",
+    note: "Availability: June 2027. Monthly fees: Arnona ~₪750, Building maintenance ~₪500. Suitable for foreign purchasers seeking a luxury holiday residence or investment property.",
+    seo: {
+      title: "Sea Park Penthouse — Luxury Ashkelon Property | Mr. Ashkelon",
+      description: "Exclusive Sea Park penthouse in Ashkelon. Floor 23, 180 m² + 63 m² terrace, 3 bedrooms, Mediterranean views, turnkey furnished. Contact Mr. Ashkelon.",
+    },
+  },
 ];
 
 export const BLOG_POSTS = [
