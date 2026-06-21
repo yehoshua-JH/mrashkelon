@@ -523,6 +523,10 @@ export const PROPERTIES = [
       "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/omMblcPuQkKPxgsM.webp",
       "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/jdGkdzBQbHJIoXCA.webp",
       "https://files.manuscdn.com/user_upload_by_module/session_file/310519663429873569/xjPrfVyjryVofYbn.webp",
+      "https://files.manuscdn.com/webdev-static-assets/seapark-living-room.webp",
+      "https://files.manuscdn.com/webdev-static-assets/seapark-aerial-view.webp",
+      "https://files.manuscdn.com/webdev-static-assets/seapark-kitchen.webp",
+      "https://files.manuscdn.com/webdev-static-assets/seapark-bathroom.webp",
     ],
     specs: {
       Location: "Sea Park, Ashkelon",
